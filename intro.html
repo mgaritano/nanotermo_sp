@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introducción y objetivos &#8212; NANOTERMODINÁMICA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="1. Introducción a la Nanotermodinámica" href="nanointro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nanointro.html">1. Introducción a la Nanotermodinámica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hill.html">2. Termodinámica de sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpn.html">3. Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="fase.html">4. Transiciones de fase en sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpmu.html">5. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="electric_magnetic.html">6. Sistemas eléctricos y magnéticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="osagarri.html">7. Ejemplos adicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adsorbent.html">8. Gas ideal y adsorbente esférico pequeño</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ondorioak.html">9. Conclusiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="euler.html"><strong><em>A</em></strong> <em>Ecuación de Euler</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html"><strong><em>B</em></strong> <em>Entropía</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gas%20ideala.html"><strong><em>C</em></strong> <em>Gas ideal clásico, en la colectividad canónica</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Otros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="erreferentziak.html">Referencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eskerrak.html"><em>Agradecimientos</em></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción y objetivos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <blockquote class="epigraph">
+<div><p><span class="math notranslate nohighlight">\(\huge \quad \quad \mathbf{\text{NANOTERMODINÁMICA}}\)</span></p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p><em>Classical thermodynamics… is the only physical theory of universal content which I am convinced that, within the framework of the applicability of its basic concepts, will never be overthrown.</em></p>
+<p class="attribution">—Albert Einstein</p>
+</div></blockquote>
+<section id="introduccion-y-objetivos">
+<span id="sarrera"></span><h1>Introducción y objetivos<a class="headerlink" href="#introduccion-y-objetivos" title="Permalink to this heading">#</a></h1>
+<p>La Termodinámica, sin lugar a dudas, es actualmente la teoría de mayor aplicabilidad en la ciencia, ya que sus postulados se extienden a diversos campos; desde el interior de los átomos, hasta la inmensidad del universo. De hecho, junto a la Física Estadística, abastece a los científicos de las herramientas y aproximaciones necesarias para la correcta descripción del carácter térmico de la naturaleza. Como es bien sabido, dos de las leyes fundamentales de la Termodinámica rigen el comportamiento de un sistema cualquiera: la conservación de la energía y el incesante crecimiento de la entropía. A este último punto se le podría deber la solidez que Einstein muestra en su afirmación.</p>
+<p>Al mismo tiempo, cabe remarcar que los análisis termodinámicos que se realizan en un sistema se fundamentan en dos aproximaciones principales; en considerar que el sistema en cuestión muestra un comportamiento macroscópico y homogéneo. Aún así, en la mayoría de los casos se han obtenido resultados de gran corrección y precisión.</p>
+<p>Sin embargo, históricamente han acontecido sucesos que han hecho tambalear a criterios aparentemente firmes. Por ejemplo, a finales del siglo XIX, se observó que en las reacciones químicas se violaba la conservación de la energía. A raíz de ello, Gibbs introdujo una importante corrección: la contribución a la energía interna del sistema a causa del incremento en el número de partículas, la cual la caracterizó por medio del potencial químico, <span class="math notranslate nohighlight">\(\mu\)</span> <span id="id1">[<a class="reference internal" href="erreferentziak.html#id2" title="R. V. Chamberlin, M. R. Clark, V. Mujica, and G. H. Wolf. An introduction to nanothermodynamics: thermal equilibrium for heterogeneous and finite-sized systems. 2020. doi:10.48550/ARXIV.2007.13031.">1</a>]</span>. Así, además de restablecer la primera ley, se logró propagar el campo de la Termodinámica. A comienzos del siglo XX, la creación y desarrollo de la teoría cuántica posibilitó el estudio de sistemas de menor tamaño. En consecuencia, emergieron nuevos factores como la <em>simetría local</em> y los <em>efectos de tamaño finito</em>. No obstante, la Termodinámica Clásica no incluía explicación alguna para dichos fenómenos. De hecho, en algunos ensayos espectroscópicos se han observado distribuciones inhomogéneas de la temperatura <span id="id2">[<a class="reference internal" href="erreferentziak.html#id3" title="R. Richert and S. Weinstein. Nonlinear dielectric response and thermodynamic heterogeneity in liquids. Physical Review Letters, 97:095703, 2006. doi:10.1103/PhysRevLett.97.095703.">2</a>]</span>. Lo anterior, sin duda, desmiente el carácter homogéneo e intensivo que le asignan las leyes macroscópicas a la temperatura <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>Con el fin de dar solución a los problemas previos, se han creado herramientas que añaden correcciones a la teoría clásica, así como los teoremas de fluctuaciones y la Termodinámica Estocástica. Pero dichas teorías requieren que el sistema se encuentre en todo momento en contacto con una fuente de calor homogénea. En la mayoría de materiales (líquidos, cristales, polímeros…) no resulta factible hacer cumplir esta condición <span id="id3">[<a class="reference internal" href="erreferentziak.html#id4" title="R. V. Chamberlin, Michael R. Clark, Vladimiro Mujica, and George H. Wolf. Multiscale thermodynamics: energy, entropy, and symmetry from atoms to bulk behavior. Symmetry, 2021. doi:10.3390/sym13040721.">3</a>]</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>De todas maneras, existe una teoría que considera los efectos mencionados bajo un punto de vista diferente, pero que, desafortunadamente, ha permanecido en desconocimiento en las últimas décadas. Esta teoría, objeto de estudio del presente trabajo, es denominada la <strong><em>Termodinámica de Sistemas Pequeños</em></strong>, y fue creada y desarrollada por el físico y biólogo <strong>Terrell Leslie Hill</strong> (1917-2014) a comienzos de la década de 1960.</p>
+<figure class="align-default" id="hill">
+<a class="reference internal image-reference" href="_images/hill.jpg"><img alt="_images/hill.jpg" src="_images/hill.jpg" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 1 </span><span class="caption-text">T. L. Hill</span><a class="headerlink" href="#hill" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>En 1962, Hill publicó el artículo <em>Thermodynamics of Small Systems</em> <span id="id4">[<a class="reference internal" href="erreferentziak.html#id5" title="T. L. Hill. Thermodynamics of Small Systems. The Journal of Chemical Physics, 36(12):3182-3197, 1962. doi:https://doi.org/10.1063/1.1732447.">4</a>]</span>, y, a lo largo de los dos próximos años escribió un libro que lleva el mismo nombre <span id="id5">[<a class="reference internal" href="erreferentziak.html#id6" title="T. L. Hill. Thermodynamics of Small Systems. Part 1 and 2., chapter 1-10; 15. Dover Publications, Inc., New York, 1964.">5</a>]</span>. En él, presentó los fundamentos de la Nanotermodinámica y varias explicaciones.</p>
+<div class="admonition-oharra admonition">
+<p class="admonition-title">Oharra</p>
+<p>Hill no emplea la palabra <em>Nanotermodinámica</em> en sus trabajos. De hecho, en la década de 1960 sus ideas carecían de una robusta aplicabilidad en la mayoría de sistemas experimentales. Así las cosas, el autor introdujo este término posteriormente (en el año 2000).</p>
+</div>
+<p>A pesar de ello, al poco tiempo abandonó casi por completo la tarea, y se dedicó a investigar en el área de la biología molecular. Por desgracia, en décadas posteriores su trabajo ha permanecido postergado. Sin embargo, en 2020, un grupo de investigadores de la universidad NTNU de Noruega emprendió un proyecto denominado <em>Small Systems Thermodynamics</em> <span id="id6">[<a class="reference internal" href="erreferentziak.html#id8" title="S. Kjelstrup et al. Small systems thermodynamics. URL: https://www.researchgate.net/project/Small-systems-thermodynamics (visited on 2022-06-22).">6</a>]</span>, con el objeto de reflotar y propulsar la teoría de Hill. De hecho, además de publicar un libro que resume sus bases <span id="id7">[<a class="reference internal" href="erreferentziak.html#id9" title="D. Bedeaux et al. Nanothermodynamics - General Theory, chapter 1-4. PoreLab, Trondheim, Norway, 2020.">7</a>]</span>, lo han aplicado en experimentos y simulaciones moleculares, y han logrado adquirir resultados significativos; por ejemplo, en el caso de la adsorción <span id="id8">[<a class="reference internal" href="erreferentziak.html#id10" title="B. A. Strøm, Jianying He, Dick Bedeaux, and Signe Kjelstrup. When thermodynamic properties of adsorbed films depend on size: fundamental theory and case study. Nanomaterials, 2020. doi:10.3390/nano10091691.">8</a>, <a class="reference internal" href="erreferentziak.html#id12" title="Bjørn A. Strøm, Dick Bedeaux, and Sondre K. Schnell. Adsorption of an ideal gas on a small spherical adsorbent. Nanomaterials, 2021. doi:10.3390/nano11020431.">9</a>]</span>.</p>
+<p>En resumidas cuentas, la teoría de Hill ofrece una generalización de la Termodinámica Clásica que posibilita la correcta descripción y caracterización de sistemas pequeños y heterogéneos. En otras palabras, modifica las ecuaciones clásicas añadiéndoles correcciones. El carácter e influencia de dichas adaptaciones resulta de suma importancia en el ámbito de los sistemas pequeños. Pero a medida que la escala aumenta, desvanece su influencia, con lo cual se restablecen las ecuaciones macroscópicas.</p>
+<p>Al hilo de lo mencionado, esta unidad didáctica está especialmente destinada a la asignatura de Termodinámica y Física Estadística. Se presentarán explicaciones teóricas, las cuales se reforzarán a base de ejemplos de gran relevancia. Así, los alumnos tendrán la oportunidad de viajar más allá de la Termodinámica, y se percatarán de la influencia e importancia de la Nanotermodinámica en el estudio de sistemas pequeños. Lo anterior les supondrá un considerable avance en su aprendizaje.</p>
+<p>Para comenzar, en el <a class="reference internal" href="nanointro.html#nanointro"><span class="std std-numref"> apartado 1</span></a> recordaremos los principios de la Mecánica Estadística <span id="id9">[<a class="reference internal" href="erreferentziak.html#id14" title="H. B. Callen. Thermodynamics and an Introduction to Thermostatistics, 2nd Edition, chapter 1-3, 9. Dover Publications, Inc., New York, 1988.">10</a>, <a class="reference internal" href="erreferentziak.html#id15" title="Y. Verbin D. J. Amit. Statistical Physics: an Introductory Course, chapter 3-4. World Scientific Publishing Co., Singapore, 1999.">11</a>, <a class="reference internal" href="erreferentziak.html#id16" title="R. K. Pathria. Statistical Mechanics, 2nd Edition, chapter 1-4. ELSEVIER, Butterworth-Heinemann, Massachusetts, 1996.">12</a>]</span> y consolidaremos su relación con la Nanotermodinámica. Habiendo establecido las ideas principales, en la <a class="reference internal" href="hill.html#hillsec"><span class="std std-numref">sección 2</span></a> nos adentraremos en el formalismo de Hill <span id="id10">[<a class="reference internal" href="erreferentziak.html#id6" title="T. L. Hill. Thermodynamics of Small Systems. Part 1 and 2., chapter 1-10; 15. Dover Publications, Inc., New York, 1964.">5</a>, <a class="reference internal" href="erreferentziak.html#id9" title="D. Bedeaux et al. Nanothermodynamics - General Theory, chapter 1-4. PoreLab, Trondheim, Norway, 2020.">7</a>]</span>. Partiendo de ahí, en el <a class="reference internal" href="tpn.html#tpn"><span class="std std-numref">capítulo 3</span></a> estudiaremos los primeros ejemplos en la importante colectividad isotérmica-isobárica. Así, observaremos de cerca las particularidades de los efectos de tamaño finito. Seguidamente, en la <a class="reference internal" href="fase.html#fase"><span class="std std-numref">parte 4</span></a> realizaremos una pausa para analizar las transiciones de fase en los sistemas pequeños. Para dar fin a la teoría, en el <a class="reference internal" href="tpmu.html#tpmu"><span class="std std-numref">apartado 5</span></a>  retornaremos al hilo principal. Presentaremos una colectividad estadística que va más allá de los límites de la Termodinámica. Al mismo tiempo, reexaminaremos ejemplos concretos, y conseguiremos resultados muy representativos. Luego, en el <a class="reference internal" href="electric_magnetic.html#elek-mag"><span class="std std-numref">capítulo 6</span></a>, hablaremos de sistemas eléctricos y magnéticos; entre otras cosas, abordarémos un reanálisis del modelo de Ising. Además, la <a class="reference internal" href="osagarri.html#osagarri"><span class="std std-numref">sección 7</span></a> complementaria contiene ejemplos adicionales importantes relacionados con el <a class="reference internal" href="tpmu.html#tpmu"><span class="std std-numref">tema 5</span></a>. Para terminar, en la <a class="reference internal" href="adsorbent.html#app"><span class="std std-numref">sección 8</span></a> estudiaremos un ejemplo más elaborado, siguiendo el artículo <span id="id11">[<a class="reference internal" href="erreferentziak.html#id12" title="Bjørn A. Strøm, Dick Bedeaux, and Sondre K. Schnell. Adsorption of an ideal gas on a small spherical adsorbent. Nanomaterials, 2021. doi:10.3390/nano11020431.">9</a>]</span>. Éste servirá como claro indicador de la aplicabilidad actual de la teoría de Hill, así como una clara señal de que no quedará estancada en la década de 1960.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Así las cosas, sin mayor demora, comenzaremos a cruzar el puente que nos trasladará de la Termodinámica convencional a la Nanotermodinámica. La <a class="reference internal" href="nanointro.html#multzo"><span class="std std-numref">figura 1.1</span></a> del siguiente apartado es el punto de partida ideal para ello.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="nanointro.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introducción a la Nanotermodinámica</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Mikel Garitano Telleria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Colectividad isotérmica-isobárica: variables de entorno \((T,p,N)\) &#8212; NANOTERMODINÁMICA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tpn';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="4. Transiciones de fase en sistemas pequeños" href="fase.html" />
+    <link rel="prev" title="2. Termodinámica de sistemas pequeños" href="hill.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nanointro.html">1. Introducción a la Nanotermodinámica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hill.html">2. Termodinámica de sistemas pequeños</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="fase.html">4. Transiciones de fase en sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpmu.html">5. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="electric_magnetic.html">6. Sistemas eléctricos y magnéticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="osagarri.html">7. Ejemplos adicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adsorbent.html">8. Gas ideal y adsorbente esférico pequeño</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ondorioak.html">9. Conclusiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="euler.html"><strong><em>A</em></strong> <em>Ecuación de Euler</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html"><strong><em>B</em></strong> <em>Entropía</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gas%20ideala.html"><strong><em>C</em></strong> <em>Gas ideal clásico, en la colectividad canónica</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Otros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="erreferentziak.html">Referencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eskerrak.html"><em>Agradecimientos</em></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Colectividad isotérmica-isobárica: variables de entorno (T,p,N)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estudio-de-la-colectividad">3.1. Estudio de la colectividad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">3.1.1. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-transicion-helice-ovillo">3.2. Ejemplo: transición hélice-ovillo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helix-ariketa-2">3.2.2. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-gas-ideal-clasico-en-la-colectividad-isotermica-isobarica">3.3. Ejemplo: gas ideal clásico, en la colectividad isotérmica-isobárica</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="colectividad-isotermica-isobarica-variables-de-entorno-t-p-n">
+<span id="tpn"></span><h1><span class="section-number">3. </span>Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span><a class="headerlink" href="#colectividad-isotermica-isobarica-variables-de-entorno-t-p-n" title="Permalink to this heading">#</a></h1>
+<p>Antes de emprender con la Física de este capítulo, cabe remarcar lo siguiente: como veremos en la <a class="reference internal" href="tpmu.html#tpmu"><span class="std std-numref">sección 5</span></a>, la transición a la colectividad nanocanónica <span class="math notranslate nohighlight">\((T,p,\mu)\)</span> la emprendemos desde la función de partición canónica <span class="math notranslate nohighlight">\(Q(T,V,N)\)</span>, aplicando transformaciones de Legendre. Si escogemos la colectividad macrocanónica <span class="math notranslate nohighlight">\((T,V,\mu)\)</span> como intermediaria, a veces el camino nos resultará escabroso. Así pues, si en lugar de calcular la integral en el volumen realizamos el sumatorio en el número de partículas <span class="math notranslate nohighlight">\(N\)</span> partiendo del colectivo isotérmico-isobárico, el camino resultará más fácil. Por otra parte, mediante las variables <span class="math notranslate nohighlight">\((T,p,N)\)</span> es posible describir una macromolécula incompresible pero extensible. En este sentido, en el <a class="reference internal" href="#helix-coil"><span class="std std-numref">apartado 3.2</span></a> presentaremos y trabajaremos el primer ejemplo, aún con aproximaciones especiales.</p>
+<p>Así las cosas, merece la pena dedicar un análisis más profundo a la colectividad en cuestión.</p>
+<section id="estudio-de-la-colectividad">
+<span id="tpn-azter"></span><h2><span class="section-number">3.1. </span>Estudio de la colectividad<a class="headerlink" href="#estudio-de-la-colectividad" title="Permalink to this heading">#</a></h2>
+<p>Las variables extensivas de los sistemas pequeños serán <span class="math notranslate nohighlight">\(\overline{E}=E_{t}/\mathscr{N}\)</span>, <span class="math notranslate nohighlight">\(\overline{V}=V_{t}/\mathscr{N}\)</span> y <span class="math notranslate nohighlight">\(N=N_{t}/\mathscr{N}\)</span>.</p>
+<section id="ejercicio">
+<h3><span class="section-number">3.1.1. </span>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
+<p>Teniendo en cuenta lo mencionado en la frase anterior, y siguiendo las explicaciones de la <a class="reference internal" href="hill.html#hillsec"><span class="std std-numref">sección 2</span></a>,
+construye las siguientes expresiones:</p>
+<p><span class="math notranslate nohighlight">\((a)\)</span> La ecuación de Hill-Gibbs asociada a la colectividad isotérmica-isobárica y la energía de réplica <span class="math notranslate nohighlight">\(X(T,p,N)\)</span>. Explica los resultados.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-dettpn">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-dettpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}E_{t}(S_{t},V_{t},N,\mathscr{N}) = T\mathrm{d}S_{t} - p\mathrm{d}V_{t} + \mu \mathscr{N}\mathrm{d}N + (\mathscr{E}+\mu N)\mathrm{d}\mathscr{N}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-xtpn">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-xtpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+X(T,p,N) = \mathscr{E} + \mu N := \left(\frac{\partial E_{t}}{\partial \mathscr{N}}\right)_{S_{t},V_{t},N} := \widehat{\mu}N \; .
+\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Explicaciones</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">En este caso, la variable <span class="math notranslate nohighlight">\(N\)</span> debe aparecer en la ecuación, empleando la relación <span class="math notranslate nohighlight">\(\mathrm{d}N_{t} = \mathscr{N}\mathrm{d}N + N\mathrm{d}\mathscr{N}\)</span>. De esta forma, dejaremos de tener bajo control externo la variable <span class="math notranslate nohighlight">\(N_{t}\)</span>.
+Al mismo tiempo, la energía de réplica de la ecuación <a class="reference internal" href="#equation-xtpn">(3.2)</a> refleja la naturaleza de la colectividad. Al incluir una réplica, el volumen y la energía total se subdividirán, puesto que los sistemas pequeños pueden variar dichas variables con total libertad. Sin embargo, la magnitud <span class="math notranslate nohighlight">\(N\)</span> debe permanecer invariable. En consecuencia, la energía interna total percibiría una aportación química caracterizada por el potencial <span class="math notranslate nohighlight">\(\widehat{\mu}\)</span> a causa de la inclusión de un nuevo conjunto de <span class="math notranslate nohighlight">\(N\)</span> partículas. En consecuencia, nos vemos obligados a modelar la contribución química antes mencionada insertando un potencial químico al nivel de la colectividad: <span class="math notranslate nohighlight">\(\widehat{\mu}\)</span>; éste no presentará el comportamiento del potencial <span class="math notranslate nohighlight">\(\mu\)</span> asignado a los subsistemas, debido a la diferenciación ocasionada por los efectos de tamaño finito en la nanoescala.</p>
+</div>
+</details><p><span class="math notranslate nohighlight">\((b)\)</span> La ecuación de Gibbs de los sistemas pequeños, y la energia interna.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-detpn">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-detpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\overline{E} = T\mathrm{d}S - p\mathrm{d}\overline{V} + \mu \mathrm{d}N
+\]</div>
+<div class="math notranslate nohighlight" id="equation-etpn">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-etpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{E} = TS - p\overline{V} + \widehat{\mu}N
+\]</div>
+</div>
+</details><p><span class="math notranslate nohighlight">\((c)\)</span> La energía libre de Gibbs, <span class="math notranslate nohighlight">\(F(T,p,N)\)</span>. Partiendo de ahí, escribe la expresión que relaciona la magnitud diferencial con la magnitud integral.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-ftpn">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-ftpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+F(T,p,N) := \overline{E} - TS + p\overline{V} = \widehat{\mu}N
+\]</div>
+<div class="math notranslate nohighlight" id="equation-dftpn">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-dftpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}F(T,p,N) = \mathrm{d}(\widehat{\mu}N) = -S\mathrm{d}T + \overline{V}\mathrm{d}p + \mu\mathrm{d}N \;
+\]</div>
+<div class="math notranslate nohighlight" id="equation-mumuhat">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-mumuhat" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed {\mu := \left[\frac{\partial(\widehat{\mu}N)}{\partial N}\right]_{T, p} = \widehat{\mu} + N\left(\frac{\partial \widehat{\mu}}{\partial N}\right)_{T,p}}
+\]</div>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+<p>La ecuación <a class="reference internal" href="#equation-ftpn">(3.5)</a> muestra la relación entre la energía libre de Gibbs y el <strong>potencial químico integral</strong>: <span class="math notranslate nohighlight">\(F := \widehat{\mu}N\)</span>. Este último, junto al <strong>potencial químico diferencial</strong>, define el potencial de subdivisión: <span class="math notranslate nohighlight">\(\mathscr{E} =  (\widehat{\mu} - \mu)N\)</span>. Así, con las ecuaciones <a class="reference internal" href="#equation-xtpn">(3.2)</a> y <a class="reference internal" href="#equation-dftpn">(3.6)</a> escribiremos la expresión del potencial <span class="math notranslate nohighlight">\(\mathrm{d}\widehat{\mu}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-dmuhat">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-dmuhat" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\mathrm{d}\widehat{\mu} = -\frac{S}{N}\mathrm{d}T + \frac{\overline{V}}{N}\mathrm{d}p - \frac{\mathscr{E}}{N^2}\mathrm{d}N}
+\]</div>
+<p>Resultaría interesante asignar una expresión semejante al potencial <span class="math notranslate nohighlight">\(\mu\)</span>. Para este fin, primero debemos obtener las relaciones de Maxwell partiendo de <a class="reference internal" href="#equation-dftpn">(3.6)</a> y empleando las propiedades conmutativas de las derivadas. Por ejemplo,</p>
+<div class="math notranslate nohighlight" id="equation-dmuhatdt">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-dmuhatdt" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial \mu}{\partial T}\right)_{p, N} := \frac{\partial}{\partial T}\left(\frac{\partial F}{\partial N}\right)_{T, p} =  \frac{\partial}{\partial N}\left(\frac{\partial F}{\partial T}\right)_{p, N} := -\left(\frac{\partial S}{\partial N}\right)_{T, p}  \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-dmuhatdp">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-dmuhatdp" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial \mu}{\partial p}\right)_{T, N} := \frac{\partial}{\partial p}\left(\frac{\partial F}{\partial N}\right)_{T, p} =  \frac{\partial}{\partial N}\left(\frac{\partial F}{\partial p}\right)_{T, N} := \left(\frac{\partial \overline{V}}{\partial N}\right)_{T, p} \; .
+\]</div>
+<p>También utilizaremos la expresión del potencial de subdivisión y el último término de la ecuación <a class="reference internal" href="#equation-dmuhat">(3.8)</a> para obtener</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial \mu}{\partial N}\right)_{T, p} = \left(\frac{\partial \widehat{\mu}}{\partial N}\right)_{T, p} - \left[\frac{\partial (\mathscr{E}/N)}{\partial N}\right]_{T,p} = - \frac{1}{N}\left(\frac{\partial \mathscr{E}}{\partial N}\right)_{T,p} \; .
+\]</div>
+<p>Por lo tanto,</p>
+<div class="math notranslate nohighlight" id="equation-dmu">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-dmu" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\mathrm{d}\mu = -\left(\frac{\partial S}{\partial N}\right)_{T,p}\mathrm{d}T + \left(\frac{\partial \overline{V}}{\partial N}\right)_{T,p}\mathrm{d}p - \frac{1}{N}\left(\frac{\partial \mathscr{E}}{\partial N}\right)_{T,p}\mathrm{d}N} \; .
+\]</div>
+<p>Las ecuaciones <a class="reference internal" href="#equation-dmuhat">(3.8)</a> y <a class="reference internal" href="#equation-dmu">(3.11)</a> han sacado a la luz la naturaleza integral y diferencial de los dos potenciales químicos, respectivamente. Igualmente, son reveladores de la no linealidad de las variables extensivas respecto a <span class="math notranslate nohighlight">\(N\)</span>. Finalmente, el último término de la ecuación <a class="reference internal" href="#equation-dmu">(3.11)</a> resulta ser igual a <span class="math notranslate nohighlight">\(\left(\partial \mu/\partial N\right)_{T,p}\mathrm{d}N\)</span> por definición. Esto nos sugiere que el potencial químico <span class="math notranslate nohighlight">\(\mu\)</span> generalmente no es intensivo, esto es, <span class="math notranslate nohighlight">\(\mu = \mu(T,p,N)\)</span>. En el límite macroscópico ambas ecuaciones coincidirán, precisamente con la relación <a class="reference internal" href="nanointro.html#equation-gibbs-duhem">(1.3)</a> (Hill-Gibbs-Duhem):</p>
+<div class="math notranslate nohighlight" id="equation-depsilontpn">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-depsilontpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\left[\left(\widehat{\mu}-\mu\right)N\right] = \mathrm{d}\mathscr{E} = -S\mathrm{d}T+\overline{V}\mathrm{d}p-N\mathrm{d}\mu \; .
+\]</div>
+<p>Sin embargo, resultaría más apropiado que las variables <span class="math notranslate nohighlight">\((T,p,N)\)</span> sustituyeran a las variables <span class="math notranslate nohighlight">\((T,p,\mu)\)</span> que aparecen en la ecuación <a class="reference internal" href="#equation-depsilontpn">(3.12)</a>. Para este fin, introduciremos allí la expresión <a class="reference internal" href="#equation-dmu">(3.11)</a>, lo cual nos permitirá realizar una reescritura muy ilustrativa de la ecuación en cuestión:</p>
+<div class="math notranslate nohighlight" id="equation-depsilontpn2">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-depsilontpn2" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\mathrm{d}\mathscr{E} = -\left[S-N\left(\frac{\partial S}{\partial N}\right)_{T,p}\right]\mathrm{d}T+\left[\overline{V}-N\left(\frac{\partial \overline{V}}{\partial N}\right)_{T,p}\right]\mathrm{d}p + \left(\frac{\partial \mathscr{E}}{\partial N}\right)_{T,p} \mathrm{d}N} \; .
+\]</div>
+<p>Antes de proseguir, trataremos de identificar los efectos de tamaño finito en las expresiones obtenidas hasta el momento, tales como las derivadas de magnitudes intensivas en el límite termodinámico (como <span class="math notranslate nohighlight">\(\widehat{\mu}\)</span> y <span class="math notranslate nohighlight">\(\mu\)</span>) con respecto al tamaño, <span class="math notranslate nohighlight">\(N\)</span>. De hecho, las variables extensivas recobrarán el carácter homogéneo; es decir, prevalecerá la aportación lineal. Por ejemplo,</p>
+<div class="math notranslate nohighlight" id="equation-barv-mak">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-barv-mak" title="Enlace permanente a esta ecuación">#</a></span>\[
+\lim_{N\rightarrow \infty} \left(\frac{\partial \overline{V}}{\partial N}\right)_{T,p} = \frac{\overline{V}}{N} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-mu-mak">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-mu-mak" title="Enlace permanente a esta ecuación">#</a></span>\[
+\lim_{N\rightarrow \infty} \left[\frac{\partial (\widehat{\mu}N)}{\partial N}\right]_{T,p} = \frac{\widehat{\mu}N}{N} \quad \Rightarrow \quad \mu = \widehat{\mu} \; .
+\]</div>
+<p>Queda en evidencia, por consiguiente, que todos los términos de la ecuación <a class="reference internal" href="#equation-depsilontpn2">(3.13)</a> son <em>pequeños</em>, y relevantes solamente en la región nanotermodinámica. Ahondando en lo mencionado, examinemos el efecto de la variación de <span class="math notranslate nohighlight">\(N\)</span> en las siguientes magnitudes intensivas: <span class="math notranslate nohighlight">\(S/N\)</span>, <span class="math notranslate nohighlight">\(\overline{V}/N\)</span> y <span class="math notranslate nohighlight">\(N/\overline{V}\)</span>. De la ecuación <a class="reference internal" href="#equation-depsilontpn2">(3.13)</a> podemos construir fácilmente estas expresiones:</p>
+<div class="math notranslate nohighlight" id="equation-dsdntp">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-dsdntp" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left[\frac{\partial \left(S/N\right)}{\partial N}\right]_{T,p} = \frac {1}{N^2}\left(\frac{\partial \mathscr{E}}{\partial T}\right)_{p,N} \, ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-dvdntp">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-dvdntp" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left[\frac{\partial (\overline{V}/N)}{\partial N}\right]_{T,p} = - \frac {1}{N^2}\left(\frac{\partial \mathscr{E}}{\partial p}\right)_{T,N} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-dndvtp">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-dndvtp" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left[\frac{\partial (N/\overline{V})}{\partial N}\right]_{T,p} =  \frac {1}{\overline{V}^2}\left(\frac{\partial \mathscr{E}}{\partial p}\right)_{T,N} \; .
+\]</div>
+<p>Debemos remarcar que mediante la Termodinámica Clásica no alcanzaremos a lograr las últimas tres ecuaciones. Dicho de otra forma, la Nanotermodinámica, además de hacer aflorar los efectos de tamaño finito, nos abastecerá de relaciones que van más allá del alcance del límite termodinámico. A modo de comprobación, en el <a class="reference internal" href="#helix-coil"><span class="std std-numref">ejemplo 3.2</span></a>, verificaremos que ambas partes de la ecuación <a class="reference internal" href="#equation-dvdntp">(3.17)</a> son coincidentes.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Pero antes de concluir esta sección, erigiremos otro par de ecuaciones, también de cara al ejemplo que viene seguidamente. Recordando que la entalpía cumple la relación <span class="math notranslate nohighlight">\(H(S,p,N) := F(T,p,N) + TS := \widehat{\mu}N + TS\)</span>, transformaremos los potenciales químicos de esta manera:</p>
+<div class="math notranslate nohighlight" id="equation-muhat-h">
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-muhat-h" title="Enlace permanente a esta ecuación">#</a></span>\[
+\widehat{\mu} =\frac{H}{N} - T\frac{S}{N} \; ,
+\]</div>
+<p>y,</p>
+<div class="math notranslate nohighlight" id="equation-mu-h">
+<span class="eqno">(3.20)<a class="headerlink" href="#equation-mu-h" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mu := \left(\frac{\partial F}{\partial N}\right)_{T,p} = \left(\frac{\partial H}{\partial N}\right)_{T,p} - T\left(\frac{\partial S}{\partial N}\right)_{T,p} \; .
+\]</div>
+<p>De ahí podemos obtener lo siguiente:</p>
+<div class="math notranslate nohighlight" id="equation-mu-muhat-h">
+<span class="eqno">(3.21)<a class="headerlink" href="#equation-mu-muhat-h" title="Enlace permanente a esta ecuación">#</a></span>\[
+ \left(\frac{\partial \widehat{\mu}/T}{\partial T}\right)_{p,N} = -\frac{1}{T^2}\frac{H}{N} \quad \pmb{\neq} \quad \left(\frac{\partial \mu/T}{\partial T}\right)_{p,N} = -\frac{1}{T^2}\left(\frac{\partial H}{\partial N}\right)_{T,p} \; .
+\]</div>
+<p>Así pues, en la siguiente sección, tras calcular el par de potenciales <span class="math notranslate nohighlight">\(\widehat{\mu}\)</span> y <span class="math notranslate nohighlight">\(\mu\)</span> asociados a la cadena <em>hélice-ovillo</em>, observaremos la apariencia de los efectos de tamaño finito que diferencian las relaciones <a class="reference internal" href="#equation-mu-muhat-h">(3.21)</a>.</p>
+</section>
+</section>
+<section id="ejemplo-transicion-helice-ovillo">
+<span id="helix-coil"></span><h2><span class="section-number">3.2. </span>Ejemplo: transición hélice-ovillo<a class="headerlink" href="#ejemplo-transicion-helice-ovillo" title="Permalink to this heading">#</a></h2>
+<p>El sistema a tratar consiste en la cuerda o cadena unidimensional de la <a class="reference internal" href="#heco"><span class="std std-numref">figura 3.1</span></a>. Ésta se compone de <span class="math notranslate nohighlight">\(n_{H}\)</span> unidades de hélice y <span class="math notranslate nohighlight">\(n_{C}= N - n_{H}\)</span> unidades de ovillo. Una fuente de calor establecerá la temperatura <span class="math notranslate nohighlight">\(T\)</span>, y mantendremos <span class="math notranslate nohighlight">\(N\)</span> invariable. Así, emplearemos <span class="math notranslate nohighlight">\((T,f,N)\)</span> como variables de control, tomando <span class="math notranslate nohighlight">\(\overline{l}\)</span>, la longitud media de la cuerda, como la conjugada extensiva de la fuerza <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<figure class="align-default" id="heco">
+<a class="reference internal image-reference" href="_images/helix-coil.PNG"><img alt="_images/helix-coil.PNG" src="_images/helix-coil.PNG" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 3.1 </span><span class="caption-text">La cadena <em>hélice-ovillo</em> contiene unidades de hélice <span class="math notranslate nohighlight">\((H)\)</span> y unidades de ovillo <span class="math notranslate nohighlight">\((C)\)</span>. En ambos extremos se ejercerá una fuerza <span class="math notranslate nohighlight">\(f\)</span>. En cuanto al número total de unidades, si prescindimos del límite asintótico <span class="math notranslate nohighlight">\(N\rightarrow\infty\)</span>, la cadena mostrará las particularidades de un sistema pequeño, las cuales afectarán significativamente a las variables de carácter intensivo en términos macroscópicos.</span><a class="headerlink" href="#heco" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Para comenzar, supongamos que las unidades ovillo <span class="math notranslate nohighlight">\((C)\)</span> pueden colocarse únicamente en los extremos de la cuerda. En el caso de la figura, dispondríamos de las configuraciones <span class="math notranslate nohighlight">\(C\;H\;H\;H\;C\)</span> , <span class="math notranslate nohighlight">\(C\;C\;H\;H\;H\)</span> y <span class="math notranslate nohighlight">\(H\;H\;H\;C\;C\)</span>. Generalizando, esta condición impondría una degeneración <span class="math notranslate nohighlight">\(g(n_{H}) = N-n_{H}+1\)</span> al sistema. En particular, si no hubiera unidades <span class="math notranslate nohighlight">\(H\)</span>, tendríamos <span class="math notranslate nohighlight">\(g=1\)</span>. Designaremos las funciones de partición de las unidades <span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(H\)</span> <span class="math notranslate nohighlight">\(q_{H}(T)\)</span> y <span class="math notranslate nohighlight">\(q_{C}(T)\)</span>, respectivamente. De esta forma, la función de partición canónica de la totalidad del sistema obedecería la relación <span class="math notranslate nohighlight">\(Q(T,l,N)=q_{C}^{n_{C}}q_{H}^{n_{H}}\)</span>. Partiendo de ahí, llegaremos a su homóloga isotérmica-isobárica, <span class="math notranslate nohighlight">\(\Delta(T,f,N)\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-d">
+<span class="eqno">(3.22)<a class="headerlink" href="#equation-d" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Delta := \sum_{l} Q(T,l,N)e^{fl/k_{\mathrm{B}}T}
+     = \sum_{n_{H}=0}^{N} g(n_{H})q_{C}^{N-n_{H}}q_{H}^{n_{H}}e^{\left[\left(N-n_{H}\right)l_{C} + n_{H}l_{H}\right]f/k_{\mathrm{B}}T} \; .
+\]</div>
+<p>En aras de la simplificación de cálculos posteriores, adoptaremos una aproximación un tanto cruda: el sistema puede consistir de solamente  unidades <span class="math notranslate nohighlight">\(H\)</span>, o bien de unidades <span class="math notranslate nohighlight">\(C\)</span>. En el ejemplo de la figura contaríamos con <span class="math notranslate nohighlight">\(H\;H\;H\;H\;H\)</span> y <span class="math notranslate nohighlight">\(C\;C\;C\;C\;C\)</span>. De esta manera, extrayendo los términos <span class="math notranslate nohighlight">\(n_{H}=0\)</span> y <span class="math notranslate nohighlight">\(n_{H}=N\)</span> del sumatorio, abreviaremos la expresión de la función de partición:</p>
+<div class="math notranslate nohighlight" id="equation-d-short">
+<span class="eqno">(3.23)<a class="headerlink" href="#equation-d-short" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Delta = q_{C}^Ne^{Nl_{C}f/k_{\mathrm{B}}T} + q_{H}^Ne^{Nl_{H}f/k_{\mathrm{B}}T} = r_{C}^N(1 + r^N)\; .
+\]</div>
+<p>Hemos sintetizado la ecuación reemplazando <span class="math notranslate nohighlight">\(r_{C,H}(T,f) = q_{C,H}(T)\exp(fl_{C,H}/k_{\mathrm{B}}T)\)</span> y <span class="math notranslate nohighlight">\(r=r_{H}/r_{C}\)</span>. Es de mencionar que, a pesar de que el modelo sugerido por la función de partición simplificada <a class="reference internal" href="#equation-d-short">(3.23)</a> carece de realismo, no influirá en la finalidad didáctica del presente ejemplo.</p>
+<p>Antes de nada, tomemos el límite <span class="math notranslate nohighlight">\(N\rightarrow \infty\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Delta(T,f,N) =
+    \begin{cases}
+      r_{C}^N &amp; \text{$r&lt;1$ bada.}\Rightarrow N = n_{C} \\
+      r_{H}^N &amp; \text{$r&gt;1$ bada.}\Rightarrow N = n_{H}
+    \end{cases}  
+\end{split}\]</div>
+<p>Salta a la vista que, en el caso <span class="math notranslate nohighlight">\(r=1\)</span>, en la cadena tendrá lugar una repentina <strong>transición de fase</strong> (en el límite termodinámico).</p>
+<p>El siguiente paso consiste en describir la Termodinámica del sistema mediante la ecuación <a class="reference internal" href="#equation-d-short">(3.23)</a>. Para comenzar, la energía libre de Gibbs sigue la definición <span class="math notranslate nohighlight">\(F(T,f,N) := -k_{\mathrm{B}}T\ln\Delta\)</span>.</p>
+<section id="id1">
+<h3><span class="section-number">3.2.1. </span>Ejercicio<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((a)\)</span> Calcula los potenciales <span class="math notranslate nohighlight">\(\widehat{\mu}\)</span> y <span class="math notranslate nohighlight">\(\mu\)</span>. Después, construye el potencial de subdivisión, y analiza su evolución en función del tamaño del sistema. Emplea los valores  <span class="math notranslate nohighlight">\(r = 0,5 \; ;  \; r = 0,98\)</span> y <span class="math notranslate nohighlight">\(r=1,05\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-muhathelix">
+<span class="eqno">(3.24)<a class="headerlink" href="#equation-muhathelix" title="Enlace permanente a esta ecuación">#</a></span>\[
+\widehat{\mu} := \frac{F}{N} = -k_{\mathrm{B}}T\left[\ln r_{C} + \frac{1}{N}\ln(1+r^N)\right]
+\]</div>
+<div class="math notranslate nohighlight" id="equation-muhelix">
+<span class="eqno">(3.25)<a class="headerlink" href="#equation-muhelix" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mu := \left(\frac{\partial F}{\partial N}\right)_{T,f} = -k_{\mathrm{B}}T\left[\ln r_{C} + \frac{r^N\ln r}{1 + r^N}\right]
+\]</div>
+<div class="math notranslate nohighlight" id="equation-epsilonhelix">
+<span class="eqno">(3.26)<a class="headerlink" href="#equation-epsilonhelix" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} = (\widehat{\mu}-\mu)N = -k_{\mathrm{B}}T\left[\ln(1+r^N) - N\frac{r^N\ln r}{1 + r^N}\right]
+\]</div>
+<figure class="align-default" id="epsilon-tfn">
+<a class="reference internal image-reference" href="_images/epsilon_tfn.PNG"><img alt="_images/epsilon_tfn.PNG" src="_images/epsilon_tfn.PNG" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 3.2 </span><span class="caption-text">La evolución de las contribuciones finitas se rige por medio del potencial de subdivisión. A medida que <span class="math notranslate nohighlight">\(N\)</span> aumenta, <span class="math notranslate nohighlight">\(\mathscr{E}\)</span> decrece, y junto a ello se restablecen las expresiones macroscópicas. Por otra parte, el ratio <span class="math notranslate nohighlight">\(r=r_{H}/r_{C}\)</span> influye directamente sobre la extensión de la región nanotermodinámica. A medida que nos acercamos al punto donde acaece la transición de fase <span class="math notranslate nohighlight">\((r \rightarrow 1)\)</span>, dicha región abarcará una mayor amplitud, y el potencial de subdivisión tenderá a la constante <span class="math notranslate nohighlight">\(\mathscr{E}\rightarrow\mathscr{E}_{0} = -k_{\mathrm{B}}T \ln 2\)</span>.</span><a class="headerlink" href="#epsilon-tfn" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details><p><span class="math notranslate nohighlight">\((b)\)</span> Partiendo de los potenciales químicos obtenidos en el apartado anterior, construye la pareja de <a class="reference internal" href="#equation-mu-muhat-h">(3.21)</a> y su límite macroscópico (considera la transición de <span class="math notranslate nohighlight">\(r&lt;1\)</span> a <span class="math notranslate nohighlight">\(r&gt;1\)</span>). Examina, asimismo, las contribuciones que diferencian ambas expresiones, y relaciónalas con el potencial de subdivisión.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-dmuhatt">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-dmuhatt" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial \widehat{\mu}/T}{\partial T}\right)_{f, N} = -k_{\mathrm{B}}\left(\frac{1}{r_{C}}\frac{\partial r_{C}}{\partial T} + \frac{r^{N-1}}{1 + r^{N}}\frac{\partial r}{\partial T}\right) \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-dmut">
+<span class="eqno">(3.28)<a class="headerlink" href="#equation-dmut" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial \mu/T}{\partial T}\right)_{f, N} = -k_{\mathrm{B}}\left[\frac{1}{r_{C}}\frac{\partial r_{C}}{\partial T} + N\frac{r^{N-1}}{1 + r^{N}}\left(\frac{1}{N} + \ln r - \frac{r^{N}\ln r}{1 + r^N} \right)\frac{\partial r}{\partial T} \right] \; .
+\]</div>
+<p class="sd-card-text">En el límite termodinámico,</p>
+<div class="math notranslate nohighlight" id="equation-dmut-mak">
+<span class="eqno">(3.29)<a class="headerlink" href="#equation-dmut-mak" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}
+\left(\frac{\partial \widehat{\mu}/T}{\partial T}\right)_{f, N} = \left(\frac{\partial \mu/T}{\partial T}\right)_{f, N} = \begin{cases}
+      -k_{\mathrm{B}}\left( \frac{1}{r_{C}} \frac{\partial r_{C}}{\partial T} + \frac{1}{r} \frac{\partial r}{\partial T} \right) &amp; \text{si $r&gt;1$.}\\
+      -k_{\mathrm{B}}\frac{1}{r_{C}}\frac{\partial r_{C}}{\partial t}&amp; \text{ si $r&lt;1$.}
+    \end{cases} 
+\end{split}\]</div>
+<p class="sd-card-text">No obstante, considerando que el sistema es pequeño,</p>
+<div class="math notranslate nohighlight" id="equation-dmut-epsilon">
+<span class="eqno">(3.30)<a class="headerlink" href="#equation-dmut-epsilon" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{1}{k_{\mathrm{B}}\; \partial r/\partial T}\left(\frac{\partial \mathscr{E}/NT}{\partial T}\right)_{f,N} = -N\frac{r^{N-1}}{1+r^N}\ln r \left(1-\frac{r^N}{1+r^N}\right) \; .
+\]</div>
+<figure class="align-default" id="epsilon-mumuhat">
+<a class="reference internal image-reference" href="_images/epsilon_mu_muhat.png"><img alt="_images/epsilon_mu_muhat.png" src="_images/epsilon_mu_muhat.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 3.3 </span><span class="caption-text">Podemos percibir que la expresión del potencial de subdivisión por unidad de partícula (ecuación <a class="reference internal" href="#equation-dmut-epsilon">(3.30)</a>) sufre una transición más severa al límite macroscópico. Precisamente, a diferencia de la <a class="reference internal" href="#epsilon-tfn"><span class="std std-numref">figura 3.2</span></a>, podemos afirmar que alrededor de la región <span class="math notranslate nohighlight">\(N=90-100\)</span> el sistema muestra un comportamiento macroscópico; en consecuencia, a partir de ese punto, los efectos de tamaño finito no influenciarán significativamente a magnitudes intensivas como <span class="math notranslate nohighlight">\(l/N\)</span>. Tambiém podemos percibir que el signo de estas contribuciones se invierte tras la transición de fase; pasa de ser positibo en la región donde se cumple que <span class="math notranslate nohighlight">\(r&lt;1\)</span> <span class="math notranslate nohighlight">\((N \rightarrow n_C)\)</span> a ser negativo cuando <span class="math notranslate nohighlight">\(r&gt;1\)</span> <span class="math notranslate nohighlight">\((N \rightarrow n_H)\)</span>.</span><a class="headerlink" href="#epsilon-mumuhat" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>A propósito de estos resultados, emprenderemos con el aspecto de mayor relevancia de esta sección. Erigiremos el gráfico que mostrará la evolución de la fracción media de unidades de hélice del sistema <span class="math notranslate nohighlight">\((\overline{n}_{H}/N)\)</span> en función de la relación <span class="math notranslate nohighlight">\(r=r_{H}/r_{C}\)</span>. De ahora en adelante, añadiremos una barra a la magnitud <span class="math notranslate nohighlight">\(n_{H}\)</span>, lo cual especificará la longitud media de la cadena:</p>
+<div class="math notranslate nohighlight" id="equation-lbar">
+<span class="eqno">(3.31)<a class="headerlink" href="#equation-lbar" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{l}(\overline{n} _ {H}) = (N-\overline{n} _ {H})l_{C} + \overline{n} _ {H}l_{H} \; .
+\]</div>
+<p>Primeramente, deberemos adquirir la expresión de <span class="math notranslate nohighlight">\(\overline{n}_{H}\)</span> mediante la función de partición. Extraeremos el término <span class="math notranslate nohighlight">\(n_{H}=0\)</span> del sumatorio de la ecuación <a class="reference internal" href="#equation-d">(3.22)</a>, y reescribiremos <span class="math notranslate nohighlight">\(\Delta(T,f,N)\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-nhdef">
+<span class="eqno">(3.32)<a class="headerlink" href="#equation-nhdef" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{n}_{H} := \frac{\sum _ {n _{H}} n _{H}Q(T,l(n _ {H}), N)e^{fl(n _{H})/k _{\mathrm{B}}T}}{\sum _ {n _{H}} Q(T,l(n _ {H}), N)e^{fl(n _{H})/k _{\mathrm{B}}T}} \equiv \frac{\sum _ {n _{H}} n _{H}Q(T,l(n _ {H}), N)e^{fl(n _{H})/k _{\mathrm{B}}T}}{\Delta(T,f,N)} \; .
+\]</div>
+<p>Extraeremos el término <span class="math notranslate nohighlight">\(n_{H}=0\)</span> del sumatorio de la ecuación <a class="reference internal" href="#equation-d">(3.22)</a>, y reescribiremos <span class="math notranslate nohighlight">\(\Delta(T,f,N)\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-dnew">
+<span class="eqno">(3.33)<a class="headerlink" href="#equation-dnew" title="Enlace permanente a esta ecuación">#</a></span>\[
+    \Delta = r_{C}^N\left[1+\sum_{n_{H}=1}^{N}\left(N-n_{H}+1\right)r^{n_{H}}\right]\; .
+\]</div>
+<p>Así, siguiendo la definición <a class="reference internal" href="#equation-nhdef">(3.32)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-nbar">
+<span class="eqno">(3.34)<a class="headerlink" href="#equation-nbar" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{n}_{H} := \frac{r_{C}^N\left[0+\sum_{n_{H}=1}^{N}n_{H}\left(N-n_{H}+1\right)r^{n_{H}}\right]}{\Delta} = r\frac{\partial}{\partial r}\ln \Delta \; .
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Sugerencia</p>
+<p>Verifica que ambas partes de la ecuación <a class="reference internal" href="#equation-nbar">(3.34)</a> son coincidentes.</p>
+</div>
+<p>Así, sustituyendo la expresión <a class="reference internal" href="#equation-d-short">(3.23)</a> en la ecuación <a class="reference internal" href="#equation-nbar">(3.34)</a>, llegaremos, al fin, a nuestro destino:</p>
+<div class="math notranslate nohighlight" id="equation-fraction-n">
+<span class="eqno">(3.35)<a class="headerlink" href="#equation-fraction-n" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\frac{\overline{n} _ {H}}{N} = \frac{r}{N}\frac{\partial}{\partial r}\ln\left[r_{C}^N(1 + r^N)\right] = \frac{r^N}{1+r^N}}\; .
+\]</div>
+<p>Contemplemos, a continuación, el gráfico de la expresión <a class="reference internal" href="#equation-fraction-n">(3.35)</a>:</p>
+<figure class="align-default" id="hc-phase">
+<a class="reference internal image-reference" href="_images/hc_phase.PNG"><img alt="_images/hc_phase.PNG" src="_images/hc_phase.PNG" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 3.4 </span><span class="caption-text">Las curvas representativas de la fracción media de unidades <span class="math notranslate nohighlight">\(H\)</span> muestran una apariencia sospechosa. Ciertamente, resulta que la intensividad no es un concepto tan firme como parece.</span><a class="headerlink" href="#hc-phase" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Atendiendo a los resultados obtenidos, nos vemos obligados a realizar una parada inminente.</p>
+<p>Acerquémonos, <strong>con suma atención</strong>, al conjunto de curvas de la <a class="reference internal" href="#hc-phase"><span class="std std-numref">figura 3.4</span></a>. Bajo el punto de vista de la Termodinámica, una magnitud como la fracción media debería ser INTENSIVA por naturaleza. Pero, cuando <span class="math notranslate nohighlight">\(N\)</span> varía, ¡la curva <span class="math notranslate nohighlight">\(\overline{n}_{H}/N\)</span> cambia de forma! Esto sugiere que la magnitud en cuestión depende del tamaño del sistema, es decir, que es EXTENSIVA en realidad. Además, a medida que <span class="math notranslate nohighlight">\(N\)</span> aumenta, disminuye el distanciamiento entre curvas. Tras estas peculiaridades yace la evolución del potencial de subdivisión representada en la <a class="reference internal" href="#epsilon-tfn"><span class="std std-numref">figura 3.2</span></a>.</p>
+<p>Por tanto, podríamos afirmar que, alrededor de <span class="math notranslate nohighlight">\(N=200\)</span>, la magnitud <span class="math notranslate nohighlight">\(\overline{n}_{H}/N\)</span> ha recuperado su carácter intensivo, puesto que se puede apreciar la repentina transición de fase hélice-ovillo mencionada al principio del ejemplo. De cualquier forma, ciñéndonos a nuestro estricto criterio, solamente el límite <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> anulará completamente los efectos de tamaño finito, lo cual nos permitirá acceder al nivel macroscópico. De lo contrario, la cadena hélice-ovillo es un sistema pequeño.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Dicho esto, en el <a class="reference internal" href="fase.html#fase"><span class="std std-numref">capítulo 4</span></a>, donde trataremos las transiciones de fase en sistemas finitos, tendremos la ocasión de retornar a la <a class="reference internal" href="#hc-phase"><span class="std std-numref">figura 3.4</span></a>. No obstante, antes de emprender con ese capítulo, vamos a retomar por unos instantes el hilo con el que hemos concluido la <a class="reference internal" href="#tpn-azter"><span class="std std-numref">sección 3.1</span></a>.</p>
+</section>
+<section id="helix-ariketa-2">
+<span id="id2"></span><h3><span class="section-number">3.2.2. </span>Ejercicio<a class="headerlink" href="#helix-ariketa-2" title="Permalink to this heading">#</a></h3>
+<p>La finalidad de este ejercicio suplementario consiste en demostrar que la cadena «hélice-ovillo» satisface la igualdad <a class="reference internal" href="#equation-dvdntp">(3.17)</a>. Antes de nada, debemos percatarnos de que el sistema a tratar es una cadena <strong>unidimensional</strong>; por lo tanto, hemos caracterizado la contribución mecánica a la energía interna por medio de la fuerza <span class="math notranslate nohighlight">\(f\)</span> y su variable conjugada, <span class="math notranslate nohighlight">\(\overline{l}\)</span>. Debido a ello, primero tendremos que reescribir la ecuación en cuestión, adecuándola a las variables que disponemos. Así pues, emprenderemos la tarea paso a paso.</p>
+<p><span class="math notranslate nohighlight">\((a)\)</span> Escribe la ecuación de Gibbs del sistema pequeño. Partiendo de ahí, reconstruye la ecuación <a class="reference internal" href="#equation-depsilontpn2">(3.13)</a>, en base a las variables de control <span class="math notranslate nohighlight">\((T,f,N)\)</span>. De ahí, extrae la expresión equivalente de la ecuación <a class="reference internal" href="#equation-dvdntp">(3.17)</a>. Pero antes de empezar, reflexiona acerca del signo de la contribución mecánica <span class="math notranslate nohighlight">\(f\overline{l}\)</span>; ¿debería ser positibo o negativo?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Considerando las explicaciones asociadas a la <a class="reference internal" href="#heco"><span class="std std-numref">figura 3.1</span></a>, si en ambos extremos de la cadena aplicáramos una fuerza <span class="math notranslate nohighlight">\(f\)</span> hacia el exterior <span class="math notranslate nohighlight">\((f&gt;0)\)</span>, su longitud aumentaría, con lo cual <span class="math notranslate nohighlight">\(\Delta l &gt; 0\)</span>; por ende, el sistema percibiría un aporte energético <span class="math notranslate nohighlight">\(f \Delta l\)</span>, el cual incrementará su energía interna. Cabe remarcar que, en el caso de los sistemas hidrostáticos habituales, el comportamiento de la contribución mecánica es diferente. Consideremeos, como ejemplo, un gas confinado en un tanque bajo presión <span class="math notranslate nohighlight">\(p\)</span> <span class="math notranslate nohighlight">\((p&gt;0)\)</span>. Si el gas comenzara a expandirse, el sistema aportaría trabajo al entorno. Entonces, el cambio positivo <span class="math notranslate nohighlight">\(\Delta V\)</span> en el volumen que abarca el gas implicaría una pérdida de energía al sistema, <span class="math notranslate nohighlight">\(-p\Delta V\)</span>. Al contrario, si la presión <span class="math notranslate nohighlight">\(p\)</span> fuera lo suficientemente elevada como para poder comprimir el gas, tendríamos que <span class="math notranslate nohighlight">\(\Delta V &lt; 0\)</span>; y, siguiendo ese convenio, el proceso de compresión aportaría trabajo al sistema, aumentando de esta forma su energía interna.</p>
+<p class="sd-card-text">Tomando consideración del razonamiento planteado, la ecuación de Gibbs perteneciente al sistema «hélice-ovillo» pequeño cumplirá</p>
+<div class="math notranslate nohighlight" id="equation-heco-gibbs">
+<span class="eqno">(3.36)<a class="headerlink" href="#equation-heco-gibbs" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\overline{E} = T\mathrm{d}S + f\mathrm{d}\overline{l} + \mu\mathrm{d}N \; .
+\]</div>
+<p class="sd-card-text">Aplicando dos transformaciones de Legendre, la energía libre de Gibbs y el potencial cumplirán, respectivamente, las relaciones</p>
+<div class="math notranslate nohighlight" id="equation-heco-gibss-aske">
+<span class="eqno">(3.37)<a class="headerlink" href="#equation-heco-gibss-aske" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}F(T,f,N) = -S\mathrm{d}T - \overline{l}\mathrm{d}f +\mu\mathrm{d}N
+\]</div>
+<p class="sd-card-text">y</p>
+<div class="math notranslate nohighlight" id="equation-heco-depsilon">
+<span class="eqno">(3.38)<a class="headerlink" href="#equation-heco-depsilon" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\mathscr{E} = -S\mathrm{d}T - \overline{l}\mathrm{d}f - N\mathrm{d}\mu \; .
+\]</div>
+<p class="sd-card-text">A continuación, siguiendo el procedimiento explicado en la <a class="reference internal" href="#tpn-azter"><span class="std std-numref">sección 3.1</span></a>, reescribiremos la ecuación <a class="reference internal" href="#equation-heco-depsilon">(3.38)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-heco-depsilon-1">
+<span class="eqno">(3.39)<a class="headerlink" href="#equation-heco-depsilon-1" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\mathscr{E} = -\left[S-N\left(\frac{\partial S}{\partial N}\right)_{T,f}\right]\mathrm{d}T+\left[\overline{l}-N\left(\frac{\partial \overline{l}}{\partial N}\right)_{T,f}\right]\mathrm{d}f + \left(\frac{\partial \mathscr{E}}{\partial N}\right)_{T,f} \mathrm{d}N \; .
+\]</div>
+<p class="sd-card-text">Consideremos ahora la ecuación <a class="reference internal" href="#equation-dvdntp">(3.17)</a>, y trasladémoslo a las variables de entorno <span class="math notranslate nohighlight">\((T,f,N)\)</span>. Con ayuda de la relación <a class="reference internal" href="#equation-heco-depsilon-1">(3.39)</a>, concluiremos que se cumple esta igualdad:</p>
+<div class="math notranslate nohighlight" id="equation-heco-equality">
+<span class="eqno">(3.40)<a class="headerlink" href="#equation-heco-equality" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left[\frac{\partial (\overline{l}/N)}{\partial N}\right]_{T,f} =  \frac {1}{N^2}\left(\frac{\partial \mathscr{E}}{\partial f}\right)_{T,N} \; .
+\]</div>
+</div>
+</details><p><span class="math notranslate nohighlight">\((b)\)</span> Comprueba que se cumple la relación <a class="reference internal" href="#equation-heco-equality">(3.40)</a> del apartado <span class="math notranslate nohighlight">\((a)\)</span>, haciendo uso de las ecuaciones obtenidas a lo largo del desarrollo del ejemplo.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La expresión de la parte izquierda la calcularemos mediante la ecuación <a class="reference internal" href="#equation-lbar">(3.31)</a>; la de la derecha, en cambio, con la ecuación <a class="reference internal" href="#equation-epsilonhelix">(3.26)</a>, y atendiendo a la relación <span class="math notranslate nohighlight">\(r(T,f)= r_H(T,f)/r_C(T,f)\)</span>. Tras realizar los cálculos necesarios, veremos que ambas partes coinciden en esta expresión:</p>
+<div class="math notranslate nohighlight" id="equation-heco-equality-1">
+<span class="eqno">(3.41)<a class="headerlink" href="#equation-heco-equality-1" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left[\frac{\partial (\overline{l}/N)}{\partial N}\right]_{T,f} = \frac{r^N \ln r}{\left(1+r^N \right)^2} \left(l_H - l_C\right) = \frac {1}{N^2}\left(\frac{\partial \mathscr{E}}{\partial f}\right)_{T,N} 
+\]</div>
+<p class="sd-card-text">Es perceptible que la expresión <a class="reference internal" href="#equation-heco-equality-1">(3.41)</a> tenderá a cero en el límite macroscópico, independientemente de si <span class="math notranslate nohighlight">\(r &lt; 1\)</span> ó <span class="math notranslate nohighlight">\(r&gt;1\)</span>. Junto a ello, la magnitud <span class="math notranslate nohighlight">\(\overline{l}/N\)</span> recuperará el carácter intensivo.</p>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+</section>
+</section>
+<section id="ejemplo-gas-ideal-clasico-en-la-colectividad-isotermica-isobarica">
+<span id="gitpn"></span><h2><span class="section-number">3.3. </span>Ejemplo: gas ideal clásico, en la colectividad isotérmica-isobárica<a class="headerlink" href="#ejemplo-gas-ideal-clasico-en-la-colectividad-isotermica-isobarica" title="Permalink to this heading">#</a></h2>
+<p>El análisis del segundo sistema lo emprenderemos desde los resultados del <a class="reference internal" href="gas%20ideala.html#gitvn"><span class="std std-ref"><em>apéndice C</em></span></a>. Activando el grado de libertad mecánico a la ecuación <a class="reference internal" href="gas%20ideala.html#equation-qtvngi">(10)</a>, transcurriremos a la colectividad isotérmica-isobárica, y calcularemos la nueva función de partición:</p>
+<div class="math notranslate nohighlight" id="equation-dtpn-gi">
+<span class="eqno">(3.42)<a class="headerlink" href="#equation-dtpn-gi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Delta(T,p,N) := \int_{0}^{\infty}\mathrm{d}\left(\frac{pV}{k_{\mathrm{B}}T}\right)\left[\frac{V^N}{N!\Lambda^{3N}}\right]\;e^{-pV/k_{\mathrm{B}}T} = \left(\frac{k_{\mathrm{B}}T}{p\Lambda^3}\right)^N \; .
+\]</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_{0}^{\infty}\mathrm{d}x \; x^n e^{-ax} = \Gamma(n+1)a^{-n-1}
+ \]</div>
+</div>
+<p>Cabe mencionar que <span class="math notranslate nohighlight">\(N!\)</span> no figura en la nueva expresión. Lo que es más, al escribir la energía libre de Gibbs,</p>
+<div class="math notranslate nohighlight" id="equation-ftpngi">
+<span class="eqno">(3.43)<a class="headerlink" href="#equation-ftpngi" title="Enlace permanente a esta ecuación">#</a></span>\[
+F(T,p,N) = Nk_{\mathrm{B}}T\ln\left(\frac{p\Lambda^3}{k_{\mathrm{B}}T}\right) \; ,
+\]</div>
+<p>veremos que en todo momento muestra un comportamiento macroscópico, puesto que cumple una expresión estrictamente Euler-homogénea de primer orden. Por consiguiente, <span class="math notranslate nohighlight">\(\widehat{\mu}=\mu\)</span>, y</p>
+<div class="math notranslate nohighlight" id="equation-gi-epsilon-tpn">
+<span class="eqno">(3.44)<a class="headerlink" href="#equation-gi-epsilon-tpn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,p,N)=0 \; .
+\]</div>
+<p>Se debe remarcar que en la colectividad canónica hemos concluido que <span class="math notranslate nohighlight">\(\mathscr{E}&gt;0\)</span> (ecuación <a class="reference internal" href="gas%20ideala.html#equation-epsilon-tvn">(14)</a> del <a class="reference internal" href="gas%20ideala.html#gitvn"><span class="std std-ref"><em>apéndice C</em></span></a>). Contemplemos la influencia que estos resultados tienen en la entropía:</p>
+<div class="math notranslate nohighlight" id="equation-stpngi">
+<span class="eqno">(3.45)<a class="headerlink" href="#equation-stpngi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{S(T,p,N) := -\left(\frac{\partial F}{\partial T}\right)_{p,N}=Nk_{\mathrm{B}}\left[\ln\left(\frac{\overline{V}}{\Lambda^3N}\right) + \frac{5}{2}\right]} \; .
+\]</div>
+<p>En comparación con la ecuación <a class="reference internal" href="gas%20ideala.html#equation-stvngi">(13)</a> del <a class="reference internal" href="gas%20ideala.html#gitvn"><span class="std std-ref"><em>apéndice C</em></span></a>, (y asumiendo que  <span class="math notranslate nohighlight">\(Nk_{\mathrm{B}}T/p = \overline{V}=V\)</span>), notaremos que no figuran los términos negativos del final, pues hemos recuperado la expresión de Sackur-Tetrode; es decir, ¡al iniciar otro grado de libertad, el potencial de subdivisión ha pasado de ser negativo a cero, y, junto a ello, la entropía ha aumentado!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>En el <a class="reference internal" href="tpmu.html#tpmu"><span class="std std-numref">apartado 5</span></a>, reexaminaremos el gas ideal en la colectividad nanocanónica compuesta por subsistemas totalmente libres. Los nuevos efectos que emergerán allí otorgarán una gran representatividad a la Nanotermodinámica en el estudio de sistemas pequeños.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hill.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Termodinámica de sistemas pequeños</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="fase.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Transiciones de fase en sistemas pequeños</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estudio-de-la-colectividad">3.1. Estudio de la colectividad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">3.1.1. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-transicion-helice-ovillo">3.2. Ejemplo: transición hélice-ovillo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helix-ariketa-2">3.2.2. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-gas-ideal-clasico-en-la-colectividad-isotermica-isobarica">3.3. Ejemplo: gas ideal clásico, en la colectividad isotérmica-isobárica</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Mikel Garitano Telleria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

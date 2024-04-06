@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Termodinámica de sistemas pequeños &#8212; NANOTERMODINÁMICA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hill';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="3. Colectividad isotérmica-isobárica: variables de entorno \((T,p,N)\)" href="tpn.html" />
+    <link rel="prev" title="1. Introducción a la Nanotermodinámica" href="nanointro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nanointro.html">1. Introducción a la Nanotermodinámica</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Termodinámica de sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpn.html">3. Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="fase.html">4. Transiciones de fase en sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpmu.html">5. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="electric_magnetic.html">6. Sistemas eléctricos y magnéticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="osagarri.html">7. Ejemplos adicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adsorbent.html">8. Gas ideal y adsorbente esférico pequeño</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ondorioak.html">9. Conclusiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="euler.html"><strong><em>A</em></strong> <em>Ecuación de Euler</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html"><strong><em>B</em></strong> <em>Entropía</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gas%20ideala.html"><strong><em>C</em></strong> <em>Gas ideal clásico, en la colectividad canónica</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Otros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="erreferentziak.html">Referencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eskerrak.html"><em>Agradecimientos</em></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Termodinámica de sistemas pequeños</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-de-hill">2.1. Teoría de Hill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacion-de-la-ecuacion-hill-gibbs-y-energia-de-replica">2.2. Generalización de la ecuación Hill-Gibbs y energía de réplica</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="termodinamica-de-sistemas-pequenos">
+<span id="hillsec"></span><h1><span class="section-number">2. </span>Termodinámica de sistemas pequeños<a class="headerlink" href="#termodinamica-de-sistemas-pequenos" title="Permalink to this heading">#</a></h1>
+<section id="teoria-de-hill">
+<span id="hillteo"></span><h2><span class="section-number">2.1. </span>Teoría de Hill<a class="headerlink" href="#teoria-de-hill" title="Permalink to this heading">#</a></h2>
+<p>Siguiendo el método de Hill, construiremos una colectividad de <span class="math notranslate nohighlight">\(\mathscr{N}\)</span> réplicas del sistema pequeño en cuestión como punto de partida de su análisis. Todos los subsistemas se considerarán equivalentes, distinguibles e independientes, es decir, no habrá ningún tipo de interacción entre ellos. De esa forma, si el número de réplicas es muy alto <span class="math notranslate nohighlight">\(\left(\mathscr{N}\rightarrow \infty\right)\)</span>, la propia colectividad mostrará un carácter macroscópico. Esta afirmación es de suma importancia, puesto que nos permite partir de la Termodinámica Clásica para examinar el macrosistema en su totalidad. Después, adquiriremos las propiedades de un solo sistema calculando los promedios por réplica.</p>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>La teoría de Hill mantiene la <strong>ergodicidad</strong>: el promedio en el tiempo de una propiedad concuerda con su promedio a través de la colectividad. Por otro lado, las magnitudes relacionadas con la colectividad se designarán mediante el subíndice <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Previo al estudio del conjunto, debemos recordar que disponemos de un cuarto grado de libertad en marcha. Por lo tanto, su energía interna cumple la relación <span class="math notranslate nohighlight">\(E_{t} = E_{t}(S_{t}, V_{t}, N_{t}, \mathscr{N})\)</span>. Así las cosas, añadiremos otro par de variables conjugadas a la ecuación <a class="reference internal" href="nanointro.html#equation-gibbs">(1.1)</a> para construir la <strong>ecuación Hill-Gibbs</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+ \mathrm{d}E_{t} = \left(\frac{\partial E_{t}}{\partial S_{t}}\right)_{V_{t}, N_{t}, \mathscr{N}}\mathrm{d}S_{t} + \left(\frac{\partial E_{t}}{\partial V_{t}}\right)_{S_{t}, N_{t}, \mathscr{N}}\mathrm{d}V_{t} + \left(\frac{\partial E_{t}}{\partial N_{t}}\right)_{S_{t},V_{t}, \mathscr{N}}\mathrm{d}N_{t} + \color{blue}{\left(\frac{\partial E_{t}}{\partial \mathscr{N}}\right)_{S_{t},V_{t}, N_{t}}}\color{red}{\mathrm{d}\mathscr{N}} \; .
+\]</div>
+<p>Sinteticemos la ecuación anterior:</p>
+<div class="math notranslate nohighlight" id="equation-hill-gibbs">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-hill-gibbs" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}E_{t}(S_{t}, V_{t}, N_{t}, \mathscr{N}) = T\mathrm{d}S_{t} - p\mathrm{d}V_{t} + \mu \mathrm{d}N_{t} + \color{blue} {\mathscr{E}} \color{red}{\mathrm{d}\mathscr{N}} \; .
+\]</div>
+<p>Las dos expresiones han sacado a relucir la definición formal del potencial de subdivisión:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\mathscr{E} := \left(\frac{\partial E_{t}}{\partial \mathscr{N}}\right)_{S_{t},V_{t}, N_{t}}} \; .
+\]</div>
+<p>Además, podrían servirnos de ayuda para aclarar la explicaciones un tanto difusas de la sección precedente. Como puede observarse, el potencial <span class="math notranslate nohighlight">\(\mathscr{E}\)</span> se asemeja a la variable <span class="math notranslate nohighlight">\(\mu\)</span>, y, en cierto modo, lo podríamos tomar como un potencial químico relacionado con la adición de subsistemas <span id="id1">[<a class="reference internal" href="erreferentziak.html#id17" title="T. L. Hill. A Different Approach to Nanothermodynamics. Nano Letters, 1(5):273-275, 2001. doi:https://doi.org/10.1021/nl010027w.">13</a>]</span>. Al incluir una réplica, las variables <span class="math notranslate nohighlight">\(S_{t}\)</span>, <span class="math notranslate nohighlight">\(V_{t}\)</span> y <span class="math notranslate nohighlight">\(N_{t}\)</span> permanecerán invariables, pero <strong>se subdividirán</strong>. Seguidamente, escribiremos la expresión de la energía interna, integrando la ecuación <a class="reference internal" href="#equation-hill-gibbs">(2.1)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-pausoa">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-pausoa" title="Enlace permanente a esta ecuación">#</a></span>\[
+E_{t} \left(=\int \mathrm{d}E_{t} = T \int \mathrm{d}S_{t} - p \int \mathrm{d}V_{t} + \mu \int \mathrm{d}N_{t} + \mathscr{E} \int \mathrm{d}\mathscr{N}\right) = TS_{t} - pV_{t} + \mu N_{t} + \mathscr{E}\mathscr{N} \; .
+\]</div>
+<p>Pese a que el cálculo parezca trivial, debemos advertir que tras este último paso yace una propiedad matemática primordial: <em>la homogeneidad de Euler</em> (ver el <a class="reference internal" href="euler.html#euler"><span class="std std-ref"><em>apendíce A</em></span></a>). En concreto, las funciones <span class="math notranslate nohighlight">\(E_{t}, S_{t}, V_{t}, N_{t}\)</span> y <span class="math notranslate nohighlight">\(\mathscr{N}\)</span> son Euler-homogéneas de primer orden con respecto a la variable <span class="math notranslate nohighlight">\(N\)</span>. Es más, la temperatura <span class="math notranslate nohighlight">\(T\)</span>, la presión <span class="math notranslate nohighlight">\(p\)</span> y el potencial químico <span class="math notranslate nohighlight">\(\mu\)</span> son funciones de orden cero, es decir, estrictamente intensivas. Estas dos características permiten extraer el conjunto <span class="math notranslate nohighlight">\((T, p, \mu,\mathscr{E})\)</span> de las integrales, y, de esta forma, transcurrir de la ecuación <a class="reference internal" href="#equation-hill-gibbs">(2.1)</a> a <a class="reference internal" href="#equation-pausoa">(2.2)</a>. No obstante, enseguida nos percataremos de que en los sistemas pequeños lo anterior no se va a cumplir.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Retomando el hilo principal, nuestro objetivo es llegar a las ecuaciones de un sistema pequeño, refiriéndonos a sus propiedades como promedios del colectivo. Por tanto, definiremos las siguientes variables: <span class="math notranslate nohighlight">\(\overline{E} \equiv E_{t}/\mathscr{N}\)</span>; <span class="math notranslate nohighlight">\(S \equiv S_{t}/\mathscr{N}\)</span>; <span class="math notranslate nohighlight">\(\overline{V} \equiv V_{t}/\mathscr{N}\)</span>; <span class="math notranslate nohighlight">\(\overline{N} \equiv N_{t}/\mathscr{N}\)</span>. De esta forma, cada subsistema de la colectividad obedecerá la siguiente ecuación:</p>
+<div class="math notranslate nohighlight" id="equation-e-small">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-e-small" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\overline{E} = TS - p\overline{V} + \mu \overline{N} + \mathscr{E}} \; .
+\]</div>
+<p>A continuación, haciendo uso de la ecuación <a class="reference internal" href="#equation-e-small">(2.3)</a> e insertando las variables del sistema pequeño en la expresión <a class="reference internal" href="#equation-hill-gibbs">(2.1)</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+\mathscr{N}\mathrm{d}\overline{E} + (TS-p\overline{V}+\mu \overline{N} + \mathscr{E})\mathrm{d}\mathscr{N} = T \mathrm{d}(\mathscr{N}S) - p \mathrm{d}(\mathscr{N}\overline{V}) + \mu \mathrm{d}(\mathscr{N}\overline{N}) + \mathscr{E}\mathrm{d}\mathscr{N} \; .
+\]</div>
+<p>Realizando cálculos y despejando, llegaremos a la ecuación de Gibbs de un sistema pequeño:</p>
+<div class="math notranslate nohighlight" id="equation-gibbs-small">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-gibbs-small" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\overline{E} = T\mathrm{d}S - p\mathrm{d}\overline{V} + \mu \mathrm{d}\overline{N} \; .
+\]</div>
+<p>Ahora, calculando el diferencial total de la ecuación <a class="reference internal" href="#equation-e-small">(2.3)</a>, e igualándolo con <a class="reference internal" href="#equation-gibbs-small">(2.4)</a>, conseguiremos la ecuación <strong>Hill-Gibbs-Duhem</strong>:</p>
+<div class="math notranslate nohighlight" id="equation-h-g-d">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-h-g-d" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\mathrm{d}\mathscr{E}(T,p,\mu) = -S\mathrm{d}T + \overline{V}\mathrm{d}p - \overline{N}\mathrm{d}\mu}\; .
+\]</div>
+<p>Esta ecuación corrobora matemáticamente lo mencionado en la <a class="reference internal" href="nanointro.html#nanointro"><span class="std std-numref">sección 1</span></a>, puesto que queda en evidencia que el potencial de subdivisión iniciará un grado de libertad adicional. Así, nos será lícito especificar el conjunto <span class="math notranslate nohighlight">\((T, p, \mu)\)</span>, y construir la colectividad nanocanónica. Ésta nos permitirá describir los sistemas pequeños con mayor detalle. Por otro lado, el aspecto de la ecuación <a class="reference internal" href="#equation-gibbs-small">(2.4)</a> podría dar a entender que hemos obtenido una expresión idéntica a <a class="reference internal" href="nanointro.html#equation-gibbs">(1.1)</a>. Pero debemos ser cautos, puesto que la inhomogeneidad de las variables no permite llevar a cabo las integrales que aparecen entre los paréntesis de <a class="reference internal" href="#equation-pausoa">(2.2)</a>; el término <span class="math notranslate nohighlight">\(\mathscr{E}\)</span> de la ecuación <a class="reference internal" href="#equation-e-small">(2.3)</a> es indicador de lo anterior. Naturalmente, si el potencial de subdivisión resultara despreciable, las variables <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(\overline{V}\)</span> y <span class="math notranslate nohighlight">\(\overline{N}\)</span> y sus conjugadas recobrarían el carácter homogéneo. Esto haría desaparecer la colectividad nanocanónica, pues llevaría las ecuaciones del sistema pequeño al nivel macroscópico: <a class="reference internal" href="#equation-e-small">(2.3)</a> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <a class="reference internal" href="nanointro.html#equation-e">(1.2)</a>, <a class="reference internal" href="#equation-gibbs-small">(2.4)</a> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <a class="reference internal" href="nanointro.html#equation-gibbs">(1.1)</a> y <a class="reference internal" href="#equation-h-g-d">(2.5)</a> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <a class="reference internal" href="nanointro.html#equation-gibbs-duhem">(1.3)</a>.</p>
+<p>Puede apreciarse que, mediante transformaciones de las ecuaciones ordinarias de la Termodinámica, hemos construido explicaciones más robustas y elaboradas para los conceptos cualitativos presentados previamente. De esta forma, estableceremos un riguroso criterio de clasificación entre sistemas: <em>Un sistema se considerará pequeño, si el potencial de subdivisión asociado a él es finito y no despreciable.</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Antes de seguir, debemos considerar una advertencia concerniente a la entropía. Al definir las variables de un sistema pequeño como promedios de la colectividad, hemos empleado la siguiente notación: <span class="math notranslate nohighlight">\(\overline{E}, S, \overline{V}\)</span> y <span class="math notranslate nohighlight">\(\overline{N}\)</span>. Todos llevan una barra encima, excepto la variable <span class="math notranslate nohighlight">\(S = S_{t}/\mathscr{N}\)</span>. Cabe remarcar que esto no se ha debido a una errata inadvertida, sino que es más bien fruto del verdadero sentido de la entropía (ver <a class="reference internal" href="entropy.html#entropy"><span class="std std-ref"><em>apéndice B</em></span></a>).</p>
+<p>Para dar fin a este apartado, comenzaremos a examinar la manera en la que determinadas colectividades estadísticas influyen en el potencial de subdivisión. Esto dará paso a las secciones <a class="reference internal" href="tpn.html#tpn"><span class="std std-numref">3</span></a>, <a class="reference internal" href="fase.html#fase"><span class="std std-numref">4</span></a> y <a class="reference internal" href="tpmu.html#tpmu"><span class="std std-numref">5</span></a>, así como a los ejemplos significativos incluidos en ellos. También comenzaremos a profundizar en el concepto más importante introducido en la parte anterior: las funciones termodinámicas sufren correcciones conforme a las variables ambientales empleadas para su análisis.</p>
+</section>
+<section id="generalizacion-de-la-ecuacion-hill-gibbs-y-energia-de-replica">
+<span id="replica-e"></span><h2><span class="section-number">2.2. </span>Generalización de la ecuación Hill-Gibbs y energía de réplica<a class="headerlink" href="#generalizacion-de-la-ecuacion-hill-gibbs-y-energia-de-replica" title="Permalink to this heading">#</a></h2>
+<p>En el estudio del grado de libertad correspondiente a la subdivisión del colectivo realizado hasta el momento, al introducir una réplica, hemos mantenido todas las variables extensivas inalteradas <span class="math notranslate nohighlight">\((S_{t}, V_{t}, N_{t})\)</span>. Así, hemos definido el potencial de subdivisión: la aportación a la energía total <em>únicamente</em> a causa del cambio en el número de réplicas del sistema. Aún así, debemos advertir que la subdivisión de la colectividad afecta directamente a las variables de las réplicas, pues impide que <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(V\)</span> y <span class="math notranslate nohighlight">\(N\)</span> permanezcan intactos. En consecuencia, hemos tenido que asignarles necesariamente <span class="math notranslate nohighlight">\((T, p, \mu)\)</span> como variables de control; o, lo que es lo mismo, el desarrollo asociado a definir formalmente el potencial de subdivisión nos ha conducido directamente a la <strong>colectividad nanocanónica</strong>.</p>
+<p>Obviamente, existirán circunstancias que no nos permitirán disponer del acceso a dichas variables. Esta frase nos conduce a generalizar la discusión precedente. En concreto, debemos definir la generalización del potencial de subdivisión ante variables de control cualesquiera <span class="math notranslate nohighlight">\((A,B,C,...)\)</span>. Dicho potencial lo designaremos con la letra <span class="math notranslate nohighlight">\(X(A,B,C,...)\)</span>, y lo denominaremos <strong>energía de réplica</strong>. Por supuesto, en el caso de la colectividad nanocanónica, <span class="math notranslate nohighlight">\(X(T,p,\mu) = \mathscr{E}(T, p, \mu)\)</span>, pero en general, lo anterior no se cumplirá.</p>
+<p>Como ejercicio aclaratorio, realizaremos el análisis de la sección <a class="reference internal" href="#hillteo"><span class="std std-numref">sección 2.1</span></a> en la <strong>colectividad macrocanónica</strong>, esto es, las variables de un sistema pequeño pasarán a ser <span class="math notranslate nohighlight">\((T,V,\mu)\)</span>. Así las cosas, las propiedades del colectivo serán definidas como <span class="math notranslate nohighlight">\(E_{t} = \mathscr{N}\overline{E}\)</span>, <span class="math notranslate nohighlight">\(S_{t} = \mathscr{N}S\)</span>, <span class="math notranslate nohighlight">\(V_{t} = \mathscr{N}V\)</span> y <span class="math notranslate nohighlight">\(N_{t} = \mathscr{N}\overline{N}\)</span>. Es de mencionar que el volumen <span class="math notranslate nohighlight">\(V\)</span> no es un promedio, sino una magnitud fija de cada subsistema de la colectividad. Seguidamente, reescribiremos la ecuación <a class="reference internal" href="#equation-hill-gibbs">(2.1)</a>, haciendo aparecer la variable <span class="math notranslate nohighlight">\(V\)</span> <span class="math notranslate nohighlight">\((\mathrm{d}V_{t} = \mathscr{N}\mathrm{d}V + V\mathrm{d}\mathscr{N})\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-degc">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-degc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}E_{t}(S_{t},V,N_{t},\mathscr{N}) = T\mathrm{d}S_{t} - p\mathscr{N}\mathrm{d}V + \mu \mathrm{d}N_{t} + (\mathscr{E}-pV)\mathrm{d}\mathscr{N} \; .
+\]</div>
+<p>Partiendo de ahí, definiremos la energía de réplica:</p>
+<div class="math notranslate nohighlight" id="equation-xgc">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-xgc" title="Enlace permanente a esta ecuación">#</a></span>\[
+X(T,V,\mu) = \mathscr{E}-pV := \left(\frac{\partial E_{t}}{\partial \mathscr{N}}\right)_{S_{t},V,N_{t}} := -\widehat{p}\;V\;.
+\]</div>
+<p>Dicho lo dicho, si observamos la ecuación <a class="reference internal" href="#equation-xgc">(2.7)</a>, veremos que <span class="math notranslate nohighlight">\(X\)</span> es una variable más adecuada que <span class="math notranslate nohighlight">\(\mathscr{E}\)</span> en este entorno, puesto que lleva consigo el carácter innato de la colectividad macrocanónica. De hecho, al añadir una réplica, el volumen total <span class="math notranslate nohighlight">\(V_{t}\)</span> del sistema también variará, lo cual posibilitará que el volumen <span class="math notranslate nohighlight">\(V\)</span> de cada sistema pequeño permanezca inalterado. Así, la energía de réplica de la presente colectividad denota el trabajo mecánico que percibirá el colectivo, y que será caracterizado mediante la presión <span class="math notranslate nohighlight">\(\widehat{p}\;\)</span>: <span class="math notranslate nohighlight">\(-\widehat{p}\;V\)</span>. Cabe resaltar que <span class="math notranslate nohighlight">\(p\neq \widehat{p}\)</span>, puesto que las aportaciones a la energía de ambas presiones no son iguales: la primera está relacionada con cada uno de los sistemas pequeños, y, la segunda, con la totalidad de la colectividad. Debido a los efectos finitos, <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(\widehat{p}\)</span> solamente coincidirán en el límite macroscópico.</p>
+<p>Siguiendo el procedimiento explicado anteriormente, y haciendo uso de la ecuación <a class="reference internal" href="#equation-xgc">(2.7)</a>, llegaremos a las siguientes expresiones:</p>
+<div class="math notranslate nohighlight" id="equation-e-small-gc">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-e-small-gc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{E} = TS - \widehat{p}\;V + \mu \overline{N} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-de-small-gc">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-de-small-gc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\overline{E} = T\mathrm{d}S - p\mathrm{d}V + \mu \mathrm{d}\overline{N} \; .
+\]</div>
+<p>Éstos dejan en evidencia que <span class="math notranslate nohighlight">\(\overline{E}\)</span> no es una función homogénea, debido a la desigualdad entre las presiones <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(\widehat{p}\)</span>. Acto seguido, aplicaremos dos transformaciones de Legendre a la ecuación <a class="reference internal" href="#equation-e-small-gc">(2.8)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-pot-gc">
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-pot-gc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}(-\widehat{p}\;V) := \mathrm{d}\Psi(T,V,\mu) = -S\mathrm{d}T - p\mathrm{d}V - \overline{N}\mathrm{d}\mu \; .
+\]</div>
+<p>De ahí, extraeremos dos expresiones que otorgarán gran representatividad a las explicaciones precedentes:</p>
+<div class="math notranslate nohighlight" id="equation-gc-summ">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-gc-summ" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed {-\widehat{p} := \frac{-\widehat{p}\;V}{V} \quad \pmb{\neq} \quad -p := \left[\frac{\partial(-\widehat{p}\;V)}{\partial V}\right]_{T,\mu} \quad ; \quad \mathscr{E} = - (\widehat{p} - p)V} \; .
+\]</div>
+<p>Así las cosas, denominaremos <strong>presión integral</strong> a <span class="math notranslate nohighlight">\(\widehat{p}\)</span> y <strong>presión diferencial</strong> a <span class="math notranslate nohighlight">\(p\)</span>. Salta a la vista que los efectos finitos y la no linealidad que los distingue quedan recogidos en el potencial de subdivisión.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="nanointro.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introducción a la Nanotermodinámica</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tpn.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-de-hill">2.1. Teoría de Hill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacion-de-la-ecuacion-hill-gibbs-y-energia-de-replica">2.2. Generalización de la ecuación Hill-Gibbs y energía de réplica</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Mikel Garitano Telleria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

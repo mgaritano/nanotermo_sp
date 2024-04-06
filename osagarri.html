@@ -1,0 +1,1096 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>7. Ejemplos adicionales &#8212; NANOTERMODINÁMICA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'osagarri';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="8. Gas ideal y adsorbente esférico pequeño" href="adsorbent.html" />
+    <link rel="prev" title="6. Sistemas eléctricos y magnéticos" href="electric_magnetic.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nanointro.html">1. Introducción a la Nanotermodinámica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hill.html">2. Termodinámica de sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpn.html">3. Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="fase.html">4. Transiciones de fase en sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpmu.html">5. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="electric_magnetic.html">6. Sistemas eléctricos y magnéticos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Ejemplos adicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adsorbent.html">8. Gas ideal y adsorbente esférico pequeño</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ondorioak.html">9. Conclusiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="euler.html"><strong><em>A</em></strong> <em>Ecuación de Euler</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html"><strong><em>B</em></strong> <em>Entropía</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gas%20ideala.html"><strong><em>C</em></strong> <em>Gas ideal clásico, en la colectividad canónica</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Otros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="erreferentziak.html">Referencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eskerrak.html"><em>Agradecimientos</em></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ejemplos adicionales</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agregado-esferico">7.1. Agregado esférico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">7.1.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.1.2. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-en-una-red-ideal">7.2. Gas en una red ideal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-microcanonica-variables-de-entorno-b-n">7.2.1. Colectividad microcanónica: variables de entorno <span class="math notranslate nohighlight">\((B,N)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-isobarica-variables-de-entorno-frac-p-t-n">7.2.2. Colectividad isobárica: variables de entorno <span class="math notranslate nohighlight">\((\frac{p}{T}, N)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-macrocanonica-variables-de-entorno-b-frac-mu-t">7.2.3. Colectividad macrocanónica: variables de entorno <span class="math notranslate nohighlight">\((B, \frac{\mu}{T})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-nanocanonica-variables-de-entorno-frac-p-t-frac-mu-t">7.2.4. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((\frac{p}{T}, \frac{\mu}{T})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Ejercicio</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Ejercicio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="ejemplos-adicionales">
+<span id="osagarri"></span><h1><span class="section-number">7. </span>Ejemplos adicionales<a class="headerlink" href="#ejemplos-adicionales" title="Permalink to this heading">#</a></h1>
+<section id="agregado-esferico">
+<span id="mupt-sphagg"></span><h2><span class="section-number">7.1. </span>Agregado esférico<a class="headerlink" href="#agregado-esferico" title="Permalink to this heading">#</a></h2>
+<p>El análisis que presentaremos a continuación se asemeja al ejemplo de la <a class="reference internal" href="tpmu.html#mupt-linagg"><span class="std std-numref">subsección 5.2</span></a>. No obstante, en lugar de en la rotación del sistema, en esta ocasión nos centraremos en el efecto de los efectos de superficie y de curvatura. Así las cosas, el sistema que nos ocupa es un agregado esférico incompresible compuesto por <span class="math notranslate nohighlight">\(N \)</span> monómeros, de tal forma que no consideraremos el grado de libertad mecánico. Por ende, pondremos en marcha el estudio a través de las variables de entorno <span class="math notranslate nohighlight">\((T, N) \)</span>. Asimismo, asignaremos a las unidades la función de partición intrínseca <span class="math notranslate nohighlight">\(j (T) \)</span>. Además, tendremos en cuenta el aporte de energía superficial libre <span class="math notranslate nohighlight">\(a (T) N ^ {2/3} \)</span> <span class="math notranslate nohighlight">\((a&gt;0) \)</span>. Cabe destacar que la magnitud <span class="math notranslate nohighlight">\(a (T) \)</span> es proporcional a la tensión superficial <span class="math notranslate nohighlight">\(\gamma \)</span>. Completaremos la formulación tomando consideración de la variación de la tensión superficial a causa de la curvatura de la superficie esférica. Este incluirá la aportación <span class="math notranslate nohighlight">\(b (T) N ^ {1/3} \)</span> <span class="math notranslate nohighlight">\((b&gt;0) \)</span>. En el libro de Hill <span id="id1">[<a class="reference internal" href="erreferentziak.html#id6" title="T. L. Hill. Thermodynamics of Small Systems. Part 1 and 2., chapter 1-10; 15. Dover Publications, Inc., New York, 1964.">5</a>]</span> se trabaja este ejemplo en varias ocasiones. Pues bien, cabe destacar que en todos ellos se excluye el efecto de la curvatura. Nosotros lo consideraremos en este análisis como una pequeña corrección respecto al resto de aportaciones, tomando <span class="math notranslate nohighlight">\(b\rightarrow 0 ^ {+} \)</span>. Dicha asunción facilitará notoriamente el procedimiento del cálculo de la función de partición <span class="math notranslate nohighlight">\(\Upsilon (T,\mu) \)</span>.</p>
+<p>Primero, construiremos la función de partición canónica <span class="math notranslate nohighlight">\(Q(T,N)\)</span>, sin aproximaciones.</p>
+<div class="math notranslate nohighlight" id="equation-qagg-sph">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-qagg-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+Q(T,N) = j(T)^N\;\exp\left[{\frac{-a(T)N^{2/3}}{k_{\mathrm{B}}T}}\right]\exp\left[{\frac{-b(T)N^{1/3}}{k_{\mathrm{B}}T}}\right]
+\]</div>
+<p>De ahí, recordando la relación <span class="math notranslate nohighlight">\(Q=e^{-\widehat{\mu}N/k_{\mathrm{B}}T}\)</span>, calcularemos los potenciales químicos diferencial e integral, así como el potencial de subdivisión:</p>
+<div class="math notranslate nohighlight" id="equation-sph-agg-mu">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-sph-agg-mu" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}
+\left.\begin{array}{l}
+\widehat{\mu}=-k_{\mathrm{B}}T\ln j + N^{-1/3}\;a(T) + N^{-2/3}\;b(T)\\\\
+\mu=-k_{\mathrm{B}}T\ln j +\frac{2}{3} N^{-1/3}\;a(T) + \frac{1}{3} N^{-2/3}\;b(T)
+\end{array}\right\}\underset{(N \rightarrow \infty)}{\boldsymbol{\longrightarrow}} \; \mu^{(0)}(T) = -k_{\mathrm{B}}T\ln j \; ,
+\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-sph-epsilon-c">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-sph-epsilon-c" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} (T,N) = N\left(\widehat{\mu}-\mu\right) = \frac{1}{3}N^{2/3}a(T) + \frac{2}{3}N^{1/3}b(T) &gt; 0 \; .
+\]</div>
+<p>Junto a ellos, escribiremos las siguientes dos magnitudes, puesto que nos resultarán útiles más en adelante:</p>
+<div class="math notranslate nohighlight" id="equation-excess-mu">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-excess-mu" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}
+\left.\begin{array}{l}
+\widehat{\mu}^{(x)} = \widehat{\mu} - \mu^{(0)} = N^{-1/3}\;a(T) + N^{-2/3}\;b(T)\\\\
+\mu^{(x)} = \mu - \mu^{(0)} = \frac{2}{3}N^{-1/3}\;a(T) + \frac{1}{3}N^{-2/3}\;b(T)
+\end{array}\right\} \underset{(N \rightarrow \infty)}{\boldsymbol{\longrightarrow}} \; 0 \; .
+\end{split}\]</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>Hill denomina términos de exceso (<em>excess terms</em>) a las magnitudes <span class="math notranslate nohighlight">\(\widehat {\mu} ^ {(x)} \)</span> y <span class="math notranslate nohighlight">\(\mu ^ {(x)} \)</span>. Son indicadores de efectos de tamaño finito de los potenciales químicos <span class="math notranslate nohighlight">\(\widehat {\mu} \)</span> y <span class="math notranslate nohighlight">\(\mu \)</span>, respectivamente.</p>
+</div>
+<p>De las ecuaciones anteriores, calcularemos la entropía y el promedio de la energía interna, para luego poder realizar comparaciones con las expresiones <span class="math notranslate nohighlight">\(S (T,\mu) \)</span> y <span class="math notranslate nohighlight">\(\overline {E} (T,\mu) \)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-s-sph-agg-tn">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-s-sph-agg-tn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{S(T,N) = -\left(\frac{\partial N\widehat{\mu}}{\partial T}\right)_{N} = Nk_{\mathrm{B}}\left(\ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}\right) - N^{2/3}\frac{\mathrm{d}a}{\mathrm{d}T} - N^{1/3}\frac{\mathrm{d}b}{\mathrm{d}T}} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-bar-e-tn-sph">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-bar-e-tn-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{E}(T,N) = \widehat{\mu}N + TS = Nk_{\mathrm{B}}T^2\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T} + N^{2/3}\left(a -T\frac{\mathrm{d}a}{\mathrm{d}T}\right) + N^{1/3}\left(b -T\frac{\mathrm{d}b}{\mathrm{d}T}\right) \; .
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Trasladaremos el análisis a la <strong>colectividad nanocanónica</strong>. Reescribiremos la definición de la función de partición nanocanónica a través del par de ecuaciones <a class="reference internal" href="#equation-excess-mu">(7.4)</a>, para poner a la vista las magnitudes <span class="math notranslate nohighlight">\(\widehat {\mu} ^ {(x)} \)</span> y <span class="math notranslate nohighlight">\(\mu ^ {(x)} \)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-upsilon-sph">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-upsilon-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon(T,\mu) = \sum_{N=0}^{\infty}e^{-\widehat{\mu}N/k_{\mathrm{B}}T}e^{{\mu}N/k_{\mathrm{B}}T} = \sum_{N=0}^{\infty}e^{-\widehat{\mu}^{(x)}N/k_{\mathrm{B}}T}e^{{\mu^{(x)}}N/k_{\mathrm{B}}T}
+\]</div>
+<p>Tengamos en cuenta que el hecho de que <span class="math notranslate nohighlight">\(\mu ^ {(x)} \)</span> sea positivo en la ecuación <a class="reference internal" href="#equation-upsilon-sph">(7.7)</a> conllevaría la divergencia de la serie, ya que, para <span class="math notranslate nohighlight">\(N \)</span> suficientemente grandes, dominaría el exponencial <span class="math notranslate nohighlight">\(e ^ {{\mu ^ {(x)}} N/k_ {\mathrm {B}} T}\)</span>. Por lo tanto, deberemos imponer <span class="math notranslate nohighlight">\(\mu ^ {(x)}\leq 0 \)</span> para garantizar la convergencia (recordemos que <span class="math notranslate nohighlight">\(a \)</span> y <span class="math notranslate nohighlight">\(b \)</span> son positivos y, en consecuencia, <span class="math notranslate nohighlight">\(\widehat {\mu} ^ {(x)} \)</span> también). De hecho, como veremos a continuación, la divergencia resultante de que <span class="math notranslate nohighlight">\(\mu ^ {(x)} &gt; 0 \)</span>, o, lo que es lo mismo, <span class="math notranslate nohighlight">\(\mu &gt; \mu^{(0)}(T)\)</span>, acarreará que <span class="math notranslate nohighlight">\(\overline {N} =\infty \)</span>. Cabe destacar que en este caso la variable <span class="math notranslate nohighlight">\(\mu \)</span> no es la que figura en la ecuación <a class="reference internal" href="#equation-sph-agg-mu">(7.2)</a> calculada anteriormente, sino una constante asociada al sistema. Pues bien, como se explicará a continuación, para garantizar la convergencia de la serie, tendremos que imponer la condición <span class="math notranslate nohighlight">\(\mu\rightarrow\mu ^ {(0)}\)</span>. Antes de seguir adelante, es conveniente introducir la siguiente notación:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta(T,\mu) = \frac{-\mu^{(x)}}{k_{\mathrm{B}}T} = \frac{\mu^{(0)}-\mu}{k_{\mathrm{B}}T} \quad , \quad \alpha(T) = \frac{a(T)}{k_{\mathrm{B}}T} \quad , \quad \beta(T) = \frac{b(T)}{k_{\mathrm{B}}T} \; .
+\]</div>
+<p>Así las cosas, antes de proceder a los cálculos, existen otras cuestiones que deberemos aclarar. De hecho, siguiendo las explicaciones del párrafo anterior, para que el tamaño del agregado bajo estudio sea razonable, tendremos que recurrir al límite <span class="math notranslate nohighlight">\(\delta\rightarrow 0 ^ {+} \)</span>, el cual nos mantendrá alejados de la divergencia. Por otro lado, la energia superficial <span class="math notranslate nohighlight">\(aN ^ {2/3} \)</span> será realista solamente para valores de <span class="math notranslate nohighlight">\(N \)</span> suficientemente grandes (por ejemplo, <span class="math notranslate nohighlight">\(N&gt;20 \)</span>). Por ello, en la ecuación <a class="reference internal" href="#equation-upsilon-sph">(7.7)</a>, sustituiremos el sumatorio sobre <span class="math notranslate nohighlight">\(N\)</span> por una integral. Hay que aclarar que, aunque este modelo es inadecuado para valores pequeños de <span class="math notranslate nohighlight">\(N \)</span>, para <span class="math notranslate nohighlight">\(\overline {N} \)</span> medianamente grandes el error no será tan significativo. Por último, al hilo de lo dicho anteriormente sobre los efectos de curvatura, también nos es lícito utilizar el límite <span class="math notranslate nohighlight">\(\beta\rightarrow 0 ^ {+} \)</span>. Todo lo mencionado hasta ahora lo reflejaremos en la expresión de la función de partición que viene a continuación:</p>
+<div class="math notranslate nohighlight" id="equation-upsilon-sph-int">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-upsilon-sph-int" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon (T,\mu) = \int_0^\infty \mathrm{d}N\;\left[1-\delta(T,\mu) N\right] \; e^{-\alpha(T) N^{2/3}}e^{-\beta(T) N^{1/3}} \approx \int_0^\infty \mathrm{d}N\;\left[1-\delta(T,\mu) N\right] \; e^{-\alpha(T) N^{2/3}}\left[1-\beta(T) N^{1/3}\right] \; .
+\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Instrucciones para el cálculo de la integral</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Estas relaciones nos resultarán de ayuda de cara a obtener la expresión <a class="reference internal" href="#equation-upsilon-sph-good">(7.9)</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{\infty} \mathrm{d}x\; e^{-ax^b} = \frac{1}{b}a^{-1/b}\;\Gamma\left(\frac{1}{b}\right) \; ,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{\infty} \mathrm{d}x\; x^ne^{-ax^b} = \frac{1}{b}a^{-(n+1)/b}\;\Gamma\left(\frac{n+1}{b}\right) \; ,
+\]</div>
+<p class="sd-card-text">y,</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma\left(\frac{1}{2} + n \right) = \frac{(2n)!}{4^n n!}\pi^{1/2} \; .
+\]</div>
+</div>
+</details><p>El resultado de la integral definida es la siguiente:</p>
+<div class="math notranslate nohighlight" id="equation-upsilon-sph-good">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-upsilon-sph-good" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon (T,\mu) = \frac{\pi^{1/2}\left(45\delta\beta+12\alpha^2\right)}{16\alpha^{7/2}} - \frac{3\beta}{2\alpha^2} - \frac{3\delta}{\alpha^3} \; \underset{(\delta \rightarrow 0^{+})}{\boldsymbol{\longrightarrow}} \; \frac{3\pi^{1/2}}{4\alpha^{3/2}} - \frac{3\beta}{2\alpha^2} \; .
+\]</div>
+<p>Desde ahí, para empezar, obtendremos el promedio <span class="math notranslate nohighlight">\(\overline {N} \)</span>. Para ello, notemos que deberemos derivar con respecto a la magnitud <span class="math notranslate nohighlight">\(\delta (T,\mu)\)</span>. Por lo tanto, tendremos que fijarnos en el lado izquierdo de la ecuación <a class="reference internal" href="#equation-upsilon-sph-good">(7.9)</a>; es decir,</p>
+<div class="math notranslate nohighlight" id="equation-bar-n-sph">
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-bar-n-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+ \overline{N} := -\left(\frac{\partial \mathscr{E}(T,\mu)}{\partial\mu}\right)_T = \left(\frac{\partial\ln\Upsilon}{\partial\frac{\mu}{k_{\mathrm{B}}T}}\right)_T = \left(\frac{\partial\ln\Upsilon}{\partial\delta}\right)_{\alpha,\beta}\left(\frac{\partial\delta}{\partial\frac{\mu}{k_{\mathrm{B}}T}}\right)_T = \frac{48\alpha^{1/2}-45\pi^{1/2}\beta}{4\alpha^{3/2}(3\pi^{1/2}\alpha^{1/2}-6\beta)}\; .
+\]</div>
+<p>Es importante destacar que, puesto que trabajamos en el límite <span class="math notranslate nohighlight">\(\mu\rightarrow\mu ^ {(0)} (T) \)</span>, la magnitud <span class="math notranslate nohighlight">\(\overline {N} \)</span> se ha convertido en una función dependiente solamente de la temperatura. Por otro lado, para escribir las expresiones de la entropía y laenergía interna, nos será útil obtener también los promedios <span class="math notranslate nohighlight">\(\overline {N ^ {2/3}} \)</span> y <span class="math notranslate nohighlight">\(\overline {N ^ {1/3}} \)</span>. Por lo tanto, deberemos construir previamente la función probabilística <span class="math notranslate nohighlight">\(P(N)\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-p-n-sph">
+<span class="eqno">(7.11)<a class="headerlink" href="#equation-p-n-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+P(N)\;\mathrm{d}N = \frac{e^{-\alpha N^{2/3}}e^{-\beta N^{1/3}}}{\Upsilon} \mathrm{d}N \approx \frac{e^{-\alpha N^{2/3}}\left(1-\beta N^{1/3}\right)}{\Upsilon} \mathrm{d}N\; .
+\]</div>
+<p>Hecho esto, llegaremos a los siguientes resultados:</p>
+<div class="math notranslate nohighlight" id="equation-bar-n23-sph">
+<span class="eqno">(7.12)<a class="headerlink" href="#equation-bar-n23-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N^{2/3}} = \int_0^{\infty}\mathrm{d}NP(N)\;N^{2/3} = \frac{1}{\Upsilon}\left(\frac{9\pi^{1/2}}{8\alpha^{5/2}}-\frac{3\beta}{\alpha^3}\right) \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-bar-n13-sph">
+<span class="eqno">(7.13)<a class="headerlink" href="#equation-bar-n13-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N^{1/3}} = \int_0^{\infty}\mathrm{d}NP(N)\;N^{1/3} = \frac{1}{\Upsilon}\left(\frac{3}{2\alpha^2}-\frac{9\pi^{1/2}\beta}{8\alpha^{5/2}}\right) \; .
+\]</div>
+<p>Una vez obtenidas estas ecuaciones, la expresión del promedio de la energía interna es inmediata, si atendemos a su definición. Atendamos a la ecuación <a class="reference internal" href="#equation-bar-e-tmu-sph-def">(7.14)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-bar-e-tmu-sph-def">
+<span class="eqno">(7.14)<a class="headerlink" href="#equation-bar-e-tmu-sph-def" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{E}(T,\mu) =\frac{\sum_E\sum_N\Omega(E,N)\;e^{-E/k_{\mathrm{B}}T}e^{\mu N/k_{\mathrm{B}}T}}{\Upsilon(T,\mu)} = \frac{\sum_N \overline{E}(T,N)\;Q(T,N)\;e^{\mu N/k_{\mathrm{B}}T}}{\Upsilon(T,\mu)}
+\]</div>
+<p>Primero, debemos calcular el promedio de <span class="math notranslate nohighlight">\(E (S, N) \)</span>, utilizando la función <span class="math notranslate nohighlight">\(\Omega (E, N) \)</span> obtenida del análisis en el colectivo microcanónico. Desde allí llegaremos la expresión <span class="math notranslate nohighlight">\(\overline {E} (T, N) \)</span>. Pues bien, su promedio a través de la magnitud <span class="math notranslate nohighlight">\(N \)</span> nos devolverá la magnitud deseada, <span class="math notranslate nohighlight">\(\overline {E} (T,\mu) \)</span>. Así, sustituyendo las funciones <span class="math notranslate nohighlight">\(N \)</span>, <span class="math notranslate nohighlight">\(N ^ {2/3} \)</span> y <span class="math notranslate nohighlight">\(N ^ {1/3} \)</span> de la ecuación <a class="reference internal" href="#equation-bar-e-tmu-sph-def">(7.14)</a> en la parte derecha de la ecuación <a class="reference internal" href="#equation-bar-e-tmu-sph-def">(7.14)</a>, obtendremos sus respectivos promedios, de manera que la expresión del promedio de de energía interna quedará</p>
+<div class="math notranslate nohighlight" id="equation-bar-e-tmu-sph">
+<span class="eqno">(7.15)<a class="headerlink" href="#equation-bar-e-tmu-sph" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{E}(T,\mu) = \overline{N}k_{\mathrm{B}}T^2\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T} + \overline{N^{2/3}}\left(a -T\frac{\mathrm{d}a}{\mathrm{d}T}\right) + \overline{N^{1/3}}\left(b -T\frac{\mathrm{d}b}{\mathrm{d}T}\right) \; .
+\]</div>
+<p>Una vez más, tal como indica el dúo <a class="reference internal" href="#equation-bar-e-tn-sph">(7.6)</a> y  <a class="reference internal" href="#equation-bar-e-tmu-sph">(7.15)</a>, las variables ambientales influyen a las propiedades de los sistemas pequeños. De hecho, aunque fijemos la relación <span class="math notranslate nohighlight">\(N =\overline {N} \)</span>, las dos expresiones de la energía interna no coincidirán, debido a las fluctuaciones en torno a las magnitudes <span class="math notranslate nohighlight">\(N ^ {2/3} \)</span> y <span class="math notranslate nohighlight">\(N ^ {1/3} \)</span>. Debemos percatarnos de que <span class="math notranslate nohighlight">\(\overline{N}^{2/3}\neq \overline{N^{2/3}}\)</span> y <span class="math notranslate nohighlight">\(\overline{N}^{1/3}\neq \overline{N^{1/3}}\)</span>.</p>
+<p>También escribiremos la ecuación que obdecerá el potencial de subdivisión:</p>
+<div class="math notranslate nohighlight" id="equation-sph-epsilon-nc">
+<span class="eqno">(7.16)<a class="headerlink" href="#equation-sph-epsilon-nc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,\mu) = -k_{\mathrm{B}}T\ln\left(\frac{3\pi^{1/2}}{4\alpha^{3/2}} - \frac{3\beta}{2\alpha^2}\right)\; .
+\]</div>
+<p>Este es el último componente que necesitaremos para construir la entropía <span class="math notranslate nohighlight">\(S (T,\mu) \)</span>. De hecho, en este ejemplo en concreto, reescribiremos la ecuación <a class="reference internal" href="hill.html#equation-e-small">(2.3)</a> del sistema pequeño de esta forma:</p>
+<div class="math notranslate nohighlight" id="equation-e-small-agg-es">
+<span class="eqno">(7.17)<a class="headerlink" href="#equation-e-small-agg-es" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline {E} = TS +\mu ^ {(0)} N +\mathscr {E} \; .
+\]</div>
+<p>Recordemos que, por un lado, hemos descartado desde el principio la contribución del grado de libertad mecánico; por otro, el valor del potencial químico es el límite <span class="math notranslate nohighlight">\(\mu ^ {(0)} \)</span>. Por lo tanto, despejando la magnitud <span class="math notranslate nohighlight">\(S\)</span> de la ecuación <a class="reference internal" href="#equation-e-small-agg-es">(7.17)</a>, la entropía que nos devolverá la colectividad nanocanónica es</p>
+<div class="math notranslate nohighlight" id="equation-s-sph-agg-tmu">
+<span class="eqno">(7.18)<a class="headerlink" href="#equation-s-sph-agg-tmu" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{S(T, \mu) =  \overline{N}k_{\mathrm{B}}\left(\ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}\right) - \overline{N^{2/3}}\frac{\mathrm{d}a}{\mathrm{d}T} - \overline{N^{1/3}}\frac{\mathrm{d}b}{\mathrm{d}T} + k_{\mathrm{B}}\ln\left[\frac{1}{\overline{N}}\left(\frac{3}{\alpha^3}-\frac{45\pi^{1/2}\beta}{16\alpha^{7/2}}\right)\right] + \overline{N^{2/3}}\frac{a}{T} + \overline{N^{1/3}}\frac{b}{T}} \; .
+\]</div>
+<p>Fijémonos en la expresión; y, al hilo de lo que hemos hecho en varias ocasiones anteriores, pongámoslo de par en par con la ecuación <a class="reference internal" href="#equation-s-sph-agg-tn">(7.5)</a>.</p>
+<p>Pues bien, en la ecuación <span class="math notranslate nohighlight">\(S (T,\mu) \)</span> aparecen tres términos adicionales. Es evidente que los dos últimos (positivos) son los responsables del aumento de la entropía debido a fluctuaciones en torno a las magnitudes <span class="math notranslate nohighlight">\(N ^ {2/3} \)</span> y <span class="math notranslate nohighlight">\(N ^ {1/3} \)</span>. Sin embargo, el antepenúltimo término, relacionado con el potencial de subdivisión, requiere un análisis más profundo. De hecho, para que el logaritmo devuelva un valor positivo, debemos hacer cumplir los siguientes requisitos: <span class="math notranslate nohighlight">\(\alpha &lt; 1 \)</span> y <span class="math notranslate nohighlight">\(\alpha\gg\beta \)</span>. La segunda exigencia sí que es compatible con las condiciones anteriormente presentadas. En efecto, así podremos mantener solamente el primer término dentro de los paréntesis. Por tanto, nos es lícito prescindir de los efectos de curvatura.</p>
+<p>Así, tomando el límite <span class="math notranslate nohighlight">\(\beta\rightarrow 0 \)</span>, reescribiremos la ecuación <a class="reference internal" href="#equation-bar-n-sph">(7.10)</a>, el potencial de subdivisión y el término de la entropía asociado a él. En primer lugar, sin embargo, adaptaremos la magnitud <span class="math notranslate nohighlight">\(\overline {N} \)</span>, partiendo de la ecuación <a class="reference internal" href="#equation-bar-n-sph">(7.10)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-bar-n-sph-approx">
+<span class="eqno">(7.19)<a class="headerlink" href="#equation-bar-n-sph-approx" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N} \approx \frac{4}{\pi^{1/2}\alpha^{3/2}} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-sph-epsilon-nc-approx">
+<span class="eqno">(7.20)<a class="headerlink" href="#equation-sph-epsilon-nc-approx" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,\mu) \approx -k_{\mathrm{B}}T\ln\left(\frac{3\pi^{1/2}}{4\alpha^{3/2}}\right) = -k_{\mathrm{B}}T\ln\left(\frac{3\pi\overline{N}}{16}\right) \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-approx">
+<span class="eqno">(7.21)<a class="headerlink" href="#equation-approx" title="Enlace permanente a esta ecuación">#</a></span>\[
+k_{\mathrm{B}}\ln\left[\frac{1}{\overline{N}}\left(\frac{3}{\alpha^3}-\frac{45\pi^{1/2}\beta}{16\alpha^{7/2}}\right)\right] \approx k_{\mathrm{B}}\ln\left(\frac{3\pi\overline{N}}{16}\right) &gt; 0 \; .
+\]</div>
+<p>El límite utilizado pone de manifiesto la verdadera naturaleza de este término problemático; de hecho, en realidad, toma consideración de fluctuaciones en torno al número de partículas <span class="math notranslate nohighlight">\(N \)</span>, aumentando así la entropía.</p>
+<p>Es destacable que, debido a que se cumple que <span class="math notranslate nohighlight">\(N \gg N^{2/3}, \; N^{1/3}\)</span> y <span class="math notranslate nohighlight">\(\overline{N} \gg \overline{N^{2/3}}, \; \overline{N^{1/3}}, \; \ln \overline{N}\)</span>, las ecuaciones <a class="reference internal" href="#equation-s-sph-agg-tn">(7.5)</a> y <a class="reference internal" href="#equation-s-sph-agg-tmu">(7.18)</a> coinciden, en el límite macroscópico, con los resultados desarrollados en en la <a class="reference internal" href="tpmu.html#mupt-linagg"><span class="std std-numref">subsección 5.2</span></a> con el agregado lineal, esto es,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boxed{\begin{gathered}
+    (a) \quad S(T,\mu) &gt; S(T,N) \\
+    \\
+   (b) \quad  \frac{S(T,\mu)}{\overline{N}k_{\mathrm{B}}}\equiv \frac{S(T,N)}{Nk_{\mathrm{B}}} = \frac{\mathrm{s}^{(0)}}{k_{\mathrm{B}}} = \ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T} \quad (\overline{N},N\rightarrow\infty)\\
+   \\
+   (c) \quad \frac{\overline{E}(T,N)}{N} \equiv \frac{\overline{E}(T,\mu)}{\overline{N}} = \mathrm{e}^{(0)} = k_{\mathrm{B}}T^2\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T} \quad (\overline{N},N\rightarrow\infty)
+\end{gathered}}
+\end{split}\]</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>En el caso del agregado lineal, a diferencia del presente ejemplo, tuvimos en cuenta la energía de interacción <span class="math notranslate nohighlight">\(\epsilon \)</span> entre primeros vecinos. Por ello, la energía interna es, en realidad, <span class="math notranslate nohighlight">\(N\left (k_ {\mathrm {B}} T ^ 2\frac {1} {j}\frac {\mathrm {d} j} {\mathrm {d} T} +\epsilon\right) \)</span>.</p>
+</div>
+<p>Parece, por tanto, que, en el límite macroscópico, el hecho de que el agregado sea lineal o esférico no influye de ninguna manera en funciones termodinámicas como la energía interna y la entropía. Precisamente, para que afloren las aportaciones correspondientes a <strong>la forma</strong> del sistema, resulta imprescindible recurrir a la Nanotermodinámica.</p>
+<section id="ejercicio">
+<h3><span class="section-number">7.1.1. </span>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
+<p>El objetivo de este ejercicio consiste en trasladar el análisis general realizado hasta ahora al límite  <span class="math notranslate nohighlight">\(b (T) = 0 \)</span>. Así, descartando por completo los efectos de curvatura y considerando únicamente la aportación de superficie <span class="math notranslate nohighlight">\(a (T) N ^ {2/3} \)</span>, recuperaremos de paso los resultados del libro de Hill <span id="id2">[<a class="reference internal" href="erreferentziak.html#id6" title="T. L. Hill. Thermodynamics of Small Systems. Part 1 and 2., chapter 1-10; 15. Dover Publications, Inc., New York, 1964.">5</a>]</span>.</p>
+<p><span class="math notranslate nohighlight">\((a)\)</span> Ya hemos calculado la expresión que cumple el potencial de subdivisión en estas condiciones (ecuación <a class="reference internal" href="#equation-sph-epsilon-nc-approx">(7.20)</a>). Haz lo mismo con las magnitudes:</p>
+<div class="math notranslate nohighlight">
+\[
+\widehat{\mu},\;\mu,\; S(T,N),\;\overline{E}(T,N),\;\Upsilon(T,\mu),\;\overline{N},\;\overline{E}(T,\mu), \; S(T,\mu)
+\]</div>
+<p><span class="math notranslate nohighlight">\((b)\)</span> Comprueba que la expresión <span class="math notranslate nohighlight">\(S (T,\mu) \)</span> de la entropía del apartado <span class="math notranslate nohighlight">\((a) \)</span> también puede obtenerse recurriendo a su definición, esto es,</p>
+<div class="math notranslate nohighlight" id="equation-sph-agg-s-def">
+<span class="eqno">(7.22)<a class="headerlink" href="#equation-sph-agg-s-def" title="Enlace permanente a esta ecuación">#</a></span>\[
+S(T,\mu) := \frac{\partial}{\partial T}\left(k_{\mathrm{B}}T\ln\Upsilon\right)_\mu \; .
+\]</div>
+<p>Para ello, ten en cuenta la dependencia de la función de partición generalizada respecto a la variable <span class="math notranslate nohighlight">\(T\)</span>, es decir,
+<span class="math notranslate nohighlight">\(\Upsilon(T,\mu) = \Upsilon(\alpha(T),\delta(T,\mu))\)</span>.</p>
+<p><strong>—————————————————-</strong></p>
+</section>
+<section id="id3">
+<h3><span class="section-number">7.1.2. </span>Ejercicio<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Esta vez, trasladamos el ejercicio anterior al límite contrario. De hecho, sólo trabajaremos con la aportación de la curvatura. Así, de paso, conseguiremos que emerja la influencia real de la propia curvatura en las funciones termodinámicas del sistema. De hecho, recordemos que, al hilo del aportación interna del logaritmo de la ecuación <a class="reference internal" href="#equation-s-sph-agg-tmu">(7.18)</a>, hemos tenido que imponer la condición <span class="math notranslate nohighlight">\(\beta = 0 \)</span> para que este término tenga una contribución positiva a la entropía. De hecho, fijémonos en que el aumentar la magnitud <span class="math notranslate nohighlight">\(\beta \)</span> asociada a la curvatura impediría lo anterior. Por ello, podríamos pensar que la incorporación de efectos de curvatura  bajaría la entropía del sistema.</p>
+<p>Ante ello, debemos andar con cautela, dado que todas las expresiones utilizadas hasta ahora son solamente válidas en el límite <span class="math notranslate nohighlight">\(\beta\rightarrow 0 ^ + \)</span>. Este límite ha permitido, ante todo, eludir el cálculo escabroso de la integral de la ecuación <a class="reference internal" href="#equation-upsilon-sph-int">(7.8)</a>, ateniéndonos únicamente a los primeros dos términos de la serie de Taylor de la función <span class="math notranslate nohighlight">\(e^{-\beta N^{1/3}}\)</span>. Por consiguiente, no nos será lícito reconducir la reflexión presentada en el párrafo anterior a través de los resultados obtenidos previamente, ya que ello nos llevará por el camino equivocado.</p>
+<p>Para esclarecer esta difusa situación, en este ejercicio reiniciaremos el análisis llevado a cabo a lo largo de todo el apartado, descartando por completo los efectos de superficie y centrando toda nuestra atención en las aportaciones derivadas de la curvatura. Por ello, el punto de partida es la función de partición canónica</p>
+<div class="math notranslate nohighlight" id="equation-sph-agg-q-b">
+<span class="eqno">(7.23)<a class="headerlink" href="#equation-sph-agg-q-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+Q(T,N) = j(T)^N\;e^{-\beta(T)N^{1/3}} \; .
+\]</div>
+<p><span class="math notranslate nohighlight">\((a)\)</span> Recalcula las siguientes magnitudes, partiendo de la ecuación <a class="reference internal" href="#equation-sph-agg-q-b">(7.23)</a>:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\mu^{(x)}(T,N), \; S(T,N), \; \overline{E}(T,N), \; \Upsilon(T,\mu), \; P(N), \; \overline{N}, \; \mathscr{E}(T, \mu), \; \overline{N^{1/3}},\; \overline{E}(T,\mu), \; S(T,\mu) \; .
+\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Primeramente, tenemos que</p>
+<div class="math notranslate nohighlight" id="equation-sph-agg-nmu-b">
+<span class="eqno">(7.24)<a class="headerlink" href="#equation-sph-agg-nmu-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\widehat{\mu}N = -Nk_{\mathrm{B}}T \ln j +  N^{1/3}b(T) \; .
+\]</div>
+<p class="sd-card-text">Desde ahí,</p>
+<div class="math notranslate nohighlight" id="equation-sph-agg-stn-b">
+<span class="eqno">(7.25)<a class="headerlink" href="#equation-sph-agg-stn-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+S(T,N) = Nk_{\mathrm{B}} \ln j + Nk_{\mathrm{B}}T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T} - N^{1/3}\frac{\mathrm{d}b}{\mathrm{d}T} 
+\]</div>
+<p class="sd-card-text">y</p>
+<div class="math notranslate nohighlight" id="equation-sph-agg-ebar-b">
+<span class="eqno">(7.26)<a class="headerlink" href="#equation-sph-agg-ebar-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{E}(T,N)  = Nk_{\mathrm{B}}T^2\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}  + N^{1/3}\left(b -T\frac{\mathrm{d}b}{\mathrm{d}T}\right) \; .
+\]</div>
+<p class="sd-card-text">Pues bien, admitiremos que las explicaciones acerca de la tensión superficial <span class="math notranslate nohighlight">\(a (T) N ^ {2/3} \)</span>, expuestas ante la ecuación <a class="reference internal" href="#equation-upsilon-sph-int">(7.8)</a>, también son válidas en esta situación; es decir, la magnitud <span class="math notranslate nohighlight">\(N \)</span> deberá ser lo suficientemente grande como para poder percibir el efecto de la tensión de curvatura <span class="math notranslate nohighlight">\(b (T) N ^ {1/3} \)</span>. Por ello, ahora también podremos calcular la función de partición generalizada <span class="math notranslate nohighlight">\(\Upsilon (T,\mu) \)</span> mediante una integral:</p>
+<div class="math notranslate nohighlight" id="equation-upsilon-sph-agg-b">
+<span class="eqno">(7.27)<a class="headerlink" href="#equation-upsilon-sph-agg-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon (T,\mu) \underset{(\delta \rightarrow 0^{+})}{\boldsymbol{\approx}} \int_0^\infty \mathrm{d}N\;\left(1-\delta N\right) \; e^{-\widehat{\mu}N/k_{\mathrm{B}}T} =\int_0^\infty \mathrm{d}N\;\left(1-\delta N\right) \; e^{-\beta N^{1/3}} = \frac{6}{\beta^3}-\frac{360\delta}{\beta^6}
+\]</div>
+<p class="sd-card-text">La función de probabilidad modificada es</p>
+<div class="math notranslate nohighlight" id="equation-agg-sph-pn-b">
+<span class="eqno">(7.28)<a class="headerlink" href="#equation-agg-sph-pn-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+P(N) \;\mathrm{d}N = \frac{e^{-\beta N^{1/3}}}{\Upsilon} \;\mathrm{d}N \underset{(\delta \rightarrow 0^{+})}{\boldsymbol{\approx}} \frac{6 e^{-\beta N^{1/3}}}{\beta^3} \;\mathrm{d}N \; .
+\]</div>
+<p class="sd-card-text">Así, siguiendo a la ecuación <a class="reference internal" href="#equation-agg-sph-pn-b">(7.28)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-agg-sph-barn-b">
+<span class="eqno">(7.29)<a class="headerlink" href="#equation-agg-sph-barn-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N} = \int_0^{\infty}\mathrm{d}NP(N)\;N = \frac{60}{\beta^3} \; .
+\]</div>
+<p class="sd-card-text">Es conveniente reconstruir la magnitud <span class="math notranslate nohighlight">\(\overline {N} \)</span> que acabamos de calcular recurriendo a su definición, al igual que en la ecuación anterior <a class="reference internal" href="#equation-bar-n-sph">(7.10)</a>, y verificar que ambos resultados coinciden. Por otra parte, al comparar las ecuaciones <a class="reference internal" href="#equation-upsilon-sph-agg-b">(7.27)</a> y <a class="reference internal" href="#equation-agg-sph-barn-b">(7.29)</a>, es evidente que <span class="math notranslate nohighlight">\(\Upsilon =\overline {N}/10 \)</span>. En consecuencia, podemos escribir el potencial de subdivisión como</p>
+<div class="math notranslate nohighlight" id="equation-agg-sph-epsilon-tmu-b">
+<span class="eqno">(7.30)<a class="headerlink" href="#equation-agg-sph-epsilon-tmu-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,\mu) = -k_{\mathrm{B}}T\ln\left(\frac{\overline{N}}{10}\right) &lt; 0 \; .
+\]</div>
+<p class="sd-card-text">Además de eso,</p>
+<div class="math notranslate nohighlight" id="equation-agg-sph-barn13-b">
+<span class="eqno">(7.31)<a class="headerlink" href="#equation-agg-sph-barn13-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N^{1/3}} = \int_0^{\infty}\mathrm{d}NP(N)\;N^{1/3} = \frac{3}{\beta} \; ,
+\]</div>
+<p class="sd-card-text">y, recurriendo de nuevo a la definición <a class="reference internal" href="#equation-bar-e-tmu-sph-def">(7.14)</a>, tendremos que el promedio de la energía interna es</p>
+<div class="math notranslate nohighlight" id="equation-bar-e-tmu-sph-b">
+<span class="eqno">(7.32)<a class="headerlink" href="#equation-bar-e-tmu-sph-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{E}(T,\mu) = \overline{N}k_{\mathrm{B}}T^2\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T} + + \overline{N^{1/3}}\left(b -T\frac{\mathrm{d}b}{\mathrm{d}T}\right) \; ,
+\]</div>
+<p class="sd-card-text">y, empleando la expresión <span class="math notranslate nohighlight">\(S(T,\mu) = \frac{1}{T}\left[\overline{E}(T,\mu) - \mu^{(0)}N - \mathscr{E}(T,\mu)\right]\)</span>, llegaremos a esta ecuación para la entropía:</p>
+<div class="math notranslate nohighlight" id="equation-s-sph-agg-tmu-b">
+<span class="eqno">(7.33)<a class="headerlink" href="#equation-s-sph-agg-tmu-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{S(T, \mu) =  \overline{N}k_{\mathrm{B}}\left(\ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}\right)  - \overline{N^{1/3}}\frac{\mathrm{d}b}{\mathrm{d}T} + k_{\mathrm{B}}\ln\left(\frac{\overline{N}}{10}\right)  + \overline{N^{1/3}}\frac{b}{T}} \; .
+\]</div>
+<p class="sd-card-text">Pues bien, comparándola con la ecuación <a class="reference internal" href="#equation-sph-agg-stn-b">(7.25)</a>, podremos observar claramente que la nueva expresión tiene dos aportaciones positivas; una relacionada con el potencial de subdivisión negativo, y la otra con variaciones en torno a <span class="math notranslate nohighlight">\(N ^ {1/3} \)</span>. Ambas mantienen una estrecha relación, fundamentalmente, con las fluctuaciones asociadas al número de partículas <span class="math notranslate nohighlight">\(N \)</span> en la región nanotermodinámica. En este concepto profundizaremos en el siguiente apartado del ejercicio.</p>
+</div>
+</details><p><span class="math notranslate nohighlight">\((b)\)</span> Verifica, recurriendo a la expresión <span class="math notranslate nohighlight">\(P(N)\;\mathrm{d}N\)</span> de la ecuación <a class="reference internal" href="#equation-agg-sph-pn-b">(7.28)</a>, que las aportaciones adicionales a la entropía que hemos obtenido en la colectividad nanocanónica, las cuales quedan recogidas en el término de exceso <span class="math notranslate nohighlight">\(S^{(x)}(T,\mu)\)</span>, son consecuencia de las fluctuaciones alrededor de la magnitud <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Dado que a lo largo de todo el apartado hemos considerado a <span class="math notranslate nohighlight">\(N\)</span> como variable continua, la contribución a la entropía de las fluctuaciones en <span class="math notranslate nohighlight">\(N\)</span> deberá cumplir la siguiente expresión:</p>
+<div class="math notranslate nohighlight" id="equation-s-x-sph-agg-b">
+<span class="eqno">(7.34)<a class="headerlink" href="#equation-s-x-sph-agg-b" title="Enlace permanente a esta ecuación">#</a></span>\[
+S^{(x)}(T,\mu) := -k_{\mathrm{B}}\int_0^\infty \mathrm{d}N\; P(N) \;\ln P(N)  \; .
+\]</div>
+<p class="sd-card-text">Así pues, desarrollemos la integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^\infty \mathrm{d}N\; P(N) \;\ln P(N) = \frac{1}{\Upsilon}\left[-\ln\Upsilon\int_0^\infty \mathrm{d}N\;e^{-\beta N^{1/3}} -\int _0^\infty \mathrm{d}N\; N^{1/3}e^{-\beta N^{1/3}} \right] = \frac{10}{\overline{N}}\left[\ln\left(\frac{10}{\overline{N}}\right)\frac{6}{\beta^3}-\frac{18}{\beta^3}\right] \; .
+\]</div>
+<p class="sd-card-text">Reorganizaremos este resultado por medio de las expresiones <a class="reference internal" href="#equation-agg-sph-barn-b">(7.29)</a> y <a class="reference internal" href="#equation-agg-sph-barn13-b">(7.31)</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^\infty \mathrm{d}N\; P(N) \;\ln P(N) = \ln\left(\frac{10}{\overline{N}}\right) - \overline{N^{1/3}}\frac{b}{k_{\mathrm{B}}T} \; .
+\]</div>
+<p class="sd-card-text">Atendiendo a la ecuación <a class="reference internal" href="#equation-s-x-sph-agg-b">(7.34)</a> de arriba, podemos percibir facilmente que el término de exceso de la entropía cumple</p>
+<div class="math notranslate nohighlight" id="equation-s-x-sph-agg-b-1">
+<span class="eqno">(7.35)<a class="headerlink" href="#equation-s-x-sph-agg-b-1" title="Enlace permanente a esta ecuación">#</a></span>\[
+S^{(x)}(T,\mu) = k_{\mathrm{B}}\ln\left(\frac{\overline{N}}{10}\right) + \overline{N^{1/3}}\frac{b}{T} \; .
+\]</div>
+<p class="sd-card-text">Hemos demostrado, por lo tanto, que para valores medianamente grandes de <span class="math notranslate nohighlight">\(\overline {N} \)</span>, el aumento en la entropía del sistema tiene una relación directa con las fluctuaciones de <span class="math notranslate nohighlight">\(N \)</span> (observemos que el término correspondiente a la magnitud <span class="math notranslate nohighlight">\(b \)</span> es la constante <span class="math notranslate nohighlight">\(3k_ {\mathrm {B}} \)</span>, por lo que, a medida que aumenta <span class="math notranslate nohighlight">\(\overline {N} \)</span>, se volverá despreciable con respecto al término <span class="math notranslate nohighlight">\(\ln\overline {N} \)</span>).</p>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+</section>
+</section>
+<section id="gas-en-una-red-ideal">
+<span id="mupt-id-lattice"></span><h2><span class="section-number">7.2. </span>Gas en una red ideal<a class="headerlink" href="#gas-en-una-red-ideal" title="Permalink to this heading">#</a></h2>
+<p>Este ejemplo se trabaja en varios apartados del libro <span id="id4">[<a class="reference internal" href="erreferentziak.html#id6" title="T. L. Hill. Thermodynamics of Small Systems. Part 1 and 2., chapter 1-10; 15. Dover Publications, Inc., New York, 1964.">5</a>]</span>. En efecto, analizaremos el mismo sistema en los colectivos microcanónico, isobárico, macrocanónico y  nanocanónico (<a class="reference internal" href="#lattice-multzo"><span class="std std-numref">figura 7.1</span></a>); en particular, nos centraremos en la evolución de la entropía en función del potencial de subdivisión, como bien hicimos en varios ejemplos anteriores, por ejemplo, en la <a class="reference internal" href="tpmu.html#mupt-gi"><span class="std std-numref">subsección 5.3</span></a>.</p>
+<p>Dicho esto, el sistema que tenemos entre manos es una red constituida por <span class="math notranslate nohighlight">\(B\)</span> celdas distinguibles. De ellas, <span class="math notranslate nohighlight">\(N \)</span> celdas contienen una molécula, de modo que las <span class="math notranslate nohighlight">\(N\)</span> moléculas (indistinguibles) componen el gas de la red cristalina. También descartaremos la energía de interacción y cualquier grado de libertad interno (rotación, vibración…), de forma que la única energía accesible del sistema es <span class="math notranslate nohighlight">\(E = 0 \)</span>. Así las cosas, solo tendremos en cuenta el aporte mecánico y químico a la energía del sistema. La variable extensiva que vamos a asignar a la primera es la magnitud <span class="math notranslate nohighlight">\(B \)</span>, por lo que el aporte mecánico a la energía será <span class="math notranslate nohighlight">\(-pB \)</span>. Tengamos en cuenta que, como <span class="math notranslate nohighlight">\(B \)</span> es adimensional, las dimensiones de su variable conjugada <span class="math notranslate nohighlight">\(p \)</span> corresponden a las de la energía. La contribución química, obviamente, vendrá determinada por el potencial químico y el número de moléculas: <span class="math notranslate nohighlight">\(\mu N \)</span>.</p>
+<figure class="align-default" id="lattice-multzo">
+<a class="reference internal image-reference" href="_images/lattice_1.png"><img alt="_images/lattice_1.png" src="_images/lattice_1.png" style="height: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 7.1 </span><span class="caption-text">Representación gráfica del sistema en los colectivos estadísticos que vamos a estudiar. En la colectividad microcanónica, los subsistemas no se ven entre ellos, y cada uno representa un microestado compatible con las condiciones <span class="math notranslate nohighlight">\(B = 25 \)</span> y <span class="math notranslate nohighlight">\(N = 9 \)</span>. A medida que modificamos las variables de ambiente bajo nuestro control, otorgaremos a los subsistemas la libertad para intercambiar celdas y/o partículas. El colectivo nanocanónico dispone de ambos grados de libertad en marcha.</span><a class="headerlink" href="#lattice-multzo" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<section id="colectividad-microcanonica-variables-de-entorno-b-n">
+<h3><span class="section-number">7.2.1. </span>Colectividad microcanónica: variables de entorno <span class="math notranslate nohighlight">\((B,N)\)</span><a class="headerlink" href="#colectividad-microcanonica-variables-de-entorno-b-n" title="Permalink to this heading">#</a></h3>
+<p>Iniciaremos, pues, el análisis, en el <strong>colectivo microcanónico</strong>, el cual quedará especificado por las variables de control <span class="math notranslate nohighlight">\((B, N) \)</span>. Dado que las moléculas son indistinguibles entre ellas, el número de microestados viene dado por</p>
+<div class="math notranslate nohighlight" id="equation-lattice-omega">
+<span class="eqno">(7.36)<a class="headerlink" href="#equation-lattice-omega" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Omega(B,N) = \frac{B!}{N!\;(B-N)!} \; .
+\]</div>
+<p>Al calcular la entropía, mantendremos los primeros cuatro términos de la serie de Stirling (ecuación <a class="reference internal" href="gas%20ideala.html#equation-stirling">(12)</a> del <a class="reference internal" href="gas%20ideala.html#gitvn"><span class="std std-ref"><em>apéndice C</em></span></a>). Así,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s-mc">
+<span class="eqno">(7.37)<a class="headerlink" href="#equation-lattice-s-mc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\frac{S(B,N)}{k_\mathrm{B}} = \ln\Omega = B\ln B-N\ln N-(B-N)\ln(B-N)-\frac{1}{2}\ln\left[2\pi\frac{(B-N)N}{B}\right] - \frac{1}{12}\left[\frac{1}{N}+\frac{1}{B-N}-\frac{1}{B}\right]} \; .
+\]</div>
+<p>Para calcular el potencial de subdivisión, debemos tener en cuenta los desarrollos del <a class="reference internal" href="hill.html#hillteo"><span class="std std-numref">apartado 2.1</span></a>. Comenzaremos escribiendo la ecuación del sistema pequeño y la ecuación de Gibbs:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-e">
+<span class="eqno">(7.38)<a class="headerlink" href="#equation-lattice-e" title="Enlace permanente a esta ecuación">#</a></span>\[
+E = TS-pB+\mu N + \mathscr{E} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-lattice-de">
+<span class="eqno">(7.39)<a class="headerlink" href="#equation-lattice-de" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}E = T\mathrm{d}S-p\mathrm{d}B+\mu \mathrm{d}N \; .
+\]</div>
+<p>Por tanto, recordando que en las condiciones expuestas al principio tenemos que <span class="math notranslate nohighlight">\(E = 0 \)</span>, reescribiremos las ecuaciones <a class="reference internal" href="#equation-lattice-e">(7.38)</a> y <a class="reference internal" href="#equation-lattice-de">(7.39)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s">
+<span class="eqno">(7.40)<a class="headerlink" href="#equation-lattice-s" title="Enlace permanente a esta ecuación">#</a></span>\[
+S = \frac{p}{T}B - \frac{\mu}{T}N - \frac{\mathscr{E}}{T} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-lattice-ds">
+<span class="eqno">(7.41)<a class="headerlink" href="#equation-lattice-ds" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}S = \frac{p}{T}\mathrm{d}B - \frac{\mu}{T}\mathrm{d}N \; .
+\]</div>
+<p>Siguiendo la última expresión, calcularemos las variables <span class="math notranslate nohighlight">\(p \)</span> y <span class="math notranslate nohighlight">\(\mu \)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-p-mc">
+<span class="eqno">(7.42)<a class="headerlink" href="#equation-lattice-p-mc" title="Enlace permanente a esta ecuación">#</a></span>\[
+p = T\left(\frac{\partial S}{\partial B}\right)_{N} = k_{\mathrm{B}}T\left\{\ln\left(\frac{B}{B-N}\right) - \frac{N}{2B(B-N)} + \frac{1}{12}\left[\frac{1}{(B-N)^2}-\frac{1}{B^2}\right]\right\} \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-lattice-mu-mc">
+<span class="eqno">(7.43)<a class="headerlink" href="#equation-lattice-mu-mc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mu = -T\left(\frac{\partial S}{\partial N}\right)_{B} = k_{\mathrm{B}}T\left\{\ln\left(\frac{N}{B-N}\right) + \frac{B-2N}{2N(B-N)} + \frac{1}{12}\left[\frac{1}{(B-N)^2}+\frac{1}{N^2}\right]\right\} \; .
+\]</div>
+<p>Así las cosas, empleando la relación <span class="math notranslate nohighlight">\(\mathscr{E} = -TS + pB -\mu N\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-epsilon-mc">
+<span class="eqno">(7.44)<a class="headerlink" href="#equation-lattice-epsilon-mc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} = k_{\mathrm{B}}T\left\{\frac{1}{2} + \frac{1}{2}\ln\left[2\pi\frac{(B-N)N}{B}\right]+\frac{1}{6}\left(\frac{1}{N}-\frac{1}{B}+\frac{1}{B-N}\right)\right\} \; .
+\]</div>
+</section>
+<section id="colectividad-isobarica-variables-de-entorno-frac-p-t-n">
+<h3><span class="section-number">7.2.2. </span>Colectividad isobárica: variables de entorno <span class="math notranslate nohighlight">\((\frac{p}{T}, N)\)</span><a class="headerlink" href="#colectividad-isobarica-variables-de-entorno-frac-p-t-n" title="Permalink to this heading">#</a></h3>
+<p>Arranquemos ahora el grado de libertad mecánico. Así, reanudaremos el análisis del sistema mediante las variables <span class="math notranslate nohighlight">\(\left (\frac {p} {T}, N\right) \)</span> en el <strong>colectivo isobárico</strong>. Para empezar, la función de partición es</p>
+<div class="math notranslate nohighlight" id="equation-lattice-delta">
+<span class="eqno">(7.45)<a class="headerlink" href="#equation-lattice-delta" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Delta \left(\frac{p}{T},N\right) = \sum_{{B=N}}^{{\infty}}\Omega(B,N)e^{-pB/k_{\mathrm{B}}T} = \frac{e^{-pN/k_{\mathrm{B}}T}}{\left(1-e^{-p/k_{\mathrm{B}}T}\right)^{N+1}} = \frac{x^N}{\left(1-x\right)^{N+1}} \; .
+\]</div>
+<p>En el último paso hemos insertado la variable <span class="math notranslate nohighlight">\(x = e ^ {p/k_ {\mathrm {B}} T} \)</span>. Percatémonos, además, de los límites del sumatorio. En concreto, a la hora de poner en marcha el grado de libertad mecánico, el límite inferior será fijado por la variable <span class="math notranslate nohighlight">\(N \)</span> <span class="math notranslate nohighlight">\((B=N)\)</span>, ya que la red cristalina deberá contar, al menos, con un mínimo numero de celdas para albergar los <span class="math notranslate nohighlight">\(N\)</span> componentes moleculares del gas.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Desarrollo de la serie</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Hemos a continuación el procedimiento para calcular la serie de la ecuación <a class="reference internal" href="#equation-lattice-delta">(7.45)</a>:</p>
+<p class="sd-card-text">En primer lugar, modificaremos la expresión interna del sumatorio por medio de un cambio de variable:</p>
+<div class="math notranslate nohighlight">
+\[
+ \Delta = \frac{1}{N!}\sum_{{B=N}}^{{\infty}}\frac{B!}{(B-N)!}x^{B} \underset{(M=B-N)}{=} \frac{1}{N!}\sum_{{M=0}}^{{\infty}}\frac{(M+N)!}{N!}x^{M+N}
+\]</div>
+<p class="sd-card-text">A continuación fijémonos en la siguiente igualdad:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}^{N}}{\mathrm{d}x^{N}}\;x^{N+M} = \frac{(M+N)!}{N!}x^{M} \; .
+\]</div>
+<p class="sd-card-text">Con ayuda de la última expresión, reescribiremos el contenido del sumatorio de esta forma:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{N!}\sum_{{M=0}}^{{\infty}}\frac{(M+N)!}{N!}x^{M+N} =   \frac{1}{N!}\;\frac{\mathrm{d}^{N}}{\mathrm{d}x^{N}}\left[x^{N}\sum_{{M=0}}^{{\infty}}x^{M}\right]\underset{\vert x\vert &lt; 1}{=} \frac{1}{N!}\frac{\mathrm{d}^{N}}{\mathrm{d}x^{N}} \left[\frac{x^N}{1-x}\right] = \frac{1}{N!}\left[\frac{N!\; x^N}{(1-x)^{N+1}}\right]
+\]</div>
+<p class="sd-card-text">Hecho esto, hemos llegado a nuestro objetivo:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\Delta = \frac{x^N}{\left(1-x\right)^{N+1}}} \; .
+\]</div>
+</div>
+</details><p>Seguidamente, de la relación <span class="math notranslate nohighlight">\(\Delta = e^{-F/k_{\mathrm{B}}T}\)</span>, extraeremos la energía libre de Gibbs:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-f">
+<span class="eqno">(7.46)<a class="headerlink" href="#equation-lattice-f" title="Enlace permanente a esta ecuación">#</a></span>\[
+F\left(\frac{p}{T}, N\right) = N\widehat{\mu} = k_{\mathrm{B}}T\left[-N\ln x + (N+1)\ln(1-x)\right] \; .
+\]</div>
+<p>Con esta ecuación, llegaremos a las expresiones de los potenciales químicos integral y diferencial, así como al potencial de subdivisión:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-muhat-iso">
+<span class="eqno">(7.47)<a class="headerlink" href="#equation-lattice-muhat-iso" title="Enlace permanente a esta ecuación">#</a></span>\[
+\widehat{\mu} = k_{\mathrm{B}}T\left[-\ln x + \frac{N+1}{N}\ln(1-x)\right] \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-lattice-mu-iso">
+<span class="eqno">(7.48)<a class="headerlink" href="#equation-lattice-mu-iso" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mu = k_{\mathrm{B}}T\ln\left(\frac{1-x}{x}\right) \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-lattice-epsilon-iso">
+<span class="eqno">(7.49)<a class="headerlink" href="#equation-lattice-epsilon-iso" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} = k_{\mathrm{B}}T\ln\left(1-x\right) \; .
+\]</div>
+<p>Reparemos en que <span class="math notranslate nohighlight">\(\mu^{(x)} = 0\)</span>; en consecuencia, en el límite macroscópico tendremos que <span class="math notranslate nohighlight">\(\widehat{\mu} = \mu^{(0)} \equiv \mu\)</span>.</p>
+<p>Además, calcularemos el promedio del número de celdas:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-bbar">
+<span class="eqno">(7.50)<a class="headerlink" href="#equation-lattice-bbar" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{B} = \frac{\sum_B B \;\Omega(B,N)e^{-pB/k_{\mathrm{B}}T}}{\sum_B \Omega(B,N)e^{-pB/k_{\mathrm{B}}T}} = -k_{\mathrm{B}}T\;\frac{\partial }{\partial p}\ln \Delta = k_{\mathrm{B}}T\frac{\partial(F/ k_{\mathrm{B}}T)}{\partial p} = \frac{N+x}{1-x} \; .
+\]</div>
+<p>Reorganizando la expresión podemos escribir también la ecuación de estado del sistema:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-eq-state">
+<span class="eqno">(7.51)<a class="headerlink" href="#equation-lattice-eq-state" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{p}{k_{\mathrm{B}}T} = \ln\left(\frac{1+\overline{B}}{\overline{B}-N}\right) \underset{(\overline{B},\; N \; \rightarrow\; \infty)}{=} -\ln\left(1-\frac{N}{\overline{B}}\right) \; .
+\]</div>
+<p>Finalmente, construimos la expresión <span class="math notranslate nohighlight">\(S\left (\frac {p} {T}, N\right) \)</span>. Para ello, escribamos en primer lugar la función probabilística correspondiente al presente colectivo estadístico:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-pb">
+<span class="eqno">(7.52)<a class="headerlink" href="#equation-lattice-pb" title="Enlace permanente a esta ecuación">#</a></span>\[
+P(B) = \frac{e^{-pB/ k_{\mathrm{B}}T}}{\Delta} \; .
+\]</div>
+<p>De este modo, atendiendo a la definición de la entropía (ecuación <a class="reference internal" href="entropy.html#equation-entropy-def">(9)</a> del <a class="reference internal" href="entropy.html#entropy"><span class="std std-ref"><em>apéndice B</em></span></a>), y con la ayuda de la ecuación <a class="reference internal" href="#equation-lattice-bbar">(7.50)</a>, llegaremos a</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s-iso-def">
+<span class="eqno">(7.53)<a class="headerlink" href="#equation-lattice-s-iso-def" title="Enlace permanente a esta ecuación">#</a></span>\[
+S\left(\frac{p}{T}, N\right) = -k_{\mathrm{B}}\sum_BP(B)\;\ln P(B) = \frac{p\overline{B}}{T} + k_{\mathrm{B}}\ln\Delta = \frac{p\overline{B}}{T} - \frac{\widehat{\mu}N}{T} \; .
+\]</div>
+<p>Sustituyendo las magnitudes <span class="math notranslate nohighlight">\(\overline{B}\)</span> y <span class="math notranslate nohighlight">\(\widehat{\mu}\)</span> previamente calculadas,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s-iso">
+<span class="eqno">(7.54)<a class="headerlink" href="#equation-lattice-s-iso" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\frac{S\left(\frac{p}{T}, N\right) }{k_\mathrm{B}} =  (\overline{B}+1)\ln (\overline{B}+1) -(N+1)\ln (N+1)-(\overline{B}-N)\ln(\overline{B}-N)} \; .
+\]</div>
+<p>La expresión obtenida es absolutamente exacta, es decir, no hemos recurrido a la aproximación de Stirling. Por ello, es válido para sistemas tan pequeños como se desee (incluso para el caso de <span class="math notranslate nohighlight">\(N = 1 \)</span>). En este sentido, resultará interesante analizar el mismo sistema en el colectivo macrocanónico, y comparar la ecuación de la entropía <span class="math notranslate nohighlight">\(S\left(B, \frac{\mu}{T}\right)\)</span> con la expresión que acabamos de construir, contemplando, ante todo, a las correcciones de tamaño finito en ambos casos. De hecho, fijémonos en que las colectividades macrocanónica e isobárica son equivalentes (<em>semiabiertas</em>), ya que en ambas disponen de un único grado de libertad en marcha.</p>
+</section>
+<section id="colectividad-macrocanonica-variables-de-entorno-b-frac-mu-t">
+<h3><span class="section-number">7.2.3. </span>Colectividad macrocanónica: variables de entorno <span class="math notranslate nohighlight">\((B, \frac{\mu}{T})\)</span><a class="headerlink" href="#colectividad-macrocanonica-variables-de-entorno-b-frac-mu-t" title="Permalink to this heading">#</a></h3>
+<p>Pongamos en marcha solamente el grado de libertad químico, para construir la función de partición macrocanónica:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-xi">
+<span class="eqno">(7.55)<a class="headerlink" href="#equation-lattice-xi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Xi\left(B,\frac{\mu}{T}\right) = \sum_{{N=0}}^{{B}}\;\Omega(B,N)\;e^{\mu N/k_{\mathrm{B}}T} = \sum_{N=0}^B \frac{B!}{N!(B-N)!}\;\lambda^N = (1+\lambda)^B \; ,
+\]</div>
+<p>donde, al igual que en ocasiones anteriores, hemos sustituido <span class="math notranslate nohighlight">\(\lambda = e^{\mu/k_{\mathrm{B}}T}\)</span>. En cuanto al cálculo del sumatorio, al lector puede resultarle útil la nota que sigue a la ecuación <a class="reference internal" href="electric_magnetic.html#equation-q-ising">(6.45)</a>.</p>
+<p>Ahora, teniendo en cuenta las explicaciones del <a class="reference internal" href="hill.html#replica-e"><span class="std std-numref">apartado 2.2</span></a>, asumiremos que la magnitud integral <span class="math notranslate nohighlight">\(\widehat {p} \)</span> satisfará la igualdad <span class="math notranslate nohighlight">\(\xi = e ^ {\widehat {p} B/k_ {\mathrm {B}} T} \)</span>, ya que ésta fijará la contribución mecánica al nivel del colectivo estadístico. Así las cosas, observando la ecuación <a class="reference internal" href="#equation-lattice-xi">(7.55)</a>, veremos que la variable diferencial <span class="math notranslate nohighlight">\(p \)</span> coincide con la integral <span class="math notranslate nohighlight">\(\widehat{p}\)</span>, es decir:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-p-phat">
+<span class="eqno">(7.56)<a class="headerlink" href="#equation-lattice-p-phat" title="Enlace permanente a esta ecuación">#</a></span>\[
+p =\left[\frac{\partial (\widehat{p}B)}{\partial B}\right]_{T,\mu} = k_{\mathrm{B}}T\ln \left(1+\lambda\right) = \widehat{p} \; .
+\]</div>
+<p>Por tanto, dado que el potencial de subdivisión engloba las aportaciones que diferencian ambas variables, se cumplirá que</p>
+<div class="math notranslate nohighlight" id="equation-lattice-epsilon-gc">
+<span class="eqno">(7.57)<a class="headerlink" href="#equation-lattice-epsilon-gc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} = -(\widehat{p}-p)B = 0 \; .
+\]</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>Debido a los resultados anteriores, los términos de exceso son nulos, es decir <span class="math notranslate nohighlight">\(\widehat {p} ^ {(x)} = p ^ {(x)} = 0 \)</span>. En otras palabras, ambas presiones cumplirán <span class="math notranslate nohighlight">\(\widehat {p} = p = p ^ {(0)} \)</span> en el límite macroscópico.</p>
+</div>
+<p>En lo que respecta al promedio del número de partículas,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-nbar">
+<span class="eqno">(7.58)<a class="headerlink" href="#equation-lattice-nbar" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N} = \left[\frac{\partial (\widehat{p}B)}{\partial \mu}\right]_{T,B} = \frac{B\lambda}{1+\lambda} \; .
+\]</div>
+<p>Por consiguiente,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-p-phat-new">
+<span class="eqno">(7.59)<a class="headerlink" href="#equation-lattice-p-phat-new" title="Enlace permanente a esta ecuación">#</a></span>\[
+\widehat{p} = p = -k_{\mathrm{B}}T\ln\left(1-\frac{\overline{N}}{B}\right) \; .
+\]</div>
+<p>Construyamos ahora la expresión de la entropía.</p>
+<section id="id5">
+<h4>Ejercicio<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p>Escribe la distribución probabilística correspondiente a la presente colectividad estadística. A través de ella, escribe la ecuación que deberá cumplir la entropía. Por último, adapta la expresión para que en ella figuren las variables <span class="math notranslate nohighlight">\(B \)</span> y <span class="math notranslate nohighlight">\(\overline {N} \)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-lattice-pn">
+<span class="eqno">(7.60)<a class="headerlink" href="#equation-lattice-pn" title="Enlace permanente a esta ecuación">#</a></span>\[
+P(N) = \frac{e^{\mu N/k_{\mathrm{B}}T}}{\Xi}
+\]</div>
+<p class="sd-card-text">Así las cosas, la entropía abarcará las fluctuaciones relativas a la magnitud <span class="math notranslate nohighlight">\(N \)</span>, es decir,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s-gc-def">
+<span class="eqno">(7.61)<a class="headerlink" href="#equation-lattice-s-gc-def" title="Enlace permanente a esta ecuación">#</a></span>\[
+S\left(B,\frac{\mu}{T}\right) = -k_{\mathrm{B}}\sum_N P(N)\ln P(N) = k_{\mathrm{B}}\ln\Xi -\frac{\mu\overline{N}} {T}  = \frac{\widehat{p}B} {T} - \frac{\mu\overline{N}} {T} \; .
+\]</div>
+<p class="sd-card-text">Deberemos modificar esta expresión por medio de las ecuacioens <a class="reference internal" href="#equation-lattice-nbar">(7.58)</a> y <a class="reference internal" href="#equation-lattice-p-phat-new">(7.59)</a>.</p>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+<p>Desarrollando la igualdad obtenida en el ejercicio anterior,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s-gc">
+<span class="eqno">(7.73)<a class="headerlink" href="#equation-lattice-s-gc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\frac{S\left(B,\frac{\mu}{T}\right) }{k_\mathrm{B}} =  B\ln B -\overline{N}\ln\overline{N} -(B-\overline{N})\ln (B-\overline{N})} \; .
+\]</div>
+<p>La ecuación <a class="reference internal" href="#equation-lattice-s-gc">(7.73)</a> de la entropía también es exacta. Asimismo, cabe destacar que al transcurrir al límite macroscópico, esta expresión se mantendrá invariable; es decir, en este caso, el colectivo macrocanónico tampoco ha incorporado ninguna corrección de tamaño finito. Un claro indicador de ello es el potencial de subdivisión estrictamente nulo obtenido anteriormente (ecuación <a class="reference internal" href="#equation-lattice-epsilon-gc">(7.57)</a>).</p>
+<p>Asimismo, comparándola con la ecuación <a class="reference internal" href="#equation-lattice-s-iso">(7.54)</a>, y aceptando que <span class="math notranslate nohighlight">\(\overline {B} = B\)</span> y <span class="math notranslate nohighlight">\(\overline {N} = N \)</span>, se puede percibir un descenso en la entropía. De todas maneras, las correcciones son muy pequeñas, es decir, del orden <span class="math notranslate nohighlight">\(\mathscr {O} (1) \)</span> con respecto a las variables <span class="math notranslate nohighlight">\(N \)</span> y <span class="math notranslate nohighlight">\(B \)</span>.</p>
+<p>La recta final consiste en abordar la reexaminación del sistema en la colectividad totalmente libre.</p>
+</section>
+</section>
+<section id="colectividad-nanocanonica-variables-de-entorno-frac-p-t-frac-mu-t">
+<h3><span class="section-number">7.2.4. </span>Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((\frac{p}{T}, \frac{\mu}{T})\)</span><a class="headerlink" href="#colectividad-nanocanonica-variables-de-entorno-frac-p-t-frac-mu-t" title="Permalink to this heading">#</a></h3>
+<p>La definición de la función de partición generalizada es la siguiente:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-upsilon">
+<span class="eqno">(7.63)<a class="headerlink" href="#equation-lattice-upsilon" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon\left(\frac{p}{T},\frac{\mu}{T}\right) = \sum_{B=0}^\infty\;\sum_{N=0}^B \; \Omega(B,N)\;e^{-pB/k_{\mathrm{B}}T}e^{\mu N/k_{\mathrm{B}}T} \; .
+\]</div>
+<p>Para compactar las ecuaciones, desde ahora sustituiremos <span class="math notranslate nohighlight">\(\varphi = p/k_ {\mathrm {B}} T \)</span> y <span class="math notranslate nohighlight">\(m =\mu/k_ {\mathrm {B}} T \)</span>. Además, es conveniente calcular primero el sumatorio a través de la variable <span class="math notranslate nohighlight">\(N \)</span>. Por lo tanto,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-upsilon-1">
+<span class="eqno">(7.64)<a class="headerlink" href="#equation-lattice-upsilon-1" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon = \sum_{B=0}^\infty\left[\sum_{N=0}^B \; \frac{B!}{N!(B-N)!}e^{mN}\right]e^{-\varphi B} = \sum_{B=0}^\infty\; (1+e^m)^B\; e^{-\varphi B} = \sum_{B=0}^\infty\; \Xi\left(B,\frac{\mu}{T}\right)\; e^{-\varphi B}\; .
+\]</div>
+<p>Teniendo en cuenta la igualdad a la derecha de la ecuación superior, podemos adaptar la expresión interna del sumatorio de la siguiente manera:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-moldatu">
+<span class="eqno">(7.65)<a class="headerlink" href="#equation-lattice-moldatu" title="Enlace permanente a esta ecuación">#</a></span>\[
+(1+e^m)^B = \Xi = e^{\widehat{p}B/k_{\mathrm{B}}T} = e^{p^{(0)}B/k_{\mathrm{B}}T} = e^{\varphi^{(0)}B}
+\]</div>
+<p>Así, desarrollaremos la expresión de la función de partición nanocanónica:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-upsilon-2">
+<span class="eqno">(7.66)<a class="headerlink" href="#equation-lattice-upsilon-2" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon = \sum_{B=0}^\infty e^{(\varphi^{(0)}-\varphi) B} = \frac{1}{1-e^{\varphi^{(0)}-\varphi}} \; , \quad \varphi &gt; \varphi^{(0)}(m)\; ,
+\]</div>
+<p>donde, atendiendo a la ecuación <a class="reference internal" href="#equation-lattice-moldatu">(7.65)</a>, tenemos que <span class="math notranslate nohighlight">\(\varphi^{(0)}(m) = \ln(1+e^m)\)</span>. Esta reescritura nos servirá, por ejemplo, para calcular el promedio <span class="math notranslate nohighlight">\(\overline {N} (\varphi, m) \)</span>.</p>
+<section id="id6">
+<h4>Ejercicio<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\((a)\)</span> Calcula <span class="math notranslate nohighlight">\(\overline{B}(\varphi, m)\)</span>. Al hacer esto, adapta la función de partición <span class="math notranslate nohighlight">\(\Upsilon \)</span>, para que dependa de la variable <span class="math notranslate nohighlight">\(\overline {B} \)</span>. Aparte de eso, reescribe la expresión <span class="math notranslate nohighlight">\(\overline {B} \)</span> en el límite <span class="math notranslate nohighlight">\(\varphi -\varphi ^ {(0)}\ll 1 \)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-lattice-bbar-nc">
+<span class="eqno">(7.67)<a class="headerlink" href="#equation-lattice-bbar-nc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{B}(\varphi, m) = -k_{\mathrm{B}}T\left(\frac{\partial \ln \Upsilon}{\partial p}\right)_{\mu} \equiv -\left(\frac{\partial \ln \Upsilon}{\partial \varphi}\right)_{m} = \frac{e^{\varphi^{(0)}-\varphi}}{1-e^{\varphi^{(0)}-\varphi}}
+\]</div>
+<p class="sd-card-text">Por tanto, <span class="math notranslate nohighlight">\(\Upsilon =\overline {B} + 1 \)</span>. Por otro lado, la ecuación <a class="reference internal" href="#equation-lattice-bbar-nc">(7.67)</a> nos dice que el límite mencionado en el enunciado garantizará que la magnitud <span class="math notranslate nohighlight">\(\overline {B} \)</span> permanezca suficientemente elevada. Pues bien, considerando esto, de aquí en adelante emplearemos</p>
+<div class="math notranslate nohighlight" id="equation-lattice-bbar-approx">
+<span class="eqno">(7.68)<a class="headerlink" href="#equation-lattice-bbar-approx" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{B} \approx \frac{1}{\varphi - \varphi^{(0)}} \; .
+\]</div>
+</div>
+</details><p><span class="math notranslate nohighlight">\((b)\)</span> Construye ahora la magnitud <span class="math notranslate nohighlight">\(\overline{N} (\varphi, m)\)</span>, y, a través de los resultados obtenidos anteriormente, reescribe la expresión para que sólo aparezca bajo dependencia de <span class="math notranslate nohighlight">\(\overline {B} \)</span> y <span class="math notranslate nohighlight">\(\varphi ^ {(0)} \)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-lattice-nbar-nc">
+<span class="eqno">(7.69)<a class="headerlink" href="#equation-lattice-nbar-nc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N}(\varphi, m) = k_{\mathrm{B}}T\left(\frac{\partial \ln \Upsilon}{\partial \mu}\right)_{p} \equiv \left(\frac{\partial \ln \Upsilon}{\partial m}\right)_{\varphi} = \left(\frac{\partial \ln \Upsilon}{\partial \varphi^{(0)}}\right)_{\varphi} \frac{\mathrm{d}\varphi^{(0)}}{\mathrm{d}m} = \overline{B}\frac{e^m}{1+e^m} = \overline{B}\left(1-e^{-\varphi^{(0)}}\right)
+\]</div>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+<p>Hay que destacar que la relación <span class="math notranslate nohighlight">\(\overline {N} /\overline {B} \)</span> se mantiene invariable en el límite macroscópico. Esta última idea sugiere implícitamente que, cualquiera que sea el conjunto estadístico que utilicemos en el estudio, recuperaremos el mismo resultado en el límite termodinámico.</p>
+<div class="tip admonition">
+<p class="admonition-title">Sugerencia</p>
+<p>Para comprobar lo mencionado en la última frase, demuestra que las expresiones <span class="math notranslate nohighlight">\(N /\overline {B} \)</span> del colectivo isobárico, <span class="math notranslate nohighlight">\(\overline {N}/B \)</span> del colectivo macrocanónico y <span class="math notranslate nohighlight">\(\overline {N} /\overline {B} \)</span> del colectivo nanocanónico cumplen la siguiente expresión en el límite termodinámico:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{N}{\overline{B}} = \frac{\overline{N}}{B} =\frac{\overline{N}}{\overline{B}} = \frac{e^{\mu/k_{\mathrm{B}}T}}{1+e^{\mu/k_{\mathrm{B}}T}}
+\]</div>
+<p>Para ese fin, emplea las siguientes ecuaciones: <a class="reference internal" href="#equation-lattice-mu-iso">(7.48)</a> y <a class="reference internal" href="#equation-lattice-eq-state">(7.51)</a> ; <a class="reference internal" href="#equation-lattice-nbar">(7.58)</a> ;  <a class="reference internal" href="#equation-lattice-nbar-nc">(7.69)</a>.</p>
+</div>
+<p>Siguiendo el procedimiento utilizado en las dos subsecciones previas, la función probabilística perteneciente a la colectividad nanocanónica es</p>
+<div class="math notranslate nohighlight" id="equation-lattice-p-nc">
+<span class="eqno">(7.70)<a class="headerlink" href="#equation-lattice-p-nc" title="Enlace permanente a esta ecuación">#</a></span>\[
+P(B,N) = \frac{e^{-pB/k_{\mathrm{B}}T}e^{\mu N/k_{\mathrm{B}}T}}{\Upsilon} \; .
+\]</div>
+<p>La entropía, por ende, cumplirá la siguiente expresión:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s-nc">
+<span class="eqno">(7.71)<a class="headerlink" href="#equation-lattice-s-nc" title="Enlace permanente a esta ecuación">#</a></span>\[
+S\left(\frac{p}{T},\frac{\mu}{T}\right) = -k_{\mathrm{B}}\sum_{B,\;N} P(B,N) \; \ln P(B,N) = \frac{p\overline{B}}{T} - \frac{\mu\overline{N}}{T} - \frac{\mathscr{E}}{T} \; ,
+\]</div>
+<p>donde, por cierto, el potencial de subdivisión cumple la ecuación</p>
+<div class="math notranslate nohighlight" id="equation-lattice-epsilon-nc-def">
+<span class="eqno">(7.72)<a class="headerlink" href="#equation-lattice-epsilon-nc-def" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} = -k_{\mathrm{B}}T\ln \Upsilon = -k_{\mathrm{B}}T\ln(\overline{B} + 1) \; .
+\]</div>
+<p>Por tanto,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-s-gc">
+<span class="eqno">(7.73)<a class="headerlink" href="#equation-lattice-s-gc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\frac{S\left(\frac{p}{T},\frac{\mu}{T}\right) }{k_\mathrm{B}} =  (\overline{B}+1)\ln (\overline{B}+1) - \overline{N}\ln\overline{N} -(\overline{B}-\overline{N})\ln (\overline{B}-\overline{N})} \; .
+\]</div>
+<p>La entropía ha vuelto a aumentar. Así las cosas, para terminar con el análisis que tenemos en marcha, resultará ilustrativo recoger todos los resultados obtenidos hasta el momento en la siguiente tabla:</p>
+<table class="table" id="taula-s-lattice">
+<caption><span class="caption-number">Tabla 7.1 </span><span class="caption-text">Evolución del potencial de subdivisión, y consiguiente aumento de la entropía, a través de las diferentes colectividades.</span><a class="headerlink" href="#taula-s-lattice" title="Enlace permanente a esta tabla">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variables</p></th>
+<th class="head"><p>Potencial de subdivisión</p></th>
+<th class="head"><p>Entropía</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\left(B,N\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\mathscr{E}}{k_{\mathrm{B}}T} \approx \frac{1}{2} + \frac{1}{2}\ln\left[2\pi\frac{(B-N)N}{B}\right] &gt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_\mathrm{B}} \approx B\ln B-N\ln N-(B-N)\ln(B-N)-\frac{1}{2}\ln\left[2\pi\frac{(B-N)N}{B}\right]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\left(B,\frac{\mu}{T}\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathscr{E} = 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_{\mathrm{B}}} =  B\ln B -\overline{N}\ln\overline{N} -(B-\overline{N})\ln (B-\overline{N})\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\left(\frac{p}{T},N\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\mathscr{E}}{k_{\mathrm{B}}T} = \ln\left(1-e^{-p/k_{\mathrm{B}}T}\right) &lt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_{\mathrm{B}}} =  (\overline{B}+1)\ln (\overline{B}+1) -(N+1)\ln (N+1)-(\overline{B}-N)\ln(\overline{B}-N)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\left(\frac{p}{T},\frac{\mu}{T}\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\mathscr{E}}{k_{\mathrm{B}}T} = - \ln(\overline{B} + 1) &lt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_{\mathrm{B}}} = (\overline{B}+1)\ln (\overline{B}+1) -\overline{N}\ln\overline{N} -(\overline{B}-\overline{N})\ln (\overline{B}-\overline{N})\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Repasemos, una a una, las expresiones de la <a class="reference internal" href="#taula-s-lattice"><span class="std std-numref">tabla 7.1</span></a>. En el colectivo microcanónico (totalmente cerrado), a medida que añadimos términos de la serie de Stirling, los efectos de tamaño finito refuerzan el potencial de subdivisión y, con ello, añaden contribuciones negativas a la entropía. En comparación, en el conjunto macrocanónico (semiabierto) ya no hemos tenido que recurrir a la aproximación de Stirling. Esta última, por un lado, ha hecho desaparecer las aportaciones negativas y, por otro, nos ha devuelto una expresión estrictamente exacta de la entropía que, a medida que transcurrimos al límite macroscópico, se mantendrá intacta. Al saltar al conjunto isobárico (semiabierto), el potencial de subdivisión se ha vuelto negativo, lo que ha provocado un ligero aumento de la entropía, ya que las correcciones son del orden <span class="math notranslate nohighlight">\(\mathscr {O} (1) \)</span>. Finalmente, como era de esperar, en el conjunto nanocanónico (totalmente abierto) hemos conseguido maximizar la entropía. En esta ocasión, las nuevas correcciones a las expresiones anteriores son también del orden <span class="math notranslate nohighlight">\(\mathscr {O} (1) \)</span>.</p>
+<p>Dicho esto, representaremos la evolución de la entropía en el gráfico de la <a class="reference internal" href="#lattice-s-graph"><span class="std std-numref">figura 7.2</span></a>.</p>
+<figure class="align-default" id="lattice-s-graph">
+<a class="reference internal image-reference" href="_images/lattice_s_comp.png"><img alt="_images/lattice_s_comp.png" src="_images/lattice_s_comp.png" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 7.2 </span><span class="caption-text">Al construir las curvas, hemos mantenido constante número de celdas en el valor <span class="math notranslate nohighlight">\(B = 40 \)</span>. Así, hemos cambiado el tamaño del sistema desde transcurriendo desde <span class="math notranslate nohighlight">\(N = 1 \)</span> al límite superior <span class="math notranslate nohighlight">\(N = B \)</span>. Lo que muestra el gráfico refuerza las explicaciones expuestas en el párrafo anterior.</span><a class="headerlink" href="#lattice-s-graph" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Es destacable que, en cuanto al aumento de la entropía en función de la evolución del potencial de subdivisión, los resultados obtenidos en este ejemplo coinciden con las conclusiones desarrolladas en el <a class="reference internal" href="tpmu.html#mupt-gi"><span class="std std-numref">apartado 5.3</span></a> perteneciente al gas ideal.</p>
+<p>Finalmente, para redondear el análisis, analizaremos las fluctuaciones en torno a las magnitudes <span class="math notranslate nohighlight">\(\overline {B} \)</span> y <span class="math notranslate nohighlight">\(\overline {N} \)</span> en el colectivo nanocanónico.</p>
+</section>
+<section id="id7">
+<h4>Ejercicio<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<p>Considerando que el promedio de una variable <span class="math notranslate nohighlight">\(X \)</span> en el colectivo nanocanónico sigue la definición</p>
+<div class="math notranslate nohighlight" id="equation-bar-x">
+<span class="eqno">(7.74)<a class="headerlink" href="#equation-bar-x" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{X} = \frac{\sum_{B, N}\; X \; \Omega(B,N)\;e^{-\varphi B}e^{mN}}{\sum_{B, N}\; \Omega(B,N)\;e^{-\varphi B}e^{mN}} \; ,
+\]</div>
+<p>verifica que se cumplen las siguientes igualdades:</p>
+<div class="math notranslate nohighlight" id="equation-lattice-b-fluc">
+<span class="eqno">(7.75)<a class="headerlink" href="#equation-lattice-b-fluc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{B^2} - \overline{B}^2 = -\left(\frac{\partial \overline{B}}{\partial \varphi}\right)_m  \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-lattice-n-fluc">
+<span class="eqno">(7.76)<a class="headerlink" href="#equation-lattice-n-fluc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N^2} - \overline{N}^2 = \left(\frac{\partial \overline{N}}{\partial m}\right)_{\varphi} \; .
+\]</div>
+<p>Emplea las ecuaciones <a class="reference internal" href="#equation-lattice-bbar-nc">(7.67)</a> y <a class="reference internal" href="#equation-lattice-nbar-nc">(7.69)</a>.</p>
+<p><strong>—————————————————-</strong></p>
+<p>Desarrollando la parte derecha de la ecuación <a class="reference internal" href="#equation-lattice-b-fluc">(7.75)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-b-fluc-1">
+<span class="eqno">(7.77)<a class="headerlink" href="#equation-lattice-b-fluc-1" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{B^2} - \overline{B}^2 = \frac{e^{\varphi^{(0)}-\varphi}(1-e^{\varphi^{(0)}-\varphi}) + e^{2(\varphi^{(0)}-\varphi)}}{(1-e^{\varphi^{(0)}-\varphi})^2} \underset{(\varphi-\varphi^{(0)}\ll 1)}{\approx} \frac{1}{\left(\varphi-\varphi^{(0)}\right)^2} + \frac{1}{\varphi-\varphi^{(0)}} \; ,
+\]</div>
+<p>y,</p>
+<div class="math notranslate nohighlight" id="equation-lattice-n-fluc-1">
+<span class="eqno">(7.78)<a class="headerlink" href="#equation-lattice-n-fluc-1" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N^2} - \overline{N}^2 \underset{(\varphi-\varphi^{(0)}\ll 1)}{\approx}\frac{e^{\varphi^{(0)}}-1}{e^{\varphi^{(0)}}}\left[\frac{1}{\left(\varphi-\varphi^{(0)}\right)^2} +\frac{e^{\varphi^{(0)}}}{\varphi-\varphi^{(0)}}\right] \; .
+\]</div>
+<p>Como se ve, ambas magnitudes presentan fluctuaciones significativas, ya que, al menos en la primera aproximación, éstas son del orden <span class="math notranslate nohighlight">\(\overline {B} ^ 2 +\overline {B} \)</span>.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="electric_magnetic.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Sistemas eléctricos y magnéticos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="adsorbent.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Gas ideal y adsorbente esférico pequeño</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agregado-esferico">7.1. Agregado esférico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">7.1.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.1.2. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-en-una-red-ideal">7.2. Gas en una red ideal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-microcanonica-variables-de-entorno-b-n">7.2.1. Colectividad microcanónica: variables de entorno <span class="math notranslate nohighlight">\((B,N)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-isobarica-variables-de-entorno-frac-p-t-n">7.2.2. Colectividad isobárica: variables de entorno <span class="math notranslate nohighlight">\((\frac{p}{T}, N)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-macrocanonica-variables-de-entorno-b-frac-mu-t">7.2.3. Colectividad macrocanónica: variables de entorno <span class="math notranslate nohighlight">\((B, \frac{\mu}{T})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colectividad-nanocanonica-variables-de-entorno-frac-p-t-frac-mu-t">7.2.4. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((\frac{p}{T}, \frac{\mu}{T})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Ejercicio</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Ejercicio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Mikel Garitano Telleria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

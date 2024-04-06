@@ -1,0 +1,583 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Transiciones de fase en sistemas pequeños &#8212; NANOTERMODINÁMICA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fase';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="5. Colectividad nanocanónica: variables de entorno \((T,p,\mu)\)" href="tpmu.html" />
+    <link rel="prev" title="3. Colectividad isotérmica-isobárica: variables de entorno \((T,p,N)\)" href="tpn.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nanointro.html">1. Introducción a la Nanotermodinámica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hill.html">2. Termodinámica de sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpn.html">3. Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Transiciones de fase en sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpmu.html">5. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="electric_magnetic.html">6. Sistemas eléctricos y magnéticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="osagarri.html">7. Ejemplos adicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adsorbent.html">8. Gas ideal y adsorbente esférico pequeño</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ondorioak.html">9. Conclusiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="euler.html"><strong><em>A</em></strong> <em>Ecuación de Euler</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html"><strong><em>B</em></strong> <em>Entropía</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gas%20ideala.html"><strong><em>C</em></strong> <em>Gas ideal clásico, en la colectividad canónica</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Otros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="erreferentziak.html">Referencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eskerrak.html"><em>Agradecimientos</em></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transiciones de fase en sistemas pequeños</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversibilidad-y-condiciones-de-equilibrio">4.1. Reversibilidad y condiciones de equilibrio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transiciones-de-fase-de-primer-orden-en-sistemas-t-p-n-pequenos">4.2. Transiciones de fase de primer orden, en sistemas <span class="math notranslate nohighlight">\((T,p,N)\)</span> pequeños</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sencillo">4.2.1. Ejemplo sencillo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fusion-del-cristalito">4.2.2. Fusión del cristalito</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="transiciones-de-fase-en-sistemas-pequenos">
+<span id="fase"></span><h1><span class="section-number">4. </span>Transiciones de fase en sistemas pequeños<a class="headerlink" href="#transiciones-de-fase-en-sistemas-pequenos" title="Permalink to this heading">#</a></h1>
+<p>En esta apartado adicional, examinaremos las peculiaridades que los efectos de tamaño finito aportan al comportamiento de la transición de fase entre dos estados de equilibrio.</p>
+<section id="reversibilidad-y-condiciones-de-equilibrio">
+<span id="itzul"></span><h2><span class="section-number">4.1. </span>Reversibilidad y condiciones de equilibrio<a class="headerlink" href="#reversibilidad-y-condiciones-de-equilibrio" title="Permalink to this heading">#</a></h2>
+<p>Siguiendo la teoría de Hill, examinaremos un conjunto macroscópico de <span class="math notranslate nohighlight">\( \mathscr{N} (\rightarrow \infty) \)</span> réplicas. No iniciaremos ningún grado de libertad a los subsistemas, es decir, están completamente aislados. Por tanto, les asignaremos las variables <span class="math notranslate nohighlight">\((E,V,N)\)</span>. De acuerdo con el segundo principio de la Termodinámica <span id="id1">[<a class="reference internal" href="erreferentziak.html#id18" title="T. L. Hill. An Introduction to Statistical Thermodynamics, chapter 2.3. Addison-Wesley, Inc., Massachusetts, 1960.">14</a>]</span>, el sistema, en su camino desde el primer estado de equilibrio al segundo, pasará por procesos infinitesimales irreversibles. Éstos generarán contribuciones positivas a la entropía  <span class="math notranslate nohighlight">\((\mathrm{d}S_{t}&gt;0)\)</span> hasta que se restablezca el equilibrio <span class="math notranslate nohighlight">\((\mathrm{d}S_{t}=0)\)</span>. Cualquier cambio posterior será reversible, ya que el sistema se mantendrá en el nuevo estado de equilibrio.</p>
+<p>En general, un proceso espontáneo se puede modelar mediante el sistema de la <a class="reference internal" href="#esp"><span class="std std-numref">figura 4.1</span></a>. Inicialmente, el sistema se encuentra bajo la influencia de una barrera externa. Como resultado, solo estarán disponibles algunos de todos los estados cuánticos posibles: <span class="math notranslate nohighlight">\( \Omega_ {i} (E, V, N) \)</span>. Eliminar esta prohibición externa cambiará el estado del sistema. De hecho, las réplicas también tendrán acceso a estados que han sido previamente prohibidos, por lo que al final tenemos <span class="math notranslate nohighlight">\(\Omega_{f} (E,V,N)&gt;\Omega_{i}(E,V,N)\)</span>. Este proceso se puede lograr reduciendo la energía de activación o minimizando un potencial. Al hilo de la discusión inicial, maximizar la entropía acarreará minimizar la energía libre.</p>
+<figure class="align-default" id="esp">
+<a class="reference internal image-reference" href="_images/esp.PNG"><img alt="_images/esp.PNG" src="_images/esp.PNG" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 4.1 </span><span class="caption-text">Modelización del proceso espontáneo. La pared divisoria evita que el gas se desplace hacia la parte derecha de la caja. No hay pared al final, y como resultado, el gas se ha extendido a todo el volumen, de forma espontánea. De principio a fin, la entropía ha aumentado.</span><a class="headerlink" href="#esp" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Dado que la entropía satisface <span class="math notranslate nohighlight">\( S_ {t} = \mathscr{N}k_{\mathrm{B}} \ln \Omega \)</span>, cuando se completa el proceso finito y espontáneo,</p>
+<div class="math notranslate nohighlight" id="equation-sesp">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-sesp" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Delta S_{t} = S_{f}^{t} - S_{i}^{t} = \mathscr{N}k_{\mathrm{B}}\ln\left(\frac{\Omega_f}{\Omega_i}\right) &gt; 0 \; .
+\]</div>
+<p>Esta ecuación ilustra el significado de una de las leyes más importantes de la Termodinámica. De hecho, si ocurriera espontáneamente el proceso contrario, tendríamos <span class="math notranslate nohighlight">\( \Delta S_ {t} &lt;0 \)</span>, lo cual iría en contra del segundo principio. Sin embargo, como hemos aceptado <span class="math notranslate nohighlight">\(\mathscr{N}\rightarrow\infty\)</span>, la probabilidad de que esto suceda en la <strong>totalidad del colectivo</strong>, es decir, en todos y cada uno de los sistemas, es casi cero, es decir,</p>
+<div class="math notranslate nohighlight" id="equation-probcont">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-probcont" title="Enlace permanente a esta ecuación">#</a></span>\[
+ P_{f \rightarrow i}^{t} := \frac{\Omega_{i}}{\Omega_{f}} = \exp\left(-\frac{\Delta S_{t}}{\mathscr{N}k_{\mathrm{B}}}\right) \rightarrow 0 \; .
+ \]</div>
+<p>Sin embargo, en los <strong>subsistemas</strong>  tendríamos <span class="math notranslate nohighlight">\(N\)</span> en lugar de <span class="math notranslate nohighlight">\(\mathscr{N}\)</span>, y por tanto <span class="math notranslate nohighlight">\(P_{f\rightarrow i}\propto e^{- N}\)</span>. Así, la magnitud de <span class="math notranslate nohighlight">\( N \)</span> no tiene que  por qué ser lo suficientemente grande como para descartar el valor de <span class="math notranslate nohighlight">\(P_{f\rightarrow i}\)</span>. Por lo tanto, si <span class="math notranslate nohighlight">\( N \)</span> es demasiado pequeño, cabría la posibilidad de observar espontáneamente un proceso que viola el segundo principio <span class="math notranslate nohighlight">\((\Delta S &lt; 0)\)</span> en ciertos sistemas pequeños. En cualquier caso, recordemos que la teoría de Hill consiste en inferir del conjunto las propiedades de las variables. Entonces, para empezar, necesitamos ver la variación de la entropía de todo el colectivo, y de ahí pasar a los sistemas pequeños, considerando que se cumple <span class="math notranslate nohighlight">\( \Delta S = \Delta S_ {t} / \mathscr{N} \)</span>.</p>
+<p>A propósito de esta discusión, en la <a class="reference internal" href="tpmu.html#stabeps"><span class="std std-numref">sección 5.4</span></a>  examinaremos el proceso de subdivisión del conjunto de sistemas pequeños. Asimismo, observaremos el efecto del potencial de subdivisión <span class="math notranslate nohighlight">\( \mathscr {E} \)</span> sobre la reversibilidad de dicho proceso.</p>
+</section>
+<section id="transiciones-de-fase-de-primer-orden-en-sistemas-t-p-n-pequenos">
+<span id="fase1order"></span><h2><span class="section-number">4.2. </span>Transiciones de fase de primer orden, en sistemas <span class="math notranslate nohighlight">\((T,p,N)\)</span> pequeños<a class="headerlink" href="#transiciones-de-fase-de-primer-orden-en-sistemas-t-p-n-pequenos" title="Permalink to this heading">#</a></h2>
+<p>Supongamos que deseamos llevar un sistema macroscópico de un estado de la fase inicial a otro final. En el primer estado, su ecuación de estado es una función continua y derivable, es decir, está correctamente definida. Sin embargo, en algún momento sufrirá un cambio repentino a la segunda fase, por lo que sufrirá discontinuidades; es decir, ocurrirá una transición de fase de primer orden en el sistema (<a class="reference internal" href="#faseirudi"><span class="std std-numref">figura 4.2a</span></a>).</p>
+<figure class="align-default" id="faseirudi">
+<a class="reference internal image-reference" href="_images/faseirudi.PNG"><img alt="_images/faseirudi.PNG" src="_images/faseirudi.PNG" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 4.2 </span><span class="caption-text"><span class="math notranslate nohighlight">\(\text{(a)}\)</span> En el límite termodinámico, en la transición de fase de primer orden, el sistema sigue la <strong>curva isotérmica</strong> <span class="math notranslate nohighlight">\( p- \overline {V} \)</span>, pasando directamente del estado <span class="math notranslate nohighlight">\( A \)</span> al estado <span class="math notranslate nohighlight">\(B\)</span>. De hecho, la <strong>curva discontinua</strong> va en contra de la estabilidad, dado que la compresibilidad es negativa, es decir, <span class="math notranslate nohighlight">\( \kappa_ {T} = - \left (\partial p / \partial V \right) _ {T} &lt;0 \)</span>. <span class="math notranslate nohighlight">\(\text{(b)}\)</span> <strong>En el caso de los sistemas pequeños</strong>, los estados <span class="math notranslate nohighlight">\( A \)</span> y <span class="math notranslate nohighlight">\( B \)</span> estarán presentes en la zona  <span class="math notranslate nohighlight">\( \Delta p \)</span> al mismo tiempo. En el límite macroscópico, está claro que se cumplirá <span class="math notranslate nohighlight">\( \Delta p \rightarrow p_ {0} \)</span>.</span><a class="headerlink" href="#faseirudi" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>En cambio, si el sistema fuera pequeño, la transición sería menos pronunciada, como se puede ver en la <a class="reference internal" href="#faseirudi"><span class="std std-numref">figura 4.2b</span></a>. Como veremos enseguida, la extensión del rango de presión <span class="math notranslate nohighlight">\( \Delta p \)</span> está directamente relacionada con el tamaño del sistema <span class="math notranslate nohighlight">\(( N )\)</span>. Pero antes de entrar en ello, hay otra cuestión que necesita ser aclarada. De hecho, como bien indica la imagen <a class="reference internal" href="#prob"><span class="std std-numref">figura 4.3</span></a>, las fluctuaciones que emergen alrededor de los volúmenes <span class="math notranslate nohighlight">\(\overline{V}_{A}\)</span> y <span class="math notranslate nohighlight">\(\overline{V}_{B}\)</span> son perceptibles. En otras palabras, la probabilidad de <span class="math notranslate nohighlight">\( P (V) \)</span> se alejará ligeramente a los alrededores de los volúmenes <span class="math notranslate nohighlight">\( \overline {V} _ {A} \)</span> y <span class="math notranslate nohighlight">\( \overline {V} _ {B} \)</span>.</p>
+<figure class="align-default" id="prob">
+<a class="reference internal image-reference" href="_images/prob.PNG"><img alt="_images/prob.PNG" src="_images/prob.PNG" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 4.3 </span><span class="caption-text">En el límite termodinámico, la probabilidad satisface <span class="math notranslate nohighlight">\( P (V) = \delta (V- \overline {V} _ {A}) + \delta (V- \overline {V} _ {B}) \)</span>. En el caso de un sistema pequeño, en cambio, las curvas muestran una <strong>mayor dispersión</strong>. Por lo tanto, no seguirá estrictamente a la denominada <em>aproximación de dos estados</em>. En cualquier caso, <span class="math notranslate nohighlight">\( P (\overline {V} _ {0}) \)</span> es despreciable en cualquier volumen <span class="math notranslate nohighlight">\( \overline {V} _ {0} \)</span> intermedio. Por todo esto, es lícito afirmar que el área de la transición de fase se compone de una combinación de los estados <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#prob" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Retomando el hilo anterior, partiendo de la función de partición canónica <span class="math notranslate nohighlight">\( Q (T, V, N) \)</span>, definiremos la probabilidad de que el sistema tenga el volumen <span class="math notranslate nohighlight">\( V_ {i} \)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-pvi">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-pvi" title="Enlace permanente a esta ecuación">#</a></span>\[
+P(V_{i}) := \frac{Q(T,V_{i},N)e^{- pV_{i}/k_{\mathrm{B}}T}}{\sum_{V_{i}}Q(T,V_{i},N)e^{-pV_{i}/k_{\mathrm{B}}T}} = \frac{Q(T,V_{i},N)e^{-pV_{i}/k_{\mathrm{B}}T}}{\Delta(T,p,N)}\;.
+\]</div>
+<p>Ahora, siguiendo los comentarios de la <a class="reference internal" href="#prob"><span class="std std-numref">figura 4.3</span></a>, calcularemos la relación <span class="math notranslate nohighlight">\( P (\overline {V} _ {A, B}) / P (\overline {V} _ {0}) \)</span>, que servirá como claro indicador de la legitimidad del empleo de la <em>aproximación de dos estados</em>. Encauzaremos el análisis desde la Física Estadística con la ayuda del libro <span id="id2">[<a class="reference internal" href="erreferentziak.html#id19" title="T. L. Hill. Statistical Mechanics - Principles and Selected Applications, chapter Appendix 9. Dover Publications, Inc., New York, 1956.">15</a>]</span>. La cuestión es que en un estado intermedio los estados originales <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span>, ambos también estarán presentes, separados por una superficie divisoria. El número de moléculas que contenga será de aproximadamente <span class="math notranslate nohighlight">\( N ^ {2/3} \)</span>, por lo que las interacciones entre estas moléculas aportarán una contribución a la energía  <span class="math notranslate nohighlight">\( A (T, V, N) \)</span> del orden <span class="math notranslate nohighlight">\( N ^ { 2/3} k _ {\mathrm {B}} T \)</span>. La función de partición alrededor de este punto, por tanto, satisfará la expresión</p>
+<div class="math notranslate nohighlight" id="equation-q-fase-puntu">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-q-fase-puntu" title="Enlace permanente a esta ecuación">#</a></span>\[
+Q(T,\overline{V}_{0},N) = e^{-A(T,V,N)/k_{\mathrm{B}}T-N^{2/3}} = Q(T,V,N)e^{-N^{2/3}} \; .
+\]</div>
+<p>Como esta ecuación es proporcional a la probabilidad (teniendo en cuenta la expresión  <a class="reference internal" href="#equation-pvi">(4.3)</a>), se cumplirá lo siguiente, excepto en torno a un punto crítico:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P(\overline{V}_{A,B})}{P(\overline{V}_{0})} \propto e^{N^{2/3}}  \; .
+\]</div>
+<p>Por lo tanto, excluyendo los puntos críticos, si el sistema no es demasiado pequeño, las únicas contribuciones a la distribución de probabilidad serán las de los estados <span class="math notranslate nohighlight">\( A \)</span> y <span class="math notranslate nohighlight">\( B \)</span>, y la aproximación será correcta.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Así las cosas, empleemos ahora un razonamiento basado en las herramientas de la Termodinámica de Sistemas Pequeños para corroborar los resultados obtenidos. Construyamos un conjunto isotérmico-isobárico de <span class="math notranslate nohighlight">\(\mathscr{N}\)</span> réplicas. Los estados <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> contienen, respectivamente, <span class="math notranslate nohighlight">\(\mathscr{N}_{A}\)</span> y <span class="math notranslate nohighlight">\(\mathscr{N}_{B}\)</span> subsistemas. De la <a class="reference internal" href="tpn.html#tpn-azter"><span class="std std-numref">sección 3.1</span></a>, recordando que la energía libre de Gibbs se define como <span class="math notranslate nohighlight">\( F_ {A, B}: = N \widehat {\mu} _ {A, B} \)</span>, y considerando la contribución de todas las distribuciones posibles (entropía configuracional), la energía total será</p>
+<div class="math notranslate nohighlight" id="equation-gibbstot">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-gibbstot" title="Enlace permanente a esta ecuación">#</a></span>\[
+F_{t} = \mathscr{N}_ {A}\left(N\;\widehat{\mu}_ {A}\right) +  \mathscr{N}_ {B}\left(N\;\widehat{\mu}_ {B}\right) - k_{\mathrm{B}}T\ln\left(\frac{\mathscr{N}!}{\mathscr{N}_ {A}!\;\mathscr{N}_{B}!}\right) \; .
+\]</div>
+<p>Nuestro objetivo es reparar en la fracción <span class="math notranslate nohighlight">\( \mathscr {N} _ {A} / \mathscr {N} _ {B} \)</span> en un estado de equilibrio. De ahí obtendremos la información necesaria para este segundo análisis. Dado que el conjunto en sí es macroscópico, podremos hacer uso de la aproximación de Stirling; esto es, partiremos de la expresión <span class="math notranslate nohighlight">\( \ln \mathscr {N}! \approx\mathscr{N}\ln\mathscr{N}-\mathscr{N}\)</span>. Así, fijando la magnitud <span class="math notranslate nohighlight">\(\mathscr {N} _ {A} \)</span> perteneciente al estado de equilibrio, y escribiendo <span class="math notranslate nohighlight">\(\mathscr {N} _ {B} = \mathscr {N} - \mathscr {N} _ { A} \)</span>, impondremos la condición</p>
+<div class="math notranslate nohighlight" id="equation-fase-oreka">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-fase-oreka" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial F_{t}}{\partial \mathscr{N}_ {A}}\right)_{T,p,N,\mathscr{N}} = 0 \; ,
+\]</div>
+<p>y, de esta forma, llegaremos a esta expresión:</p>
+<div class="math notranslate nohighlight" id="equation-fracnanb">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-fracnanb" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{\mathscr{N}_ {A}}{\mathscr{N}_ {B}} = \left(\exp\frac{\widehat{\mu}_ {B} - \widehat{\mu}_ {A}}{k_{\mathrm{B}}T}\right)^N \; .
+\]</div>
+<p>Por lo general, siguiendo las explicaciones de la sección <a class="reference internal" href="tpn.html#tpn-azter"><span class="std std-numref">sección 3.1</span></a>, el potencial químico integral es una función de las variables ambientales, es decir, <span class="math notranslate nohighlight">\( \widehat {\mu} _ {A, B} = \widehat {\mu } _ {A, B } (T, p, N) \)</span>. Por lo tanto, podemos fijar la presión <span class="math notranslate nohighlight">\( p \)</span> de tal forma que los dos potenciales coincidan <span class="math notranslate nohighlight">\(( \widehat {\mu} _ {A} = \widehat {\mu} _ {B} )\)</span>. Este valor corresponde a la presión <span class="math notranslate nohighlight">\( p_ {0} \)</span> de la <a class="reference internal" href="#faseirudi"><span class="std std-numref">figura 4.2b</span></a>. Además, según la ecuación <a class="reference internal" href="#equation-fracnanb">(4.7)</a>, se cumplirá que <span class="math notranslate nohighlight">\(\mathscr{N} _ {A} = \mathscr {N} _ {B} \)</span>. Pero, si la presión se desviara ligeramente del valor de <span class="math notranslate nohighlight">\( p_ {0} \)</span>, tal que <span class="math notranslate nohighlight">\( \widehat {\mu} _ {A} \gtrsim \widehat {\mu} _ {B} \)</span> o <span class="math notranslate nohighlight">\( \widehat {\mu} _ {B} \gtrsim \widehat {\mu} _ {A} \)</span>, en el límite <span class="math notranslate nohighlight">\( N \rightarrow \infty \)</span> casi todos los sistemas saltarían a los estados <span class="math notranslate nohighlight">\( B \)</span> y <span class="math notranslate nohighlight">\( A \)</span>, respectivamente, y se cumpliría que <span class="math notranslate nohighlight">\( \mathscr { N} _ {B} \gg \mathscr {N} _ {A} \)</span> o <span class="math notranslate nohighlight">\( \mathscr {N} _ {A} \gg \mathscr {N} _ {B} \)</span>. En otras palabras, el límite macroscópico de la ecuación <a class="reference internal" href="#equation-fracnanb">(4.7)</a> es compatible con la <em>aproximación de dos estados</em>. En cualquier caso, si <span class="math notranslate nohighlight">\( N \)</span> no fuera lo suficientemente grande, la presión se debería alejar considerablemente del punto <span class="math notranslate nohighlight">\( p_ {0} \)</span> para observar lo anterior. Por lo tanto, en un rango de presión <span class="math notranslate nohighlight">\( \Delta p \)</span>  bastante amplio, <span class="math notranslate nohighlight">\( \mathscr {N} _ {B} \gtrsim \mathscr {N} _ {A} \)</span> o bien <span class="math notranslate nohighlight">\( \mathscr {N} _ {A} \gtrsim \mathscr {N} _ {B} \)</span>. El salto de un estado a otro sería más suave.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Para concluir el análisis de las transiciones de fase, se debe tener en cuenta que en el punto <span class="math notranslate nohighlight">\(p = p_{0}\)</span> las variables <span class="math notranslate nohighlight">\((T,p,N)\)</span> de entorno deben permanecer constantes. Entonces, para mantener la igualdad, las variaciones alrededor de estos valores deben cumplir <span class="math notranslate nohighlight">\( \mathrm {d} \widehat {\mu} _ {A} = \mathrm {d} \widehat {\mu} _ {B}\)</span>. Usando esta condición y la ecuación <a class="reference internal" href="tpn.html#equation-dmuhat">(3.8)</a>, llegamos a</p>
+<div class="math notranslate nohighlight" id="equation-sasb">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-sasb" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{S_{A}-S_{B}}{N}\;\mathrm{d}T + \frac{V_{B}-V_{A}}{N}\;\mathrm{d}p + \frac{(\mu_{B}-\mu_{A}) + (\widehat{\mu} _ {A} - \widehat{\mu}_{B})}{N}\;\mathrm{d}N = 0 \; .
+\]</div>
+<p>Por supuesto, el punto de estudio satisface <span class="math notranslate nohighlight">\( \Delta \widehat {\mu} = \widehat {\mu} _ {B} - \widehat {\mu} _ {A} = 0 \)</span>. Con esto en mente, obtendremos las siguientes relaciones con las variaciones de las demás magnitudes:</p>
+<div class="math notranslate nohighlight" id="equation-neweq">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-neweq" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\left(\frac{\partial p}{\partial T}\right)_ {N} = \frac{\Delta S}{\Delta V}\quad ; \quad \left(\frac{\partial T}{\partial N}\right)_ {p} = \frac{\Delta \mu}{N\Delta \mathrm{s}}\quad ; \quad \left(\frac{\partial p}{\partial N}\right)_{T} = -\frac{\Delta \mu}{N\Delta \mathrm{v}}} \quad ,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\mathrm{v} = V/N\)</span> y <span class="math notranslate nohighlight">\(\mathrm{s}=S/N\)</span>. La segunda y tercera relaciones (las cuales no son alcanzables por medio de la Termodinámica Clásica) sugieren claramente que la temperatura y la presión generalmente no son magnitudes intensivas. Así las cosas, y a modo de avance, en el <a class="reference internal" href="#cryst-melt"><span class="std std-numref">ejemplo 4.2.2</span></a> obtendremos una expresión de la temperatura que dependiente del tamaño.</p>
+<section id="ejemplo-sencillo">
+<span id="fase-simple"></span><h3><span class="section-number">4.2.1. </span>Ejemplo sencillo<a class="headerlink" href="#ejemplo-sencillo" title="Permalink to this heading">#</a></h3>
+<p>El propósito de este ejemplo es expresar cuantitativamente la validez de <em>la aproximación de dos estados</em>. Consideremos que los volúmenes <span class="math notranslate nohighlight">\( \overline {\mathrm {v}} _ {A} \)</span> y <span class="math notranslate nohighlight">\( \overline {\mathrm {v}} _ {B} \)</span> de los estados <span class="math notranslate nohighlight">\( A \)</span> y <span class="math notranslate nohighlight">\( B \)</span> son independientes de las variables <span class="math notranslate nohighlight">\( p \)</span> y <span class="math notranslate nohighlight">\( N\)</span>. De manera similar, escribiremos <span class="math notranslate nohighlight">\( \widehat {\mu} = \widehat {\mu} _ {A, B} (p = p_ {0}) \)</span>. Así, extrayendo la relación  <span class="math notranslate nohighlight">\(\partial\widehat {\mu}_{A,B}/\partial p=\overline{V}_{A,B}/N=\overline{\mathrm { v}} _ {A, B} \)</span>  de la <a class="reference internal" href="tpn.html#equation-dmuhat">(3.8)</a> e integrando, tendremos que</p>
+<div class="math notranslate nohighlight" id="equation-muhatab">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-muhatab" title="Enlace permanente a esta ecuación">#</a></span>\[
+\widehat{\mu}_ {A,B} = \widehat{\mu} + \overline{\mathrm{v}}_ {A,B}\left(p-p_{0}\right) \; .
+\]</div>
+<p>Mediante esta ecuación reescribiremos la relación <a class="reference internal" href="#equation-fracnanb">(4.7)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-nanbex">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-nanbex" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{\mathscr{N}_ {A}}{\mathscr{N}_ {B}} = \exp\left[-N\frac{\left(\overline{\mathrm{v}}_ {A} - \overline{\mathrm{v}}_ {B}\right)\left(p-p_{0}\right)}{k_{\mathrm{B}}T}\right]\; .
+\]</div>
+<p>La expresión del volumen total es</p>
+<div class="math notranslate nohighlight" id="equation-vtotex">
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-vtotex" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial F}{\partial p}\right)_{T,N
+} := \overline{V} = \frac{\mathscr{N}_ {A}}{\mathscr{N}}\overline{V}_ {A} + \frac{\mathscr{N}_ {B}}{\mathscr{N}}\overline{V}_ {B}\equiv P_{A}\overline{V}_ {A} +  P_{B}\overline{V}_{B} \; ,
+\]</div>
+<p>Considerando que <span class="math notranslate nohighlight">\(P_{A} = (\overline{\mathrm{v}} - \overline{\mathrm{v}}_ {B}) / (\overline{\mathrm{v}}_ {A} - \overline{\mathrm{v}}_ {B})\)</span> eta <span class="math notranslate nohighlight">\(P_{B}=1-P_{A}\)</span>, llegaremos a</p>
+<div class="math notranslate nohighlight" id="equation-fasesimplegraph">
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-fasesimplegraph" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{(\overline{\mathrm{v}}_ {A} - \overline{\mathrm{v}}_ {B})(p-p_{0})}{k_{\mathrm{B}}T} = -\frac{1}{N}\ln\left[\frac{(\overline{\mathrm{v}} - \overline{\mathrm{v}}_ {B})/(\overline{\mathrm{v}}_ {A} - \overline{\mathrm{v}}_ {B})}{1-(\overline{\mathrm{v}} - \overline{\mathrm{v}}_ {B})/(\overline{\mathrm{v}}_ {A} - \overline{\mathrm{v}}_{B})}\right] \; .
+\]</div>
+<p>Erijamos la representación gráfica de la ecuación <a class="reference internal" href="#equation-fasesimplegraph">(4.13)</a>:</p>
+<figure class="align-default" id="faseplot">
+<a class="reference internal image-reference" href="_images/faseplot.PNG"><img alt="_images/faseplot.PNG" src="_images/faseplot.PNG" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 4.4 </span><span class="caption-text">Este modelo simple de transiciones de fase en sistemas pequeños pone de manifiesto que la coexistencia de los estados <span class="math notranslate nohighlight">\( A \)</span> y <span class="math notranslate nohighlight">\( B \)</span> abarca un rango de presión considerable en el caso de <span class="math notranslate nohighlight">\( N &lt;40 \)</span>. Además, la curva de <span class="math notranslate nohighlight">\( N = 200 \)</span> tiende a asemejarse con el gráfico de la <a class="reference internal" href="#faseirudi"><span class="std std-numref">figura 4.2a</span></a>.</span><a class="headerlink" href="#faseplot" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Obsérvese la <a class="reference internal" href="#faseplot"><span class="std std-numref">figura 4.4</span></a>. Si el gráfico se rota <span class="math notranslate nohighlight">\(90 ^ \circ \)</span> hacia la izquierda, coincidirá con las curvas de la <a class="reference internal" href="tpn.html#hc-phase"><span class="std std-numref">figura 3.4</span></a> del ejemplo «hélice-ovillo». En otras palabras, podemos confirmar con mayor rigurosidad que en el límite macroscópico se producirá una transición de fase entre los estados hélice y ovillo.</p>
+</section>
+<section id="fusion-del-cristalito">
+<span id="cryst-melt"></span><h3><span class="section-number">4.2.2. </span>Fusión del cristalito<a class="headerlink" href="#fusion-del-cristalito" title="Permalink to this heading">#</a></h3>
+<p>En este segundo ejemplo, examinaremos el efecto del tamaño de un cristalito esférico sobre su temperatura de fusión. Entonces, siguiendo la  <em>aproximación de dos estados</em>, denominaremos <span class="math notranslate nohighlight">\( A \)</span> al estado sólido <span class="math notranslate nohighlight">\((S)\)</span> y <span class="math notranslate nohighlight">\( B \)</span> al estado líquido <span class="math notranslate nohighlight">\((L)\)</span>. La energía libre de Gibbs de los sistemas pequeños contendrá no sólo la contribución <strong>lineal macroscópica</strong> <span class="math notranslate nohighlight">\((\propto N)\)</span>, sino también las correspondientes a  <strong>efectos de superficie</strong> <span class="math notranslate nohighlight">\((\propto N^{2/3})\)</span> y la <strong>rotación</strong> <span class="math notranslate nohighlight">\((\propto\ln N)\)</span>; es decir,</p>
+<div class="math notranslate nohighlight" id="equation-fklasto">
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-fklasto" title="Enlace permanente a esta ecuación">#</a></span>\[
+F(T,p,N) := N\widehat{\mu} = Nf(T,p) + N^{2/3}a(T,p) + \ln N \; b(T) \; .
+\]</div>
+<p>De esta forma, centraremos nuestro análisis en la zona de coexistencia de los dos estados. Denominaremos <span class="math notranslate nohighlight">\( T _ {\infty} \)</span> y <span class="math notranslate nohighlight">\( p _ {\infty} \)</span> la temperatura y la presión del límite macroscópico. En concreto, calcularemos las desviaciones que el tamaño del sistema ocasiona en la temperatura en este estado de equilibrio, manteniendo constante la presión. Siguiendo las explicaciones del apartado <a class="reference internal" href="#fase1order"><span class="std std-numref">apartado 4.2</span></a>, se cumplirá que <span class="math notranslate nohighlight">\( \Delta \widehat {\mu} = \widehat {\mu} _ {L} - \widehat {\mu} _ {S} = 0 \)</span>. Usando esta condición y la ecuación <a class="reference internal" href="#equation-fklasto">(4.14)</a>, tendremos</p>
+<div class="math notranslate nohighlight" id="equation-muhatklasto">
+<span class="eqno">(4.15)<a class="headerlink" href="#equation-muhatklasto" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Delta \widehat{\mu}(T,p_{\infty},N) = \Delta f(T,p_{\infty}) + N^{-1/3}\Delta a(T,p_{\infty}) + \frac{\ln N}{N}\Delta b(T) = 0 \; .
+\]</div>
+<p>Para hacer aparecer la variable <span class="math notranslate nohighlight">\( T \)</span>, calcularemos la aproximación de Taylor en los puntos <span class="math notranslate nohighlight">\( T = T _ {\infty} \)</span> de las funciones <span class="math notranslate nohighlight">\( \Delta f \)</span> y <span class="math notranslate nohighlight">\( \Delta a \)</span>, e incluiremos solamente el primer término no nulo:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta f(T,p_{\infty}) \approx \left(\frac{\partial \Delta f}{\partial T}\right)_ {T_{\infty}}\left(T-T_{\infty}\right) = -\Delta \mathrm{s}_ {\infty}(T-T_{\infty})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Delta a(T,p_{\infty}) \approx \Delta a(T_{\infty},p_{\infty}) \; .
+\]</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>Los términos macroscópicos de los estados <span class="math notranslate nohighlight">\( f_ {S} (T, p) \)</span> y <span class="math notranslate nohighlight">\( f_ {L} (T, p) \)</span> coinciden en la región de coexistencia. De hecho, esto es lo que observamos en el límite termodinámico: un salto repentino de una fase a otra. Las desviaciones que allí aparecen se deben únicamente a contribuciones pequeñas. Por lo tanto, debemos aceptar que <span class="math notranslate nohighlight">\(\Delta f(T_{\infty}, p_{\infty})=0\)</span>.</p>
+</div>
+<p>Al introducir estas expresiones en la ecuación <a class="reference internal" href="#equation-muhatklasto">(4.15)</a>, veremos que la temperatura obedecerá esta expresión:</p>
+<div class="math notranslate nohighlight" id="equation-t-ez-int">
+<span class="eqno">(4.16)<a class="headerlink" href="#equation-t-ez-int" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{T = T_{\infty} + N^{-1/3}\frac{\Delta a (T_{\infty},p_{\infty})}{\Delta \mathrm{s}_ {\infty}} + \frac{\ln N}{N}\frac{\Delta b(T_{\infty})}{\Delta \mathrm{s}_{\infty}}} \; .
+\]</div>
+<p>Está claro que las pequeñas contribuciones inhomogéneas que hemos añadido a la temperatura <span class="math notranslate nohighlight">\(T_{\infty}\)</span> son de carácter extensivo.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Los comentarios sobre las transiciones de fase que hemos realizado a lo largo de este capítulo han reforzado lo predicho en la <a class="reference internal" href="tpn.html#tpn-azter"><span class="std std-numref">sección 3.1</span></a>. Ante todo, nos han ayudado a establecer <span class="math notranslate nohighlight">\(\color{teal}{\text{la naturaleza propia del potencial químico integral} \; \widehat {\mu} }\)</span>, pues ha quedado de manifiesto que que es un indicador de los cambios que experimenta el conjunto de subsistemas (ecuación <a class="reference internal" href="#equation-fracnanb">(4.7)</a>); es decir, toma consideración de las <span class="math notranslate nohighlight">\(\color{teal}{\text{propiedades de la colectividad}}\)</span>. Por el contrario, el <span class="math notranslate nohighlight">\(\color{red}{\text{potencial químico diferencial} \; \mu} \)</span> tiene en cuenta las variaciones en las moléculas individuales de <span class="math notranslate nohighlight">\(\color{red}{\text{un solo sistema pequeño}}\)</span>. La Nanotermodinámica diferencia estrictamente estos dos efectos.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tpn.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tpmu.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversibilidad-y-condiciones-de-equilibrio">4.1. Reversibilidad y condiciones de equilibrio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transiciones-de-fase-de-primer-orden-en-sistemas-t-p-n-pequenos">4.2. Transiciones de fase de primer orden, en sistemas <span class="math notranslate nohighlight">\((T,p,N)\)</span> pequeños</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sencillo">4.2.1. Ejemplo sencillo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fusion-del-cristalito">4.2.2. Fusión del cristalito</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Mikel Garitano Telleria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

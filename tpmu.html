@@ -1,0 +1,908 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Colectividad nanocanónica: variables de entorno \((T,p,\mu)\) &#8212; NANOTERMODINÁMICA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tpmu';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="6. Sistemas eléctricos y magnéticos" href="electric_magnetic.html" />
+    <link rel="prev" title="4. Transiciones de fase en sistemas pequeños" href="fase.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nanointro.html">1. Introducción a la Nanotermodinámica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hill.html">2. Termodinámica de sistemas pequeños</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpn.html">3. Colectividad isotérmica-isobárica: variables de entorno <span class="math notranslate nohighlight">\((T,p,N)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="fase.html">4. Transiciones de fase en sistemas pequeños</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="electric_magnetic.html">6. Sistemas eléctricos y magnéticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="osagarri.html">7. Ejemplos adicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adsorbent.html">8. Gas ideal y adsorbente esférico pequeño</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ondorioak.html">9. Conclusiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="euler.html"><strong><em>A</em></strong> <em>Ecuación de Euler</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html"><strong><em>B</em></strong> <em>Entropía</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gas%20ideala.html"><strong><em>C</em></strong> <em>Gas ideal clásico, en la colectividad canónica</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Otros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="erreferentziak.html">Referencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eskerrak.html"><em>Agradecimientos</em></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Colectividad nanocanónica: variables de entorno (T,p,\mu)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estudio-de-la-colectividad">5.1. Estudio de la colectividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-agregado-lineal">5.2. Ejemplo: agregado lineal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">5.2.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.2.2. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-gas-ideal-clasico-en-la-colectividad-nanocanonica">5.3. Ejemplo: Gas ideal clásico, en la colectividad nanocanónica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.3.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-gas-ideal-clasico-en-la-colectividad-macrocanonica-left-t-v-mu-right">5.3.2. Ejercicio: Gas ideal clásico, en la colectividad macrocanónica <span class="math notranslate nohighlight">\(\left(T,V,\mu\right)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potencial-de-subdivision-y-estabilidad">5.4. Potencial de subdivisión y estabilidad</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="colectividad-nanocanonica-variables-de-entorno-t-p-mu">
+<span id="tpmu"></span><h1><span class="section-number">5. </span>Colectividad nanocanónica: variables de entorno <span class="math notranslate nohighlight">\((T,p,\mu)\)</span><a class="headerlink" href="#colectividad-nanocanonica-variables-de-entorno-t-p-mu" title="Permalink to this heading">#</a></h1>
+<p>En este capítulo acometeremos el área más significativa perteneciente a la teoría. Supongamos que el sistema en cuestión es un polímero agregado compuesto por <span class="math notranslate nohighlight">\(N\)</span> monómeros, y que se encuentra a una temperatura <span class="math notranslate nohighlight">\(T\)</span> y una presión <span class="math notranslate nohighlight">\(p\)</span>. Si las fuerzas de unión entre las moléculas no fueran lo suficientemente fuertes, el número de moléculas <span class="math notranslate nohighlight">\( N \)</span> no se mantendría fijo por largo tiempo, ya que estaría sujeto a fluctuaciones. Por lo tanto, deberemos asignar al sistema el potencial químico <span class="math notranslate nohighlight">\(\mu\)</span> como tercera variable ambiental; es decir, el análisis debe realizarse necesariamente por medio de una colectividad nanocanónica compuesta por subsistemas con variables <span class="math notranslate nohighlight">\( (T, p, \mu) \)</span>.</p>
+<p>Pero tengamos en cuenta lo mencionado en el <a class="reference internal" href="nanointro.html#nanointro"><span class="std std-numref">apartado 1</span></a>: a nivel macroscópico no podremos definir tal conjunto, ya que sólo dos de las tres variables intensivas del sistema pueden ser libres (relación de Gibbs-Duhem). En este sentido, hemos aceptado que los sistemas pequeños disponen de un grado de libertad especial que se caracteriza por el potencial de subdivisión <span class="math notranslate nohighlight">\(\mathscr{E}\)</span>. Así, ahora el tamaño del sistema afectará a las variables intensivas. Esto permite, precisamente, la construcción de la colectividad nanocanónica. Sin embargo, como hemos visto, a medida que incrementa el tamaño del sistema, el gradual predominio de las contribuciones macroscópicas eliminará paulatinamente este grado de libertad.</p>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>En su libro, Hill emplea el apelativo <em>colectividad generalizada</em> («generalized ensemble»), en lugar de colectividad <em>nanocanónica</em>.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Con motivo de profundizar en lo anterior, iniciaremos todos los grados de libertad a los sistemas de los ejemplos <a class="reference internal" href="#mupt-linagg"><span class="std std-numref">5.2</span></a>  y <a class="reference internal" href="#mupt-gi"><span class="std std-numref">5.3</span></a>, y, particularmente, estudiaremos su efecto en la <strong>entropía</strong>. También comprobaremos que los resultados obtenidos en el límite macroscópico son compatibles con los del resto de colectividades estadísticas. Pero, primero, presentaremos brevemente las herramientas necesarias para el análisis.</p>
+<section id="estudio-de-la-colectividad">
+<span id="mupt-azter"></span><h2><span class="section-number">5.1. </span>Estudio de la colectividad<a class="headerlink" href="#estudio-de-la-colectividad" title="Permalink to this heading">#</a></h2>
+<p>Es de mencionar que la mayoría de las expresiones que pertenecen a este conjunto se han construido en la sección <a class="reference internal" href="hill.html#hillteo"><span class="std std-numref">sección 2.1</span></a>, puesto que ofrece un punto de partida adecuado para el abordaje de la teoría de Hill. Recuperemos la ecuación <a class="reference internal" href="hill.html#equation-h-g-d">(2.5)</a> (relación de Hill-Gibbs-Duhem), y reescribámosla para construir las relaciones que cumplirán la entropía <span class="math notranslate nohighlight">\(S\)</span>, el volumen <span class="math notranslate nohighlight">\( \overline {V} \)</span> y el número de partículas <span class="math notranslate nohighlight">\( \overline {N} \)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-depsilonnew">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-depsilonnew" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}\mathscr{E}(T,p,\mu) = \color{red}{ \left(\frac{\partial \mathscr{E}}{\partial T}\right)_ {p,\mu}}\color{black}{\mathrm{d}T} + \color{blue}{\left(\frac{\partial \mathscr{E}}{\partial p}\right)_ {T,\mu}}\color{black}{\mathrm{d}p} + \color{teal}{\left(\frac{\partial \mathscr{E}}{\partial \mu}\right)_{T,p}}\color{black}{\mathrm{d}\mu} = \color{red}{ -S}\color{black}{\mathrm{d}T} \; \color{blue}{+\overline{V}}\color{black}{\mathrm{d}p}  \; \color{teal}{-\overline{N}}\color{black}{\mathrm{d}\mu}\; .
+ \]</div>
+<p>Como el potencial de subdivisión es una función del conjunto de variables <span class="math notranslate nohighlight">\((T,p,\mu)\)</span>, ellos determinarán las magnitudes extensivas <span class="math notranslate nohighlight">\((S,\overline{V},\overline{N})\)</span> de un sistema pequeño de un solo componente, como bien indica la ecuación <a class="reference internal" href="#equation-depsilonnew">(5.1)</a>. No obstante, en el límite termodinámico la situación será diferente; en efecto, solamente podremos definir dos variables intensivas libres, y éstas no especificarán el tamaño del sistema.</p>
+<p>De la misma forma, la ecuación <a class="reference internal" href="#equation-depsilonnew">(5.1)</a> nos abastecerá de las relaciones de Maxwell propias de la colectividad nanocanónica; entre ellas,</p>
+<div class="math notranslate nohighlight" id="equation-maxwell-nc">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-maxwell-nc" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial S}{\partial p}\right)_{T,\mu} =- \left(\frac{\partial \overline{V}}{\partial T}\right)_{p,\mu} \quad ; \quad \left(\frac{\partial S}{\partial \mu}\right)_{T,p} = \left(\frac{\partial \overline{N}}{\partial T}\right)_{p,\mu} \quad ; \quad \left(\frac{\partial \overline{V}}{\partial \mu}\right)_{T,p} = - \left(\frac{\partial \overline{N}}{\partial p}\right)_{T,\mu} \; .
+\]</div>
+<p>Nótese que en el límite macroscópico todas las derivadas tenderán a infinito; de hecho, sus expresiones recíprocas (derivadas de magnitudes intensivas con respecto al tamaño) se volverán cero. Así pues, mediante las magnitudes que calcularemos en la segunda reexaminación del gas ideal clásico (<a class="reference internal" href="#mupt-gi"><span class="std std-numref">subsección 5.3</span></a>), confirmaremos la veracidad de las relaciones <a class="reference internal" href="#equation-maxwell-nc">(5.2)</a>.</p>
+<p>Ahora, de cara a establecer el vínculo con la Física Estadística, escribiremos la relación entre la <strong>función de partición nanocanónica</strong>, <span class="math notranslate nohighlight">\(\Upsilon (T , p, \mu)\)</span>, y el potencial de subdivisión:</p>
+<div class="math notranslate nohighlight" id="equation-epspf">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-epspf" title="Enlace permanente a esta ecuación">#</a></span>\[
+  \mathscr{E}(T,p,\mu) := -k_{\mathrm{B}}T\ln \Upsilon \; .
+\]</div>
+<p>Calcularemos la función de partición generalizada aplicando las transformaciones de Legendre correspondientes. Por ejemplo, a partir del conjunto isotérmico-isobárico, tendríamos</p>
+<div class="math notranslate nohighlight" id="equation-upsilon-def">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-upsilon-def" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon(T,p,\mu) := \sum_{E,V,N}\Omega(E,V,N)e^{-E/k_{\mathrm{B}}T}e^{-pV/k_{\mathrm{B}}T}e^{\mu N/k_{\mathrm{B}}T} \equiv \sum_{N}\Delta(T,p,N)e^{\mu N/k_{\mathrm{B}}T} \; .
+\]</div>
+</section>
+<section id="ejemplo-agregado-lineal">
+<span id="mupt-linagg"></span><h2><span class="section-number">5.2. </span>Ejemplo: agregado lineal<a class="headerlink" href="#ejemplo-agregado-lineal" title="Permalink to this heading">#</a></h2>
+<p>El sistema pequeño de este ejemplo se muestra en la <a class="reference internal" href="#agg"><span class="std std-numref">figura 5.1</span></a>. Aceptaremos que el conjunto macroscópico es un gas diluido compuesto por sistemas distinguibles. Así, las interacciones entre réplicas se considerarán despreciables. Por otro lado, no se tendrá en cuenta el grado de libertad mecánico.</p>
+<figure class="align-default" id="agg">
+<a class="reference internal image-reference" href="_images/aggregate.PNG"><img alt="_images/aggregate.PNG" src="_images/aggregate.PNG" style="height: 225px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 5.1 </span><span class="caption-text">Un agregado lineal es una vara larga que se constituye de <span class="math notranslate nohighlight">\(N\)</span> monómeros. Por tanto, su masa es <span class="math notranslate nohighlight">\( Nm \)</span> y su longitud <span class="math notranslate nohighlight">\( Na \)</span>.  Las unidades tienen una función de partición <span class="math notranslate nohighlight">\( j (T) \)</span> asociada con movimientos internos; la energía de interacción negativa entre primeros vecinos es <span class="math notranslate nohighlight">\(\epsilon\)</span> (<span class="math notranslate nohighlight">\(N-1\)</span> contribuciones). Asimismo, la barra puede girar alrededor del eje que pasa por su centro. El momento de inercia es <span class="math notranslate nohighlight">\(I = \frac {1} {12} N ^ {3} ma ^ {2} \)</span>.</span><a class="headerlink" href="#agg" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Primero, analizaremos el sistema en la <strong>colectividad canónica</strong>. Por una parte, la función de partición asociada a la rotación del agregado es</p>
+<div class="math notranslate nohighlight" id="equation-qrot">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-qrot" title="Enlace permanente a esta ecuación">#</a></span>\[
+Q_{\mathrm{rot}}(T,N) := \frac{4\pi^2}{h^2}I(N)k_{\mathrm{B}}T = \xi(T)N^3 \; .
+\]</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>Ver el capítulo 6 del libro <span id="id1">[<a class="reference internal" href="erreferentziak.html#id16" title="R. K. Pathria. Statistical Mechanics, 2nd Edition, chapter 1-4. ELSEVIER, Butterworth-Heinemann, Massachusetts, 1996.">12</a>]</span>. De ahora en adelante usaremos la abreviación <span class="math notranslate nohighlight">\(\xi(T) = \frac{\pi^2ma^2}{3h^2}k_{\mathrm{B}}T\)</span>.</p>
+</div>
+<p>Combinando la influencia de la rotación con la contribución intrínseca de las unidades y las interacciones entre ellas, construiremos la función de partición canónica. Para abreviar las ecuaciones, definiremos <span class="math notranslate nohighlight">\(c(T) = \xi(T) e^{\epsilon/k_{\mathrm{B}}T}\)</span>. Así las cosas,</p>
+<div class="math notranslate nohighlight" id="equation-qagg">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-qagg" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{Q(T,N) := j(T)^{N} \cdot Q_{\mathrm{rot}}(T,N) \cdot e^{-(N-1)\epsilon/k_{\mathrm{B}}T} = c(T)\;N^3j(T)^N\;e^{-N\epsilon/k_{\mathrm{B}}T}} \quad (N\geq1)\; .
+\]</div>
+<p>Cuando <span class="math notranslate nohighlight">\(N=0\)</span>, no habrá contribuciones de la rotación ni de la energía de interacción a la función de partición del sistema. Por lo tanto, teniendo en cuenta la función de partición intrínseca, se cumplirá que <span class="math notranslate nohighlight">\(Q(T,0)=j(T)^0=1\)</span>.</p>
+<section id="ejercicio">
+<h3><span class="section-number">5.2.1. </span>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((a)\)</span> Calcular los potenciales químicos <span class="math notranslate nohighlight">\(\widehat{\mu}\)</span> y <span class="math notranslate nohighlight">\(\mu\)</span>, su forma cuando <span class="math notranslate nohighlight">\(N\rightarrow \infty\)</span> y el potencial <span class="math notranslate nohighlight">\(\mathscr{E}(T,N)\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Haciendo uso de la función de partición canónica (ecuación <a class="reference internal" href="#equation-qagg">(5.6)</a>), y recordando la relación <span class="math notranslate nohighlight">\(N\widehat{\mu} = -k_{\mathrm{B}}T\ln Q(T,N)\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-muagg">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-muagg" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}
+\left.\begin{array}{l}
+\widehat{\mu}=-k_{\mathrm{B}}T\ln j + \frac{N-1}{N} \epsilon - \frac{\ln(\xi N^3)}{N}k_{\mathrm{B}}T \\\\
+\mu=-k_{\mathrm{B}}T\ln j + \epsilon -\frac{3}{N}k_{\mathrm{B}} T
+\end{array}\right\}\underset{(N \rightarrow \infty)}{\boldsymbol{\longrightarrow}} \; \mu^{(0)} = -k_{\mathrm{B}}T\ln j + \epsilon
+\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-eps-agg-tn">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-eps-agg-tn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{\mathscr{E}(T,N)}{k_\mathrm{B}T} = \frac{N(\widehat{\mu}-\mu)}{k_\mathrm{B}T} = -\frac{\epsilon}{k_\mathrm{B}T} + 3  -\ln(\xi N^3)
+\]</div>
+</div>
+</details><p><span class="math notranslate nohighlight">\((b)\)</span> Construir la expresión <span class="math notranslate nohighlight">\(S(T,N)/k_{\mathrm{B}}\)</span>. Analizar lo que ocurre en el límite macroscópico.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight" id="equation-stnagg">
+<span class="eqno">(5.9)<a class="headerlink" href="#equation-stnagg" title="Enlace permanente a esta ecuación">#</a></span>\[
+\frac{S(T,N)}{k_{\mathrm{B}}} := -\frac{1}{k_{\mathrm{B}}}\left(\frac{\partial N\widehat{\mu}}{\partial T}\right)_{N} = N\left(\ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}\right) +\color{red} \{ \color{black} 1 + \ln\left(\xi N^3\right)\color{red} \}
+\]</div>
+<p class="sd-card-text">Las llaves rojas contienen contribuciones ligadas a la rotación, y son de tamaño finito, puesto que en el límite termodinámico prevalecerán los primeros dos términos de la expresión (lineales con respecto a <span class="math notranslate nohighlight">\(N\)</span>). Por ende, parece ser que el sistema macroscópico no percibirá la influencia de la rotación, ni siquiera de la energía de interacción entre las unidades <span class="math notranslate nohighlight">\((\epsilon)\)</span>.</p>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Así las cosas, iniciaremos el grado de libertad químico, y pasaremos a la  <strong>colectividad nanocanónica</strong>. Sustituyendo la expresión <span class="math notranslate nohighlight">\( x = je ^ {\left (\mu- \epsilon \right) / k _ {\mathrm {B}} T} \)</span>, e introduciendo la ecuación <a class="reference internal" href="#equation-qagg">(5.6)</a> en la definición <a class="reference internal" href="#equation-upsilon-def">(5.4)</a>, calcularemos la función de partición generalizada:</p>
+<div class="math notranslate nohighlight" id="equation-upsilontn">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-upsilontn" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{\Upsilon(T,\mu) = 1 + c\sum_{N=1}^{\infty}  N^{3}\;x^N = 1 +  c \left[\frac{6x^2}{(x-1)^4} + \frac{x}{(x-1)^2}\right]}\; , \; \vert x \vert &lt; 1 \; .
+\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Desarrollo de la serie</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Partiremos de la siguiente serie geométrica, ya conocida:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{N=1}^{\infty}x^N = \frac{1}{1-x} \; , \; \vert x \vert &lt; 1 \; .
+\]</div>
+<p class="sd-card-text">Derivaremos ambas partes de la ecuación con respecto a <span class="math notranslate nohighlight">\(x\)</span>, y tras ello, multiplicaremos por <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{N=1}^{\infty}Nx^N = \frac{x}{(x-1)^2}
+\]</div>
+<p class="sd-card-text">Siguiendo el mismo procedimiento, calcularemos primero <span class="math notranslate nohighlight">\(\sum_{N=1}^{\infty}N^2x^N\)</span>, y, a continuación, la expresión requerida, <span class="math notranslate nohighlight">\(\sum_{N=1}^{\infty}N^3x^N\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{N=1}^{\infty}N^3x^N = \frac{6x^2}{(x-1)^4} + \frac{x}{(x-1)^2} \; .
+\]</div>
+</div>
+</details><p>Hecho esto, escribiremos el potencial de subdivisión, atendiendo a la definición <a class="reference internal" href="#equation-epspf">(5.3)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-epsagg-tmu">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-epsagg-tmu" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,\mu) = -k_{\mathrm{B}}T\ln \left\{1 + c\left[\frac{6x^2}{(x-1)^4} + \frac{x}{(x-1)^2}\right]\right\} \;.
+\]</div>
+<p>Considerando el potencial químico <span class="math notranslate nohighlight">\( \mu ^ {(0)} \)</span> de la ecuación <a class="reference internal" href="#equation-muagg">(5.7)</a>, podemos reescribir <span class="math notranslate nohighlight">\( x = e ^ {({\mu} - \mu ^ {(0)}) / k_ { \mathrm {B}} T} \)</span>. Por lo tanto, en el límite macroscópico se cumplirá <span class="math notranslate nohighlight">\( x \rightarrow 1 \)</span>. Efectivamente, si calculamos el número medio de partículas,</p>
+<div class="math notranslate nohighlight" id="equation-barnagg">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-barnagg" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N} := -\left(\frac{\partial \mathscr{E}}{\partial \mu}\right)_{T} = c \; x \; P(0)\left[\frac{12 x(x-1)-24 x^{2}}{(x-1)^{5}}-\frac{x+1}{(x-1)^{3}}\right] \; ,
+\]</div>
+<p>veremos que  <span class="math notranslate nohighlight">\( \overline {N} (x \rightarrow 1) \rightarrow \infty \)</span>. Construiremos la expresión de la entropía en función de las variables <span class="math notranslate nohighlight">\((T,\mu)\)</span>, y la abreviaremos con la ayuda de la ecuación <a class="reference internal" href="#equation-barnagg">(5.12)</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{S(T,\mu)}{k_{\mathrm{B}}} := -\frac{1}{k_{\mathrm{B}}} \left(\frac{\partial \mathscr{E}}{\partial T}\right)_ {\mu}  = \overline{N}\left(\ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}\right)
+\]</div>
+<div class="math notranslate nohighlight" id="equation-stmuagg">
+<span class="eqno">(5.13)<a class="headerlink" href="#equation-stmuagg" title="Enlace permanente a esta ecuación">#</a></span>\[ + \color{red} \left\{ \color{black} - \overline{N}\ln x - \ln P(0) + cP(0)\left(1-\frac{\epsilon}{k_{\mathrm{B}} T}\right)\frac{x(x^{2}+4x+1)}{(x-1)^{4}} \color{red} \right\} \; \color{black} .
+\]</div>
+<p>Observemos que la función <span class="math notranslate nohighlight">\( P (0) \)</span> que aparece en las dos ecuaciones anteriores la hemos extraído de la probabilidad <span class="math notranslate nohighlight">\(P(N)\)</span> (o <span class="math notranslate nohighlight">\(P(\overline{N}=N)\)</span>), el cual denota la probabilidad de que el sistema contenga <span class="math notranslate nohighlight">\(N\)</span> partículas:</p>
+<div class="math notranslate nohighlight" id="equation-probagg">
+<span class="eqno">(5.14)<a class="headerlink" href="#equation-probagg" title="Enlace permanente a esta ecuación">#</a></span>\[
+P(N) := \frac{Q(T,N)e^{N\mu/k_{\mathrm{B}}T}}{\Upsilon} \; .
+\]</div>
+<p>Como <span class="math notranslate nohighlight">\(Q(T,0) = 1\)</span>, se cumplirá que <span class="math notranslate nohighlight">\(P(0) = 1/\Upsilon\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Llegados a este punto, comparemos las ecuaciones <a class="reference internal" href="#equation-stnagg">(5.9)</a> y <a class="reference internal" href="#equation-stmuagg">(5.13)</a>. Parece que los dos primeros términos muestran la misma apariencia. Sin embargo, debemos tener cuidado, ya que en la primera expresión aparece la variable <span class="math notranslate nohighlight">\( N \)</span>, y, en la segunda, el promedio <span class="math notranslate nohighlight">\(\overline{N}\)</span>. En aras de mayor claridad, construyamos la representación gráfica de la magnitud <span class="math notranslate nohighlight">\( P (N) \)</span>:</p>
+<figure class="align-default" id="pn-plot">
+<a class="reference internal image-reference" href="_images/pn_plot.PNG"><img alt="_images/pn_plot.PNG" src="_images/pn_plot.PNG" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 5.2 </span><span class="caption-text">En la región de los sistemas pequeños <span class="math notranslate nohighlight">\(( x \ll 1 )\)</span>, la distribución de probabilidad tiene un máximo bien definido en el punto <span class="math notranslate nohighlight">\( N = \overline {N} \)</span>, como puede comprobarse mediante la ecuación <a class="reference internal" href="#equation-barnagg">(5.12)</a>. Pero a medida que aumenta el tamaño del sistema, la ubicación del máximo se difuminará, y no se cumplirá que <span class="math notranslate nohighlight">\( \mathrm{max} [P (N)] = P (\overline {N}) \)</span>.</span><a class="headerlink" href="#pn-plot" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Ahora sí, siguiendo las explicaciones de la <a class="reference internal" href="#pn-plot"><span class="std std-numref">figura 5.2</span></a>, podemos estimar que los primeros dos términos en las ecuaciones <a class="reference internal" href="#equation-stnagg">(5.9)</a> y <a class="reference internal" href="#equation-stmuagg">(5.13)</a> coinciden cuando el sistema es pequeño. Habiendo aclarado esto, retomemos el hilo de la discusión. Observemos las contribuciones de tamaño finito que contienen las llaves rojas. En el caso de la ecuación de la colectividad canónica <a class="reference internal" href="#equation-stnagg">(5.9)</a>, estas contribuciones se deben únicamente al grado de libertad correspondiente a la rotación. En contraste, la expresión <a class="reference internal" href="#equation-stmuagg">(5.13)</a> de la colectividad nanocanónica muestra más términos, todos los cuales son positivos. De hecho, además de la rotación, las fluctuaciones en el número de partículas <span class="math notranslate nohighlight">\( N \)</span> aumentarán aún más la entropía.</p>
+<div class="admonition-oharra admonition">
+<p class="admonition-title">Oharra</p>
+<p>Nótese que en la ecuación <a class="reference internal" href="#equation-stmuagg">(5.13)</a> se cumple que <span class="math notranslate nohighlight">\( \epsilon &lt;0 \)</span> y <span class="math notranslate nohighlight">\( x, P ( 0) \leq1 \)</span>. Por otro lado, en agregados lineales comunes se cumple que <span class="math notranslate nohighlight">\(e^{\epsilon/k_{\mathrm{B}}T} = 0.1\)</span> <span id="id2">[<a class="reference internal" href="erreferentziak.html#id6" title="T. L. Hill. Thermodynamics of Small Systems. Part 1 and 2., chapter 1-10; 15. Dover Publications, Inc., New York, 1964.">5</a>]</span>. Entonces, la energía de interacción será <span class="math notranslate nohighlight">\(\epsilon \approx -2,3 \cdot k_{\mathrm{B}}T &lt; 0\)</span>.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>El siguiente cuadro resume las principales conclusiones de este ejemplo: <span class="math notranslate nohighlight">\((a)\)</span> el aumento de entropía que se produce en un sistema completamente libre, y <span class="math notranslate nohighlight">\((b)\)</span> la compatibilidad entre la Nanotermodinámica y la Termodinámica.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boxed{\begin{gathered}
+    (a) \quad S(T,\mu) &gt; S(T,N) \\
+    \\
+   (b) \quad  \frac{S(T,\mu)}{\overline{N}k_{\mathrm{B}}}\equiv \frac{S(T,N)}{Nk_{\mathrm{B}}} = \frac{\mathrm{s}^{(0)}}{k_{\mathrm{B}}} = \ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T} \quad (\overline{N},N\rightarrow\infty)
+\end{gathered}}
+\end{split}\]</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">5.2.2. </span>Ejercicio<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Hill no considera la rotación en el ejemplo del libro <span id="id4">[<a class="reference internal" href="erreferentziak.html#id6" title="T. L. Hill. Thermodynamics of Small Systems. Part 1 and 2., chapter 1-10; 15. Dover Publications, Inc., New York, 1964.">5</a>]</span>. Por lo tanto, en ese caso el aumento de entropía está directamente relacionado con las fluctuaciones, puesto que obedece lo siguiente:</p>
+<div class="math notranslate nohighlight" id="equation-agg-sx">
+<span class="eqno">(5.15)<a class="headerlink" href="#equation-agg-sx" title="Enlace permanente a esta ecuación">#</a></span>\[
+S(T,\mu)-S^{(0)} \equiv S^{(x)}(T,\mu) = -k_{\mathrm{B}}\sum_{N}P(N)\ln P(N)\; .
+\]</div>
+<p>El objetivo de este ejercicio es, precisamente, llegar a la ecuación <a class="reference internal" href="#equation-agg-sx">(5.15)</a>. Como no vamos a considerar el efecto de la rotación, la función de partición de la ecuación <a class="reference internal" href="#equation-qagg">(5.6)</a> quedará resumida:</p>
+<div class="math notranslate nohighlight" id="equation-agg-q-summ">
+<span class="eqno">(5.16)<a class="headerlink" href="#equation-agg-q-summ" title="Enlace permanente a esta ecuación">#</a></span>\[
+Q(T,N) = c(T)j(T)^N\;e^{-N\epsilon/k_{\mathrm{B}}T} \quad (N\geq1)\; ,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(c(T) = e^{\epsilon/k_{\mathrm{B}}T}\)</span>, y <span class="math notranslate nohighlight">\(Q(T,0) = 1\)</span>.</p>
+<p>Dicho esto, dividiremos la tarea de este ejercicio en las siguientes partes:</p>
+<p><span class="math notranslate nohighlight">\((a)\)</span> Partiendo de la función de partición <a class="reference internal" href="#equation-agg-q-summ">(5.16)</a>, recalcular las magnitudes contempladas entre las ecuaciones <a class="reference internal" href="#equation-muagg">(5.7)</a> y <a class="reference internal" href="#equation-probagg">(5.14)</a>; esto es,</p>
+<div class="math notranslate nohighlight">
+\[
+\widehat{\mu}, \; \mu, \; \mu^{(0)}, \mathscr{E}(T,N), \; S(T,N), \; \Upsilon(T,\mu), \; \mathscr{E}(T,\mu), \; \overline{N}, \; P(N) \; \text{eta} \; S(T,\mu) \; .
+\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Éstos son los resultados a obtener:</p>
+<div class="math notranslate nohighlight" id="equation-muagg-short">
+<span class="eqno">(5.17)<a class="headerlink" href="#equation-muagg-short" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}
+\left.\begin{array}{l}
+\widehat{\mu}=-k_{\mathrm{B}}T\ln j + \frac{N-1}{N} \epsilon \\\\
+\mu=-k_{\mathrm{B}}T\ln j + \epsilon 
+\end{array}\right\}\underset{(N \rightarrow \infty)}{\boldsymbol{\longrightarrow}} \; \mu^{(0)} = -k_{\mathrm{B}}T\ln j + \epsilon \; ,
+\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-epstn-agg-short">
+<span class="eqno">(5.18)<a class="headerlink" href="#equation-epstn-agg-short" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,N) = -\epsilon &gt; 0 \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-stn-agg-short">
+<span class="eqno">(5.19)<a class="headerlink" href="#equation-stn-agg-short" title="Enlace permanente a esta ecuación">#</a></span>\[
+S(T, N) = N k_\mathrm{B} \left(\ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}\right) \equiv S^{(0)} \; .
+\]</div>
+<p class="sd-card-text">Por tanto, tenemos que <span class="math notranslate nohighlight">\(S^{(x)}(T,N) = 0\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-upsilon-agg-short">
+<span class="eqno">(5.20)<a class="headerlink" href="#equation-upsilon-agg-short" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon(T,\mu) = \frac{1-x+cx}{1-x} \quad (x &lt; 1) \; ,
+\]</div>
+<p class="sd-card-text">donde el término <span class="math notranslate nohighlight">\(x(T,\mu)  =  j(T)e^{\left(\mu-\epsilon\right)/k_{\mathrm{B}}T}\)</span> permanece inalterado, y, <span class="math notranslate nohighlight">\(c = e^{\epsilon/k_{\mathrm{B}}T}\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-epstmu-agg-short">
+<span class="eqno">(5.21)<a class="headerlink" href="#equation-epstmu-agg-short" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,\mu) = - k_{\mathrm{B}}T\ln\left(\frac{1-x+cx}{1-x}\right) &lt; 0
+\]</div>
+<div class="math notranslate nohighlight" id="equation-nbar-agg-short">
+<span class="eqno">(5.22)<a class="headerlink" href="#equation-nbar-agg-short" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N} = \frac{cx}{(1-x)(1-x+cx)}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-pn-agg-short">
+<span class="eqno">(5.23)<a class="headerlink" href="#equation-pn-agg-short" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}
+P(N) = \begin{cases}\frac{1-x}{1-x+cx} &amp; , \quad N = 0\\\frac{x^Nc(1-x)}{1-x+cx} &amp; , \quad N  \geq 1\end{cases}
+\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-stmu-agg-short">
+<span class="eqno">(5.24)<a class="headerlink" href="#equation-stmu-agg-short" title="Enlace permanente a esta ecuación">#</a></span>\[
+S(T,\mu) = \overline{N} k_\mathrm{B} \left(\ln j + T\frac{1}{j}\frac{\mathrm{d}j}{\mathrm{d}T}\right)  + \color{red} \left\{ \color{black} - \overline{N}k_\mathrm{B}\ln x - k_\mathrm{B}\ln P(0) - \left[1-P(0)\right]\frac{\epsilon}{T} \color{red} \right\} \color{black} = S^{(0)} + \color{red}S^{(x)} (T,\mu)
+\]</div>
+</div>
+</details><p><span class="math notranslate nohighlight">\((b)\)</span> Verificar que se cumple la igualdad <a class="reference internal" href="#equation-agg-sx">(5.15)</a>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Empleando la función <span class="math notranslate nohighlight">\(P(N)\)</span> de la ecuación <a class="reference internal" href="#equation-pn-agg-short">(5.23)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-pn-aux">
+<span class="eqno">(5.25)<a class="headerlink" href="#equation-pn-aux" title="Enlace permanente a esta ecuación">#</a></span>\[
+-k_{\mathrm{B}}\sum_{N=0}^{\infty}P(N)\ln P(N) = -k_\mathrm{B}\ln P(0) - k_\mathrm{B}\frac{c(1-x)}{1-x+cx} \left\{\ln x\sum_{N=1}^{\infty}N x^N +\ln\left[\frac{c(1-x)}{1-x+cx}\right]\sum_{N=1}^{\infty} x^N\right\} \; .
+\]</div>
+<p class="sd-card-text">Desarrollando los sumatorios,</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{N=1}^{\infty}N x^N = \frac{x}{(x-1)^2} \;\; (x &lt; 1) \quad , \quad  \sum_{N=1}^{\infty} x^N = \frac{x}{1-x} \;\; (x &lt; 1) \; .
+\]</div>
+<p class="sd-card-text">Reescribiremos la ecuación <a class="reference internal" href="#equation-pn-aux">(5.25)</a> de esta manera:</p>
+<div class="math notranslate nohighlight">
+\[
+-k_{\mathrm{B}}\sum_{N=0}^{\infty}P(N)\ln P(N) = -k_\mathrm{B}\ln P(0) - k_\mathrm{B}\left\{\frac{cx\ln x}{(1-x)(1-x+cx)}  + \frac{cx}{1-x+cx}\left[ \ln c + \ln\left(\frac{1-x}{1-x+cx}\right)\right]\right\}
+\]</div>
+<p class="sd-card-text">Teniendo en cuenta las expresiones de las magnitudes <a class="reference internal" href="#equation-nbar-agg-short">(5.22)</a>,  <span class="math notranslate nohighlight">\(P(0)\)</span> y <span class="math notranslate nohighlight">\(c\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+-k_{\mathrm{B}}\sum_{N=0}^{\infty}P(N)\ln P(N) = -k_\mathrm{B}\ln P(0) - k_\mathrm{B}\left\{\overline{N}\ln x  + \left[1-P(0)\right]\left[ \frac{\epsilon}{k_\mathrm{B}T} + \ln P(0)\right]\right\} \; .
+\]</div>
+<p class="sd-card-text">Reordenando la ecuación, llegaremos a la meta:</p>
+<div class="math notranslate nohighlight" id="equation-pnlnpn-def">
+<span class="eqno">(5.26)<a class="headerlink" href="#equation-pnlnpn-def" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{-k_{\mathrm{B}}\sum_{N=0}^{\infty}P(N)\ln P(N) = -\overline{N}k_{\mathrm{B}}\ln x - k_\mathrm{B}\ln P(0) - \left[1-P(0)\right]\frac{\epsilon}{T}}
+\]</div>
+<p class="sd-card-text">Pongamos las ecuaciones <a class="reference internal" href="#equation-stn-agg-short">(5.19)</a> , <a class="reference internal" href="#equation-stmu-agg-short">(5.24)</a> y <a class="reference internal" href="#equation-pnlnpn-def">(5.26)</a> frente a frente. Una vez realizada esta observación, es evidente que el aumento de entropía causado por la transición del conjunto canónico al nanocanónico es asociable a las fluctuaciones relacionadas con el número de partículas <span class="math notranslate nohighlight">\(N\)</span> . Además, podemos percibir que en la región nanotermodinámica <span class="math notranslate nohighlight">\((\overline{N} \not \to \infty)\)</span>, dichas fluctuaciones alrededor de <span class="math notranslate nohighlight">\(N\)</span> serán significativas con respecto a los términos lineales. Este último resultado ha revelado una vez más que el conjunto nanocanónico es indispensable para garantizar la maximización de la entropía de los sistemas pequeños.</p>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+<p>Más en adelante, en concreto en el <a class="reference internal" href="electric_magnetic.html#agg-elek"><span class="std std-numref">ejemplo 6.2</span></a>, sumergiremos el agregado lineal en un campo eléctrico, y examinaremos la influencia que esto acarreará a las magnitudes calculadas a lo largo del presente análisis.</p>
+</section>
+</section>
+<section id="ejemplo-gas-ideal-clasico-en-la-colectividad-nanocanonica">
+<span id="mupt-gi"></span><h2><span class="section-number">5.3. </span>Ejemplo: Gas ideal clásico, en la colectividad nanocanónica<a class="headerlink" href="#ejemplo-gas-ideal-clasico-en-la-colectividad-nanocanonica" title="Permalink to this heading">#</a></h2>
+<p>El punto de partida para el segundo análisis de este sistema es la ecuación <a class="reference internal" href="tpn.html#equation-dtpn-gi">(3.42)</a> del <a class="reference internal" href="tpn.html#gitpn"><span class="std std-numref">ejemplo 3.3</span></a>.</p>
+<section id="id5">
+<h3><span class="section-number">5.3.1. </span>Ejercicio<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>Calcula estas expresiones: la función de partición <span class="math notranslate nohighlight">\(\Upsilon(T,p,\mu)\)</span>, el potencial de subdivisión <span class="math notranslate nohighlight">\(\mathscr{E}(T,p,\mu)\)</span> y la entropía <span class="math notranslate nohighlight">\(S(T,p,\mu)\)</span>. A continuación, construye las magnitudes <span class="math notranslate nohighlight">\(\overline{N}\)</span> y <span class="math notranslate nohighlight">\(\overline{V}\)</span>, y reescribe la entropía en función de ellas; esto es, <span class="math notranslate nohighlight">\(S(T,\overline{V},\overline{N})\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Aplicando a la función de partición <span class="math notranslate nohighlight">\(\Delta(T,p,N)\)</span> la transformación de Legendre asociada a la activación del grado de libertad químico, construiremos la función de partición generalizada:</p>
+<div class="math notranslate nohighlight" id="equation-upsilongi">
+<span class="eqno">(5.27)<a class="headerlink" href="#equation-upsilongi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Upsilon(T,p,\mu) = \sum_{N=0}^{\infty} \left(\frac{k_{\mathrm{B}}T\lambda}{p\Lambda^3}\right)^{N} = \frac{1}{1 - k_{\mathrm{B}}T\lambda/(p\Lambda^3)} \; , \; \left| \frac{k_{\mathrm{B}}T\lambda}{p\Lambda^3} \right| &lt; 1 \; ,
+\]</div>
+<p class="sd-card-text">en donde hemos sustituido la expresión <span class="math notranslate nohighlight">\(\lambda = e^{\mu/k_{\mathrm{B}}T}\)</span>. Por tanto,</p>
+<div class="math notranslate nohighlight" id="equation-epsilontpmugi">
+<span class="eqno">(5.28)<a class="headerlink" href="#equation-epsilontpmugi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E}(T,p,\mu) = k_{\mathrm{B}}T \ln\left(1- \frac{k_{\mathrm{B}}T\lambda}{p\Lambda^3}\right) = -k_{\mathrm{B}}T \ln(\overline{N} + 1) &lt; 0 \; .
+\]</div>
+<p class="sd-card-text">El lado derecho de la ecuación la hemos reescrito con ayuda del par de expresiones de <a class="reference internal" href="#equation-barnbarvtpmugi">(5.29)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-barnbarvtpmugi">
+<span class="eqno">(5.29)<a class="headerlink" href="#equation-barnbarvtpmugi" title="Enlace permanente a esta ecuación">#</a></span>\[
+ \overline{N} = \frac{1}{p\Lambda^3/(k_{\mathrm{B}}T\lambda) - 1} \quad , \quad \overline{V} = \frac{\overline{N}k_{\mathrm{B}}T}{p} \; .
+\]</div>
+<p class="sd-card-text">De esta forma, obtendremos la tercera expresión de la entropía:</p>
+<div class="math notranslate nohighlight" id="equation-stpmugi">
+<span class="eqno">(5.30)<a class="headerlink" href="#equation-stpmugi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{S(T,p,\mu) =  \overline{N}k_{\mathrm{B}}\left[\ln\left(\frac{\overline{V}}{\Lambda^3}\frac{\overline{N}+1}{\overline{N}^2}\right) + \frac{5}{2}\right] + k_{\mathrm{B}}\ln(\overline{N} + 1)}
+\]</div>
+</div>
+</details><p><strong>—————————————————-</strong></p>
+<p>Examinemos la ecuación <a class="reference internal" href="#equation-stpmugi">(5.30)</a> de la entropía obtenida por medio de la colectividad nanocanónica. Recordemos también las expresiones <a class="reference internal" href="gas%20ideala.html#equation-stvngi">(13)</a> del <a class="reference internal" href="gas%20ideala.html#gitvn"><span class="std std-ref"><em>apéndice C</em></span></a> y <a class="reference internal" href="tpn.html#equation-stpngi">(3.45)</a>, y coloquémoslas frente a frente (<a class="reference internal" href="#taula-s-gi"><span class="std std-numref">tabla 5.1</span></a> y <a class="reference internal" href="#sn100"><span class="std std-numref">figura 5.3</span></a>). En todas ellas, la contribución principal es la expresión de Sackur-Tetrode <em>extensiva</em> <span class="math notranslate nohighlight">\(( S_ {0} )\)</span>. Pero, en comparación con los dos primeros, en la ecuación <a class="reference internal" href="#equation-stpmugi">(5.30)</a> se puede apreciar otro término <em>positivo</em>, y, por lo tanto, en sistemas pequeños predominará <span class="math notranslate nohighlight">\(S(T,p, \mu)\)</span>.</p>
+<table class="table" id="taula-s-gi">
+<caption><span class="caption-number">Tabla 5.1 </span><span class="caption-text">Entropía y potencial de subdivisión del gas ideal, en cuatro colectividades estadísticas.</span><a class="headerlink" href="#taula-s-gi" title="Enlace permanente a esta tabla">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variables</p></th>
+<th class="head"><p>Potencial de subdivisión</p></th>
+<th class="head"><p>Entropía</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\left(T, V,N\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\mathscr{E}}{k_{\mathrm{B}}T} \approx \ln\left(\frac{\sqrt{2\pi N}}{e}\right) + \frac{7}{12N} &gt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_\mathrm{B}} \approx N \left[\ln \left(\frac{V}{\Lambda^{3} N}\right)+\frac{5}{2}\right]-  \ln \sqrt{2 \pi N} - \frac{1}{12N}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\left(T,p,N\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathscr{E} = 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_{\mathrm{B}}} =  N\left[\ln\left(\frac{\overline{V}}{\Lambda^3N}\right) + \frac{5}{2}\right]\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\left(T,V,\mu\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathscr{E} = 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_{\mathrm{B}}} =  \overline{N}\left[\ln\left(\frac{V}{\Lambda^3 \overline{N}}\right) + \frac{5}{2}\right]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\left(T,p,\mu\right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\mathscr{E}}{k_{\mathrm{B}}T} = - \ln(\overline{N} + 1) &lt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{S}{k_{\mathrm{B}}} = \overline{N}\left[\ln\left(\frac{\overline{V}}{\Lambda^3}\frac{\overline{N}+1}{\overline{N}^2}\right) + \frac{5}{2}\right] + \ln(\overline{N} + 1)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-default" id="sn100">
+<a class="reference internal image-reference" href="_images/sn100.PNG"><img alt="_images/sn100.PNG" src="_images/sn100.PNG" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 5.3 </span><span class="caption-text">Para erigir las curvas, se han empleado los datos pertenecientes al gas <span class="math notranslate nohighlight">\(\text{Ar}\)</span> <span class="math notranslate nohighlight">\((1 \; \text{mol})\)</span>: <span class="math notranslate nohighlight">\(\Lambda = 16,7 \; \mathrm{pm}\)</span> ; <span class="math notranslate nohighlight">\(T=273,15 \; \mathrm{K}\)</span> ; <span class="math notranslate nohighlight">\(N/V = 2,687\cdot10^{25}\; \mathrm{at/m^3}\)</span>. Salta a la vista, por una parte, que a medida que vamos activando grados de libertad, los efectos de tamaño finito aumentan la entropía en la región nanotermodinámica. Por otra, la magnitud <span class="math notranslate nohighlight">\(S/Nk_{\mathrm{B}}\)</span> se ha tornado extensiva.</span><a class="headerlink" href="#sn100" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Además, el lado derecho de la ecuación <a class="reference internal" href="#equation-epsilontpmugi">(5.28)</a> nos dice que este aumento en la entropía se debe a la contribución <em>negativa</em> y <em>no extensiva</em> del potencial de subdivisión, esto es,</p>
+<div class="math notranslate nohighlight" id="equation-stpmuginew">
+<span class="eqno">(5.31)<a class="headerlink" href="#equation-stpmuginew" title="Enlace permanente a esta ecuación">#</a></span>\[
+S(T,p,\mu) = S_{0}(T,p,\mu) - \frac{\mathscr{E}(T,p,\mu)}{T} \;.
+\]</div>
+<p>En la sección <a class="reference internal" href="#stabeps"><span class="std std-numref">sección 5.4</span></a> que viene a continuación, veremos que <span class="math notranslate nohighlight">\(\mathscr {E} &lt;0 \)</span> conduce al aumento en el número de réplicas dentro de la colectividad (<a class="reference internal" href="#gisub"><span class="std std-numref">figura 5.4</span></a>).</p>
+<figure class="align-default" id="gisub">
+<a class="reference internal image-reference" href="_images/gibbsparadox.PNG"><img alt="_images/gibbsparadox.PNG" src="_images/gibbsparadox.PNG" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 5.4 </span><span class="caption-text">En el conjunto nanocanónico, el <strong>aumento de la subdivisión reforzará la distinguibilidad</strong>. Al principio, las partículas de cada una de las dos réplicas eran indistinguibles precisamente por pertenecer al mismo subsistema. Pero al final, las paredes divisorias entre los subsistemas las han vuelto distinguibles. Como resultado, la entropía ha aumentado.</span><a class="headerlink" href="#gisub" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Considerando la imagen y la ecuación <a class="reference internal" href="#equation-stpmugi">(5.30)</a>, las contribuciones resultantes de la subdivisión del conjunto incrementarán la variación de entropía, puesto que se cumple que <span class="math notranslate nohighlight">\( \Delta S = k _ {\mathrm {B}} \ln (\overline {N} +1) \)</span>. Al llegar a un estado de equilibrio en términos de la subdivisión del colectivo, tendremos que <span class="math notranslate nohighlight">\(\overline{N} \rightarrow 0\)</span>, y, de ahí, <span class="math notranslate nohighlight">\(\Delta S_{\text{equilibrio}}=0\)</span>. Sin embargo, maximizaremos la entropía por número de partícula:</p>
+<div class="math notranslate nohighlight" id="equation-gi-tpmu-s-n">
+<span class="eqno">(5.32)<a class="headerlink" href="#equation-gi-tpmu-s-n" title="Enlace permanente a esta ecuación">#</a></span>\[
+\lim_{\overline{N} \rightarrow 0}\frac{\Delta S/k_{\mathrm{B}}}{\overline{N}} = 1 \; .
+\]</div>
+<p>Cabe señalar que las explicaciones asociadas a la <a class="reference internal" href="#gisub"><span class="std std-numref">figura 5.4</span></a> son extremadamente importantes, ya que otorgan un significado especial a la colectividad nanocanónica. Por ejemplo, supongamos que dos conjuntos macroscópicos contienen el mismo gas, y que hemos colocado una pared de separación entre ellos. Al eliminar la pared, los dos conjuntos se unificarán. Si nos basáramos de la Termodinámica, argumentaríamos de la siguiente manera: como los gases no se pueden diferenciar, el proceso deberá haber sido reversible, lo cual significa que <span class="math notranslate nohighlight">\( \Delta S = 0 \)</span>. Sin embargo, si seguimos por este camino, nos encontraremos con la <strong>paradoja de Gibbs</strong>, ya que la entropía sufrirá, en realidad, una variación positiva. Para afrontar esto, impondremos la indistinguibilidad de las partículas, y parece ser que el factor <em>ad hoc</em> <span class="math notranslate nohighlight">\(1/N!\)</span> de Gibbs soluciona el problema…</p>
+<p>Por el contrario, si fuéramos más allá de lo que dice la Termodinámica, y siguiéramos el razonamiento basado en la Nanotermodinámica, procederíamos de esta forma: al combinar los dos sistemas, la colectividad nanocanónica comenzará a subdividirse, acrecentando la distinguibilidad de las partículas. Por tanto, aunque los dos gases sean iguales, en la región nanotermodinámica se <em>entremezclarán</em> <strong>irreversiblemente</strong>, y la colectividad  reflejará este fenómeno en el aumento de la entropía, llegando así a maximizarla. Así, al intensificar la distinguibilidad dentro de la colectividad nanocanónica, eludiremos la paradoja de Gibbs en los sistemas pequeños <span id="id6">[<a class="reference internal" href="erreferentziak.html#id2" title="R. V. Chamberlin, M. R. Clark, V. Mujica, and G. H. Wolf. An introduction to nanothermodynamics: thermal equilibrium for heterogeneous and finite-sized systems. 2020. doi:10.48550/ARXIV.2007.13031.">1</a>, <a class="reference internal" href="erreferentziak.html#id4" title="R. V. Chamberlin, Michael R. Clark, Vladimiro Mujica, and George H. Wolf. Multiscale thermodynamics: energy, entropy, and symmetry from atoms to bulk behavior. Symmetry, 2021. doi:10.3390/sym13040721.">3</a>]</span>.</p>
+<p>Los efectos de tamaño finito que yacen detrás de esta solución innovadora están bajo la dirección del potencial <span class="math notranslate nohighlight">\( \mathscr {E} \)</span>. Le dedicaremos la última sección perteneciente a la teoría en su totalidad, profundizando en el papel que juega en el equilibrio asociado a la subdivisión.</p>
+</section>
+<section id="ejercicio-gas-ideal-clasico-en-la-colectividad-macrocanonica-left-t-v-mu-right">
+<h3><span class="section-number">5.3.2. </span>Ejercicio: Gas ideal clásico, en la colectividad macrocanónica <span class="math notranslate nohighlight">\(\left(T,V,\mu\right)\)</span><a class="headerlink" href="#ejercicio-gas-ideal-clasico-en-la-colectividad-macrocanonica-left-t-v-mu-right" title="Permalink to this heading">#</a></h3>
+<p>Calcula los resultados de la tercera fila de la <a class="reference internal" href="#taula-s-gi"><span class="std std-numref">tabla 5.1</span></a>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Solución</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Para empezar, la función de partición nanocanónica es</p>
+<div class="math notranslate nohighlight" id="equation-gi-xi">
+<span class="eqno">(5.33)<a class="headerlink" href="#equation-gi-xi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\Xi (T,V,\mu) = \sum_{N=0}^{\infty}\; Q(T,V,N)\;e^{\mu N/k_{\mathrm{B}}T} = \sum_{N=0}^{\infty}\;\frac{1}{N!}\left(\frac{V\lambda}{\Lambda^3}\right)^N = e^{V\lambda/\Lambda^3} := e^{\widehat{p}V/k_{\mathrm{B}}T} \; .
+\]</div>
+<p class="sd-card-text">De ahí, nos percataremos de que la presión integral <span class="math notranslate nohighlight">\(\widehat{p}\)</span> coincide con la presión diferencial <span class="math notranslate nohighlight">\(p\)</span>; de hecho, la expresión</p>
+<div class="math notranslate nohighlight" id="equation-gi-widehatp-v">
+<span class="eqno">(5.34)<a class="headerlink" href="#equation-gi-widehatp-v" title="Enlace permanente a esta ecuación">#</a></span>\[
+\widehat{p}V = -\frac{k_{\mathrm{B}}T  \lambda}{\Lambda^3}V
+\]</div>
+<p class="sd-card-text">es una función Euler-homogénea de primer orden. Por consiguiente, tenemos que <span class="math notranslate nohighlight">\(\mathscr{E} = 0\)</span>. Al mismo tiempo,</p>
+<div class="math notranslate nohighlight" id="equation-gi-barn-makro">
+<span class="eqno">(5.35)<a class="headerlink" href="#equation-gi-barn-makro" title="Enlace permanente a esta ecuación">#</a></span>\[
+\overline{N} = \left[\frac{\partial \left(\widehat{p}V\right)}{\partial \mu}\right]_{T,V} = \frac{\lambda V}{\Lambda^3} \; ,
+\]</div>
+<p class="sd-card-text">y, sustituyendo esa expresión en la ecuación <a class="reference internal" href="#equation-gi-widehatp-v">(5.34)</a> obtendremos la entropía:</p>
+<div class="math notranslate nohighlight" id="equation-gi-s-makro">
+<span class="eqno">(5.36)<a class="headerlink" href="#equation-gi-s-makro" title="Enlace permanente a esta ecuación">#</a></span>\[
+\boxed{S(T,V,\mu) = \left[\frac{\partial \left(\widehat{p}V\right)}{\partial T}\right]_{V,\mu} = \overline{N}k_{\mathrm{B}}\left[\ln\left(\frac{V}{\Lambda^3 \overline{N}}\right) + \frac{5}{2}\right]} \; .
+\]</div>
+</div>
+</details></section>
+</section>
+<section id="potencial-de-subdivision-y-estabilidad">
+<span id="stabeps"></span><h2><span class="section-number">5.4. </span>Potencial de subdivisión y estabilidad<a class="headerlink" href="#potencial-de-subdivision-y-estabilidad" title="Permalink to this heading">#</a></h2>
+<p>Para empezar, recordemos la definición del potencial <span class="math notranslate nohighlight">\(\mathscr{E}\)</span>: la contribución a la energía total de la colectividad a causa de influenciar en su número de réplicas, manteniendo constantes el resto de las variables ambientales respectivas, es decir,</p>
+<div class="math notranslate nohighlight" id="equation-epsilonnewdef">
+<span class="eqno">(5.37)<a class="headerlink" href="#equation-epsilonnewdef" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} := \left(\frac{\partial E_{t}}{\partial \mathscr{N}}\right)_ {S_{t},V_{t}, N_{t}} \equiv \left(\frac{\partial A_{t}}{\partial \mathscr{N}}\right)_ {T,V_{t}, N_{t}} \equiv \left(\frac{\partial F_{t}}{\partial \mathscr{N}}\right)_ {T,p, N_ {t}} \; .
+\]</div>
+<p>En otras palabras, en el caso de la colectividad nanocanónica, representa el trabajo que se le debe realizar al conjunto para crear una nueva réplica.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>En este sentido, en la presente sección discutiremos la naturaleza espontánea de las variaciones en el número promedio de réplicas, <span class="math notranslate nohighlight">\( \overline{\mathscr {N}} \)</span>. Supondremos que los subsistemas del conjunto son completamente libres, pero deberán contener al menos una partícula (<span class="math notranslate nohighlight">\( N \geq 1 \)</span>). El conjunto de variables de entorno de la colectividad será <span class="math notranslate nohighlight">\((T,p,N_ {t})\)</span>, donde <span class="math notranslate nohighlight">\(N_{t} = \overline{\mathscr{N}}\;\overline{N}\)</span>.</p>
+<p>Así las cosas, en el camino hacia el equilibrio a través del proceso espontáneo, la energía libre <span class="math notranslate nohighlight">\( F_ {t} (T, p, N_ {t}) \)</span> tenderá a su valor mínimo, y, por lo tanto, <span class="math notranslate nohighlight">\( \mathrm {d} F_ {t} &lt;0 \)</span>. Si el conjunto se mantiene aislado durante el proceso, todas las variables excepto <span class="math notranslate nohighlight">\( \overline {\mathscr {N}} \)</span> permanecerán invariables. En consecuencia, considerando la parte derecha de la ecuación <a class="reference internal" href="#equation-epsilonnewdef">(5.37)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-dft">
+<span class="eqno">(5.38)<a class="headerlink" href="#equation-dft" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathrm{d}F_{t}=\mathscr{E}\mathrm{d}\overline{\mathscr{N}}&lt;0\; .
+\]</div>
+<p>Esta expresión nos sugiere que cuando el potencial de subdivisión es positivo, disminuirá el número de réplicas, y, cuando es negativo, se intensificará la subdivisión de la colectividad, creando subsistemas más pequeños (recordemos la <a class="reference internal" href="#gisub"><span class="std std-numref">figura 5.4</span></a>). Además, como al alcanzar el equilibrio la energía se encontrará en un mínimo, se cumplirá asimismo que</p>
+<div class="math notranslate nohighlight" id="equation-d2f">
+<span class="eqno">(5.39)<a class="headerlink" href="#equation-d2f" title="Enlace permanente a esta ecuación">#</a></span>\[
+\left(\frac{\partial^2 F_{t}}{\partial \overline{\mathscr{N}}^2}\right)_{T,p, N_{t}} = \left(\frac{\partial \mathscr{E}}{\partial \overline{\mathscr{N}}}\right)_{T,p, N_{t}} &gt; 0 \; .
+\]</div>
+<p>Resulta evidente que <span class="math notranslate nohighlight">\(\mathrm{d}\mathscr{E}\)</span> y <span class="math notranslate nohighlight">\(\mathrm{d}\overline{\mathscr{N}}\)</span> son del mismo signo. Además de eso, considerando la ecuación <a class="reference internal" href="#equation-dft">(5.38)</a>, se cumplirá  <span class="math notranslate nohighlight">\(\mathscr{E}\cdot\mathrm{d}\mathscr{E} &lt;0\)</span>. Esta significativa conclusión nos ayudará a completar la explicación del <a class="reference internal" href="#mupt-gi"><span class="std std-numref">ejemplo 5.3</span></a>: dado que <span class="math notranslate nohighlight">\(\mathscr{E}\)</span> y <span class="math notranslate nohighlight">\(\mathrm{d}\mathscr{E}\)</span> son de signos opuestos, a medida que <span class="math notranslate nohighlight">\(\overline{\mathscr {N}} \)</span> aumenta, el potencial <span class="math notranslate nohighlight">\( \mathscr {E} \)</span> tenderá a cero, hasta alcanzar el equilibrio. <strong>Un estado de equilibrio correspondiente a la subdivisión</strong> debe satisfacer la condición <span class="math notranslate nohighlight">\( \mathscr {E} = 0 \)</span>.</p>
+<p>Debido a esta última frase, necesitamos aclarar un última asunto. Para llegar a ello, retomaremos el ejemplo del gas ideal. Antes de nada, tengamos en cuenta que a los sistemas pequeños les hemos establecido la condición <span class="math notranslate nohighlight">\( N \geq 1 \)</span>. Por ende, necesitaremos extraer el término <span class="math notranslate nohighlight">\( N = 0 \)</span> de la ecuación <a class="reference internal" href="#equation-upsilongi">(5.27)</a>. Reemplazando <span class="math notranslate nohighlight">\( x = k _ {\mathrm {B}} T \lambda / (p \Lambda ^ 3) \)</span>, la nueva función de partición será</p>
+<div class="math notranslate nohighlight" id="equation-upsilonginew">
+<span class="eqno">(5.40)<a class="headerlink" href="#equation-upsilonginew" title="Enlace permanente a esta ecuación">#</a></span>\[
+ \Upsilon = \frac{x}{1-x}
+\]</div>
+<p>De ahí volveremos a calcular las magnitudes <span class="math notranslate nohighlight">\(\mathscr{E}\)</span> y <span class="math notranslate nohighlight">\(\overline{N}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-epsginew">
+<span class="eqno">(5.41)<a class="headerlink" href="#equation-epsginew" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} = -k_{\mathrm{B}}T\ln\left(\frac{x}{1-x}\right) = -k_{\mathrm{B}}T\ln\left(\overline{N}-1\right) \; ,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-barnginew">
+<span class="eqno">(5.42)<a class="headerlink" href="#equation-barnginew" title="Enlace permanente a esta ecuación">#</a></span>\[
+ \overline{N} = \frac{1}{1-x} = 1 + e^{-\mathscr{E}/k_{\mathrm{B}}T} \; .
+\]</div>
+<p>Supongamos que ahora iniciamos un proceso espontáneo que cambiará el número de subsistemas <span class="math notranslate nohighlight">\( \overline {\mathscr {N}} \)</span>, manteniendo <span class="math notranslate nohighlight">\( T \)</span> y <span class="math notranslate nohighlight">\( p \)</span> constantes. Durante la subdivisión (<span class="math notranslate nohighlight">\(\mathrm{d}\overline{\mathscr{N}} &lt;0\)</span> o <span class="math notranslate nohighlight">\(\mathrm{d}\overline{\mathscr{N}}&gt;0\)</span>), la entropía sufrirá la variación <span class="math notranslate nohighlight">\(\Delta S =  \pm k _ {\mathrm {B}} \ln (\overline {N} / 2)\)</span>. Cuando se alcance el equilibrio,</p>
+<div class="math notranslate nohighlight">
+\[
+\mathscr{E}_ {\text{equilibrio}} = 0 \quad \Rightarrow \quad \overline{N}_ {\text{equilibrio}}=2 \quad \text{y} \quad \Delta S_{\text{equilibrio}}=0 \; .
+\]</div>
+<p>Recordemos que antes, al insertar el término <span class="math notranslate nohighlight">\( N = 0 \)</span> en la función de partición, la condición <span class="math notranslate nohighlight">\( \overline {N} \rightarrow 0 \)</span> nos llevaba al equilibrio, lo que podría dar a entender que la subdivisión es incesante. Por el contrario, parece que los resultados obtenidos ahora son de mayor sentido y significado físico.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+\end{split}\]</div>
+<p>Finalmente, abordaremos el aspecto que ha quedado por aclarar. Como hemos ido mencionando en varias secciones anteriores, en el límite macroscópico, las contribuciones que cumplen una relación lineal con la variable <span class="math notranslate nohighlight">\( \overline {N} \)</span> prevalecerán fuertemente sobre el potencial de subdivisión, y por lo tanto <span class="math notranslate nohighlight">\( \mathscr {E} \)</span> se considerará despreciable. Pues bien, esta última frase puede resultar engañosa, puesto que nos puede conducir hacia una argumentación errónea. De hecho, podría sugerirnos que, dado que el sistema macroscópico percibe que <span class="math notranslate nohighlight">\( \mathscr {E} \approx 0 \)</span>, <em>el límite macroscópico es en sí un estado de equilibrio</em>.</p>
+<p>De hecho, debemos actuar con cautela ante ese concepto. Por ejemplo, en el caso del gas ideal, el límite macroscópico (<span class="math notranslate nohighlight">\(\overline{N}\rightarrow\infty\)</span>) de la ecuación <a class="reference internal" href="#equation-epsginew">(5.41)</a> viene a ser</p>
+<div class="math notranslate nohighlight" id="equation-epslimgi">
+<span class="eqno">(5.43)<a class="headerlink" href="#equation-epslimgi" title="Enlace permanente a esta ecuación">#</a></span>\[
+\mathscr{E} = -k_{\mathrm{B}}T\ln \overline{N} \; .
+\]</div>
+<p>Como resultado, el potencial de subdivisión aumentará en módulo, aunque sea más lentamente que otras funciones de carácter lineal. Es cierto que las expresiones obtenidas en otros casos (por ejemplo, en las secciones <a class="reference internal" href="tpn.html#helix-coil"><span class="std std-numref">3.2</span></a> y <a class="reference internal" href="adsorbent.html#app"><span class="std std-numref">8</span></a>) sí que cumplen <span class="math notranslate nohighlight">\(\mathscr{E}\rightarrow 0\)</span> en el límite macroscópico, pero la ecuación <a class="reference internal" href="#equation-epslimgi">(5.43)</a> deja en claro que en general esto no sucederá. Además, cabe destacar que el significado de este límite a cero del potencial de subdivisión no corresponde a la estricta condición <span class="math notranslate nohighlight">\( \mathscr {E} = 0 \)</span> requerida por un estado de equilibrio. Por lo tanto, generalmente no es lícito afirmar que el estado macroscópico es equivalente a un estado de equilibrio.</p>
+<div class="math notranslate nohighlight">
+\[
+**********
+\]</div>
+<p>Estos comentarios esclarecedores darán el cierre a la parte de la teoría correspondiente a la Termodinámica de Sistemas Pequeños. Al final, (<a class="reference internal" href="adsorbent.html#app"><span class="std std-numref">capítulo 8</span></a>) saltaremos de la década de 1960 al año 2021, y nos sumergiremos en una importante aplicación actual de la teoría de Hill.</p>
+<p>Pero antes, los siguientes dos apartados (<a class="reference internal" href="electric_magnetic.html#elek-mag"><span class="std std-numref">6</span></a> y <a class="reference internal" href="osagarri.html#osagarri"><span class="std std-numref">7</span></a>) están destinados a presentar nuevos ejemplos. Asimismo, se modificarán varios sistemas ya trabajados (el agregado lineal, entre otros) incorporando nuevas contribuciones a las magnitudes más relevantes. Hay que decir que éstos nos resultarán fructíferos y representativos, a fin de completar la teoría de Hill y establecer el punto de partida para su extensión a aplicaciones importantes.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fase.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Transiciones de fase en sistemas pequeños</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="electric_magnetic.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Sistemas eléctricos y magnéticos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estudio-de-la-colectividad">5.1. Estudio de la colectividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-agregado-lineal">5.2. Ejemplo: agregado lineal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">5.2.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.2.2. Ejercicio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-gas-ideal-clasico-en-la-colectividad-nanocanonica">5.3. Ejemplo: Gas ideal clásico, en la colectividad nanocanónica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.3.1. Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-gas-ideal-clasico-en-la-colectividad-macrocanonica-left-t-v-mu-right">5.3.2. Ejercicio: Gas ideal clásico, en la colectividad macrocanónica <span class="math notranslate nohighlight">\(\left(T,V,\mu\right)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potencial-de-subdivision-y-estabilidad">5.4. Potencial de subdivisión y estabilidad</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Mikel Garitano Telleria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
