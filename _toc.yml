@@ -1,0 +1,27 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Contenidos
+    numbered: 3
+    chapters:
+    - file: nanointro
+    - file: hill
+    - file: tpn
+    - file: fase
+    - file: tpmu
+    - file: electric_magnetic
+    - file: osagarri
+    - file: adsorbent
+    - file: ondorioak
+  - caption: Apéndices
+    chapters:
+    - file: euler
+    - file: entropy
+    - file: gas ideala
+  - caption: Otros
+    chapters:
+    - file: erreferentziak
+    - file: eskerrak
