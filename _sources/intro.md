@@ -38,7 +38,7 @@ T. L. Hill
 En 1962, Hill publicó el artículo _Thermodynamics of Small Systems_ {cite}`hill_art`, y, a lo largo de los dos próximos años escribió un libro que lleva el mismo nombre {cite}`hill`. En él, presentó los fundamentos de la Nanotermodinámica y varias explicaciones.
 
 
-```{admonition} Oharra
+```{admonition} Nota
 Hill no emplea la palabra _Nanotermodinámica_ en sus trabajos. De hecho, en la década de 1960 sus ideas carecían de una robusta aplicabilidad en la mayoría de sistemas experimentales. Así las cosas, el autor introdujo este término posteriormente (en el año 2000).
 ```
 
